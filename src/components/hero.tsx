@@ -1,0 +1,104 @@
+// Hero — beyond-elyu. Composition inspired by the travel-hero reference,
+// rebuilt in our Coastal Editorial system (no cream/gold, no borrowed type).
+//
+// IMAGE: `public/hero.png` fills the whole hero as a cover background.
+// If it's ever missing, it falls back to a warm deep-sea-green tint.
+
+const NAV = [
+  { label: "Guide", href: "#guide" },
+  { label: "The Map", href: "#map" },
+  { label: "Journal", href: "#journal" },
+];
+
+const SPOTS = [
+  "Surf breaks",
+  "Waterfalls",
+  "Hidden coves",
+  "Back roads",
+  "Sunset points",
+];
+
+export function Hero() {
+  return (
+    <section className="relative isolate flex min-h-[100svh] flex-col overflow-hidden text-sand">
+      {/* ── Full-bleed cover photo ── */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-20 bg-sea-deep bg-cover bg-center"
+        style={{ backgroundImage: "url('/hero.png')" }}
+      />
+      {/* Legibility scrim — darkens top (for nav) and lower-left (for the headline) */}
+      <div
+        aria-hidden
+        className="absolute inset-0 -z-10"
+        style={{
+          background:
+            "linear-gradient(to bottom, color-mix(in oklab, var(--color-ink) 38%, transparent) 0%, transparent 26%), linear-gradient(to top, color-mix(in oklab, var(--color-ink) 72%, transparent) 0%, transparent 60%), linear-gradient(to right, color-mix(in oklab, var(--color-ink) 40%, transparent) 0%, transparent 55%)",
+        }}
+      />
+
+      {/* ── Floating pill navigation — translucent capsule over the photo ── */}
+      <header className="flex justify-center px-gutter pt-[clamp(1.25rem,2.5vw,2rem)]">
+        <div className="flex items-center gap-8 rounded-full border border-sand/15 bg-ink/35 px-2.5 py-2 backdrop-blur-md">
+          {/* wordmark */}
+          <a
+            href="#top"
+            aria-label="elyu — home"
+            className="rounded-full bg-sand px-4 py-1.5 font-display text-base font-medium lowercase tracking-tight text-ink"
+          >
+            elyu
+          </a>
+
+          <nav className="hidden items-center gap-3 text-sm font-medium md:flex">
+            {NAV.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="rounded-full px-5 py-1.5 text-sand/85 transition-colors hover:bg-sand/10 hover:text-sand"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          <a
+            href="#plan"
+            className="rounded-full bg-sand px-5 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-terracotta hover:text-sand"
+          >
+            Plan a trip
+          </a>
+        </div>
+      </header>
+
+      {/* ── Lower content: location chip, headline, short lede, spot capsules ── */}
+      <div className="mt-auto max-w-3xl px-gutter pb-[clamp(2.5rem,5vw,4.5rem)]">
+        <span className="inline-flex items-center rounded-full border border-sand/30 px-3.5 py-1.5 text-eyebrow uppercase text-sand/80">
+          Ilocos Region
+        </span>
+
+        <h1 className="mt-5 font-display text-display font-semibold tracking-tight">
+          La Union
+        </h1>
+
+        <p className="mt-3 max-w-[48ch] text-lede font-body text-sand/80">
+          They&apos;ll tell you it&apos;s overrated. Look closer, past the
+          crowds and the day-trip checklist, and the coast proves them wrong.
+        </p>
+
+        {/* Spot capsules — translucent glass over the photo */}
+        <ul className="mt-20 flex flex-wrap gap-2.5">
+          {SPOTS.map((spot) => (
+            <li key={spot}>
+              <a
+                href="#guide"
+                className="inline-flex items-center rounded-full border border-sand/25 bg-ink/20 px-4 py-2 text-sm font-medium text-sand/90 backdrop-blur-md transition-colors hover:border-sand/40 hover:bg-sand/15 hover:text-sand"
+              >
+                {spot}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
