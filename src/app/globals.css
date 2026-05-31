@@ -7,9 +7,43 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+
+  /* ── Coastal Editorial · fonts ──
+     next/font injects --font-clash-display and --font-geist-sans on <html>;
+     these wrappers expose them as the `font-display` and `font-body` utilities. */
+  --font-display: var(--font-clash-display), "Clash Display", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-display);
+  --font-mono: ui-monospace, "SFMono-Regular", "Geist Mono", monospace;
+
+  /* ── Coastal Editorial · palette (warm, light, intentional) ──
+     Authored in OKLCH; each maps 1:1 to the brief's starting hex. */
+  --color-sand: var(--sand);              /* #F5F0E6 · background */
+  --color-sand-deep: var(--sand-deep);    /* sectioning / quiet panels */
+  --color-sea: var(--sea);                /* #1F4A43 · primary */
+  --color-sea-deep: var(--sea-deep);      /* hover / pressed */
+  --color-terracotta: var(--terracotta);          /* #C0623D · accent */
+  --color-terracotta-soft: var(--terracotta-soft); /* accent hover */
+  --color-ink: var(--ink);                /* #2A2622 · text */
+  --color-ink-soft: var(--ink-soft);      /* secondary text */
+
+  /* ── Editorial type scale · fluid, ratio ≥ 1.25 ── */
+  --text-eyebrow: 0.8125rem;
+  --text-eyebrow--line-height: 1.1;
+  --text-eyebrow--letter-spacing: 0.24em;
+  --text-lede: clamp(1.0625rem, 0.9rem + 0.6vw, 1.375rem);
+  --text-lede--line-height: 1.55;
+  --text-headline: clamp(2.75rem, 1.4rem + 5vw, 6rem);
+  --text-headline--line-height: 0.96;
+  --text-headline--letter-spacing: -0.02em;
+  --text-display: clamp(2.75rem, 1rem + 5vw, 5.5rem);
+  --text-display--line-height: 0.94;
+  --text-display--letter-spacing: -0.025em;
+
+  /* ── Generous spacing · page gutter + section bay ── */
+  --spacing-gutter: clamp(1.5rem, 1rem + 4vw, 5.5rem);
+  --spacing-bay: clamp(4rem, 2rem + 8vw, 11rem);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -49,24 +83,35 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  /* Coastal Editorial brand palette — OKLCH, mapped to the brief's hex */
+  --sand: oklch(0.9563 0.0143 84.58);        /* #F5F0E6 */
+  --sand-deep: oklch(0.9215 0.0188 83);       /* warmer panel */
+  --sea: oklch(0.3762 0.0495 181.43);         /* #1F4A43 */
+  --sea-deep: oklch(0.305 0.043 181);         /* hover */
+  --terracotta: oklch(0.6006 0.1311 41.47);   /* #C0623D */
+  --terracotta-soft: oklch(0.667 0.118 43);   /* hover */
+  --ink: oklch(0.2715 0.0094 67.42);          /* #2A2622 */
+  --ink-soft: oklch(0.2715 0.0094 67.42 / 0.62);
+
+  /* Semantic tokens, themed onto the brand (shadcn-compatible) */
+  --background: var(--sand);
+  --foreground: var(--ink);
+  --card: var(--sand);
+  --card-foreground: var(--ink);
+  --popover: var(--sand);
+  --popover-foreground: var(--ink);
+  --primary: var(--sea);
+  --primary-foreground: var(--sand);
+  --secondary: var(--sand-deep);
+  --secondary-foreground: var(--ink);
+  --muted: var(--sand-deep);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--terracotta);
+  --accent-foreground: var(--sand);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(0.2715 0.0094 67.42 / 0.12);
+  --input: oklch(0.2715 0.0094 67.42 / 0.16);
+  --ring: var(--sea);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -125,6 +170,6 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-sans;
+    @apply font-body;
   }
 }

@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# beyond elyu
 
-## Getting Started
+> La Union is not overrated. Look closer.
 
-First, run the development server:
+A single-page editorial site about **La Union** — the surf coast on the
+northwest of Luzon that everyone thinks they've already seen from a weekend
+day-trip. This is a small love letter arguing the opposite: that past the
+crowded breaks and the day-tripper checklist, there's a place worth slowing
+down for. The whole site is built to make one point, *look closer*.
+
+This is a **vibe-coded side project** — made for fun, to play with a design
+direction and to show off how good La Union actually is, not as a polished
+product. Expect things to be a work in progress.
+
+## Design direction — "Coastal Editorial"
+
+Warm, light, and intentional. The palette and type are the voice:
+
+| Role | Token | Color |
+|---|---|---|
+| Background | `sand` | `#F5F0E6` — warm off-white |
+| Primary | `sea` | `#1F4A43` — deep sea green |
+| Accent | `terracotta` | `#C0623D` — burnt terracotta |
+| Text | `ink` | `#2A2622` |
+
+- **Display type:** Clash Display (self-hosted)
+- **Body type:** Geist (self-hosted via the `geist` package)
+- Tokens, fonts, an editorial type scale, and generous spacing all live in
+  the Tailwind v4 `@theme` block in [`src/app/globals.css`](src/app/globals.css).
+  Colors are authored in OKLCH and map 1:1 to the hex values above.
+
+## Tech stack
+
+- [Next.js 16](https://nextjs.org) (App Router, Turbopack)
+- React 19 + TypeScript
+- [Tailwind CSS v4](https://tailwindcss.com) (CSS-first `@theme` config)
+- [shadcn](https://ui.shadcn.com) components
+- Self-hosted fonts via `next/font/local` + the `geist` package (no CDN)
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | What it does |
+|---|---|
+| `npm run dev` | Start the dev server |
+| `npm run build` | Production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | Run ESLint |
 
-## Learn More
+## Fonts
 
-To learn more about Next.js, take a look at the following resources:
+Both faces are self-hosted, so nothing is fetched from a CDN at runtime.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Clash Display** — the variable `.woff2` lives in
+  [`src/app/fonts/`](src/app/fonts) and is wired up in
+  [`src/app/layout.tsx`](src/app/layout.tsx). It's free for commercial use
+  ([Fontshare](https://www.fontshare.com/fonts/clash-display), by the Indian
+  Type Foundry). To swap it, replace that one file.
+- **Geist** — comes from the `geist` npm package.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Status
 
-## Deploy on Vercel
+Early days. The design tokens and self-hosted font setup are in place; the
+page sections are still being built. More of La Union to come.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Made with warm light and too much coffee, somewhere along the El Niño coast.
