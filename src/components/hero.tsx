@@ -1,7 +1,7 @@
 // Hero — beyond-elyu. Composition inspired by the travel-hero reference,
 // rebuilt in our Coastal Editorial system (no cream/gold, no borrowed type).
 //
-// IMAGE: `public/hero.png` fills the whole hero as a cover background.
+// IMAGE: `public/hero.webp` fills the whole hero as a cover background.
 // If it's ever missing, it falls back to a warm deep-sea-green tint.
 
 const NAV = [
@@ -11,11 +11,11 @@ const NAV = [
 ];
 
 const SPOTS = [
-  "Surf breaks",
   "Waterfalls",
-  "Hidden coves",
-  "Back roads",
-  "Sunset points",
+  "Local food",
+  "Heritage towns",
+  "Sunset views",
+  "Mountain trails",
 ];
 
 export function Hero() {
@@ -25,7 +25,7 @@ export function Hero() {
       <div
         aria-hidden
         className="absolute inset-0 -z-20 bg-sea-deep bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero.png')" }}
+        style={{ backgroundImage: "url('/hero.webp')" }}
       />
       {/* Legibility scrim — darkens top (for nav) and lower-left (for the headline) */}
       <div
@@ -80,9 +80,10 @@ export function Hero() {
           La Union
         </h1>
 
-        <p className="mt-3 max-w-[48ch] text-lede font-body text-sand/80">
-          They&apos;ll tell you it&apos;s overrated. Look closer, past the
-          crowds and the day-trip checklist, and the coast proves them wrong.
+        <p className="mt-3 max-w-[50ch] text-base font-body leading-relaxed text-sand/80 md:text-xl">
+          Overrated is what you call a place when you mistook one town for the
+          whole of it. San Juan was the part you saw. This is the part you
+          didn&apos;t.
         </p>
 
         {/* Spot capsules — translucent glass over the photo */}
