@@ -20,7 +20,7 @@ const SPOTS = [
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-svh flex-col overflow-hidden text-sand">
+    <section id="top" className="relative isolate flex min-h-svh flex-col overflow-hidden text-sand">
       {/* ── Full-bleed cover photo ── */}
       <div
         aria-hidden
