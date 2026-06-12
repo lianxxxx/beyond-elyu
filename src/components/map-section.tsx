@@ -10,46 +10,7 @@
 // hand-placed for legibility, not GPS.
 
 import { useEffect, useRef, useState } from "react";
-
-type Town = {
-  name: string;
-  x: number;
-  y: number;
-  kind: "coast" | "inland";
-  blurb: string;
-  anchor?: boolean;
-};
-
-const TOWNS: Town[] = [
-  // Coast, north → south
-  { name: "Bangar", x: 250, y: 90, kind: "coast", blurb: "Inabel cloth, woven on wooden looms" },
-  { name: "Luna", x: 222, y: 150, kind: "coast", blurb: "Pebble beach and the old Baluarte watchtower" },
-  { name: "Balaoan", x: 240, y: 205, kind: "coast", blurb: "Quiet river town opening to the sea" },
-  { name: "Bacnotan", x: 232, y: 262, kind: "coast", blurb: "Sea urchin season and the state university" },
-  { name: "San Juan", x: 248, y: 322, kind: "coast", anchor: true, blurb: "The surf town everyone mistakes for the whole" },
-  { name: "City of San Fernando", x: 242, y: 388, kind: "coast", anchor: true, blurb: "The capital: Ma-Cho Temple, Pindangan ruins" },
-  { name: "Bauang", x: 256, y: 448, kind: "coast", blurb: "Grape rows and a long shore of resorts" },
-  { name: "Caba", x: 272, y: 505, kind: "coast", blurb: "Windswept points and small fishing barangays" },
-  { name: "Aringay", x: 280, y: 555, kind: "coast", blurb: "Where the river finally meets the sea" },
-  { name: "Agoo", x: 290, y: 612, kind: "coast", anchor: true, blurb: "The Basilica of Our Lady of Charity" },
-  { name: "Santo Tomas", x: 305, y: 665, kind: "coast", blurb: "The southern shoreline, near Pangasinan" },
-  { name: "Rosario", x: 330, y: 715, kind: "coast", blurb: "The gateway in from the south" },
-  // Foothills, north → south
-  { name: "Sudipen", x: 420, y: 95, kind: "inland", blurb: "Foothills along the Amburayan river" },
-  { name: "Santol", x: 462, y: 172, kind: "inland", blurb: "A mountain town of cold river pools" },
-  { name: "San Gabriel", x: 410, y: 268, kind: "inland", blurb: "The trail to Tangadan Falls" },
-  { name: "Naguilian", x: 400, y: 358, kind: "inland", blurb: "The basi capital: sugarcane wine in clay" },
-  { name: "Bagulin", x: 492, y: 420, kind: "inland", blurb: "Highland trails above the valley" },
-  { name: "Burgos", x: 458, y: 498, kind: "inland", blurb: "Cool uplands, far from the surf" },
-  { name: "Tubao", x: 425, y: 602, kind: "inland", blurb: "Inland farms and slow afternoons" },
-  { name: "Pugo", x: 475, y: 658, kind: "inland", blurb: "Eco-adventure parks in the hills" },
-];
-
-const COASTLINE =
-  "M 205 55 C 175 150, 225 215, 200 300 C 178 380, 235 450, 232 520 C 230 590, 285 650, 300 720 L 312 770";
-const SEA = `${COASTLINE} L 0 770 L 0 55 Z`;
-const FOOTHILLS =
-  "M 520 60 C 545 180, 515 300, 535 420 C 550 540, 520 660, 540 760";
+import { TOWNS, COASTLINE, SEA, FOOTHILLS } from "@/lib/la-union";
 
 const EASE_EXPO = "cubic-bezier(0.16, 1, 0.3, 1)";
 const EASE_QUINT = "cubic-bezier(0.22, 1, 0.36, 1)";
