@@ -20,7 +20,7 @@ const SPOTS = [
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[100svh] flex-col overflow-hidden text-sand">
+    <section className="relative isolate flex min-h-svh flex-col overflow-hidden text-sand">
       {/* ── Full-bleed cover photo ── */}
       <div
         aria-hidden
@@ -72,9 +72,7 @@ export function Hero() {
 
       {/* ── Lower content: location chip, headline, short lede, spot capsules ── */}
       <div className="mt-auto max-w-3xl px-gutter pb-[clamp(2.5rem,5vw,4.5rem)]">
-        <span className="inline-flex items-center rounded-full border border-sand/30 px-3.5 py-1.5 text-eyebrow uppercase text-sand/80">
-          Ilocos Region
-        </span>
+        
 
         <h1 className="mt-5 font-display text-display font-semibold tracking-tight">
           La Union
@@ -87,7 +85,7 @@ export function Hero() {
         </p>
 
         {/* Spot capsules — translucent glass over the photo */}
-        <ul className="mt-20 flex flex-wrap gap-2.5">
+        <ul className="mt-10 flex flex-wrap gap-2.5">
           {SPOTS.map((spot) => (
             <li key={spot}>
               <a
