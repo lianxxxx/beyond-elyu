@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-12T00:00:00Z",
+  "title": "Design System: beyond elyu",
+  "extensions": {
+    "colorMeta": {
+      "sea": {
+        "role": "primary",
+        "displayName": "Deep Sea Green",
+        "canonical": "oklch(0.3762 0.0495 181.43)",
+        "tonalRamp": [
+          "oklch(0.18 0.03 181)",
+          "oklch(0.25 0.04 181)",
+          "oklch(0.305 0.043 181)",
+          "oklch(0.3762 0.0495 181)",
+          "oklch(0.46 0.05 181)",
+          "oklch(0.58 0.045 181)",
+          "oklch(0.74 0.035 181)",
+          "oklch(0.92 0.02 181)"
+        ]
+      },
+      "terracotta": {
+        "role": "secondary",
+        "displayName": "Burnt Terracotta",
+        "canonical": "oklch(0.6006 0.1311 41.47)",
+        "tonalRamp": [
+          "oklch(0.22 0.06 41)",
+          "oklch(0.32 0.09 41)",
+          "oklch(0.44 0.12 41)",
+          "oklch(0.6006 0.1311 41)",
+          "oklch(0.667 0.118 43)",
+          "oklch(0.75 0.095 44)",
+          "oklch(0.85 0.06 46)",
+          "oklch(0.94 0.03 48)"
+        ]
+      },
+      "sand": {
+        "role": "neutral",
+        "displayName": "Warm Sand",
+        "canonical": "oklch(0.9563 0.0143 84.58)",
+        "tonalRamp": [
+          "oklch(0.27 0.009 67)",
+          "oklch(0.40 0.012 75)",
+          "oklch(0.55 0.014 80)",
+          "oklch(0.70 0.016 82)",
+          "oklch(0.82 0.018 83)",
+          "oklch(0.9215 0.0188 83)",
+          "oklch(0.9563 0.0143 84.58)",
+          "oklch(0.98 0.008 85)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "oklch(0.2715 0.0094 67.42)",
+        "tonalRamp": [
+          "oklch(0.20 0.008 67)",
+          "oklch(0.2715 0.0094 67)",
+          "oklch(0.36 0.010 68)",
+          "oklch(0.47 0.011 70)",
+          "oklch(0.58 0.012 74)",
+          "oklch(0.70 0.013 78)",
+          "oklch(0.83 0.014 82)",
+          "oklch(0.93 0.014 84)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline and the single biggest statements only. Clash Display 600, tight tracking." },
+      "headline": { "displayName": "Headline", "purpose": "Section openers. The largest reach per scroll beat." },
+      "lede": { "displayName": "Lede", "purpose": "The paragraph under a headline that states the section's argument." },
+      "body": { "displayName": "Body", "purpose": "Running copy: town histories, the persuasive close. Measure capped 65-75ch." },
+      "label": { "displayName": "Label", "purpose": "Eyebrows and small metadata. Track-spaced uppercase, used sparingly." }
+    },
+    "shadows": [
+      { "name": "photo-float", "value": "backdrop-filter: blur(12px); background: color-mix(in oklab, var(--color-ink) 30%, transparent)", "purpose": "The only elevation token. Glass capsules over imagery (nav, spot chips). Never on the flat light page." }
+    ],
+    "motion": [
+      { "name": "ease-out-quint", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Default reveal and transition easing. Calm exponential ease-out, no bounce." },
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Larger hero-moment reveals (the map assembling, big headline entrances)." },
+      { "name": "duration-reveal", "value": "640ms", "purpose": "Section entrance reveal duration." },
+      { "name": "duration-state", "value": "200ms", "purpose": "Hover and interactive state-change duration (color only)." },
+      { "name": "stagger-step", "value": "80ms", "purpose": "Delay between staggered children (headline then lede then chips)." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (over photo)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Hero CTA. Solid sand pill on the photo, washes to terracotta on hover.",
+      "html": "<button class=\"ds-btn-primary\">Plan a trip</button>",
+      "css": ".ds-btn-primary { background: var(--color-sand); color: var(--color-ink); border: none; border-radius: 9999px; padding: 0.375rem 1.25rem; font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; cursor: pointer; transition: background-color 200ms cubic-bezier(0.22,1,0.36,1), color 200ms cubic-bezier(0.22,1,0.36,1); } .ds-btn-primary:hover { background: var(--color-terracotta); color: var(--color-sand); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-sea); outline-offset: 2px; }"
+    },
+    {
+      "name": "Primary Button (on light)",
+      "kind": "button",
+      "refersTo": "button-on-light",
+      "description": "Light-section CTA. Sea-green pill on sand, ~8.7:1 contrast. Washes to sea-deep on hover.",
+      "html": "<button class=\"ds-btn-onlight\">Plan a trip</button>",
+      "css": ".ds-btn-onlight { background: var(--color-sea); color: var(--color-sand); border: none; border-radius: 9999px; padding: 0.625rem 1.5rem; font-family: var(--font-body); font-size: 0.9375rem; font-weight: 500; cursor: pointer; transition: background-color 200ms cubic-bezier(0.22,1,0.36,1); } .ds-btn-onlight:hover { background: var(--color-sea-deep); } .ds-btn-onlight:focus-visible { outline: 2px solid var(--color-sea); outline-offset: 2px; }"
+    },
+    {
+      "name": "Spot Capsule (over photo)",
+      "kind": "chip",
+      "refersTo": "chip-capsule",
+      "description": "Translucent glass capsule over the hero photo. Backdrop blur, sand text.",
+      "html": "<a class=\"ds-chip-glass\" href=\"#\">Waterfalls</a>",
+      "css": ".ds-chip-glass { display: inline-flex; align-items: center; border-radius: 9999px; border: 1px solid color-mix(in oklab, var(--color-sand) 25%, transparent); background: color-mix(in oklab, var(--color-ink) 20%, transparent); padding: 0.5rem 1rem; font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; color: color-mix(in oklab, var(--color-sand) 90%, transparent); text-decoration: none; backdrop-filter: blur(12px); transition: background-color 200ms cubic-bezier(0.22,1,0.36,1), border-color 200ms cubic-bezier(0.22,1,0.36,1); } .ds-chip-glass:hover { border-color: color-mix(in oklab, var(--color-sand) 40%, transparent); background: color-mix(in oklab, var(--color-sand) 15%, transparent); color: var(--color-sand); }"
+    },
+    {
+      "name": "Spot Capsule (on light)",
+      "kind": "chip",
+      "refersTo": "chip-on-light",
+      "description": "Solid chip for light sections. Sand-deep fill, ink text, no border at rest.",
+      "html": "<a class=\"ds-chip-light\" href=\"#\">Heritage towns</a>",
+      "css": ".ds-chip-light { display: inline-flex; align-items: center; border-radius: 9999px; background: var(--color-sand-deep); color: var(--color-ink); padding: 0.5rem 1rem; font-family: var(--font-body); font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: background-color 200ms cubic-bezier(0.22,1,0.36,1), box-shadow 200ms cubic-bezier(0.22,1,0.36,1); } .ds-chip-light:hover { box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-ink) 15%, transparent); }"
+    },
+    {
+      "name": "Floating Nav Pill",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Centered glass capsule navigation over the hero. Wordmark pill + links + CTA.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-mark\" href=\"#\">elyu</a><nav class=\"ds-nav-links\"><a href=\"#\">Guide</a><a href=\"#\">The Map</a><a href=\"#\">Journal</a></nav><a class=\"ds-nav-cta\" href=\"#\">Plan a trip</a></header>",
+      "css": ".ds-nav { display: inline-flex; align-items: center; gap: 2rem; border-radius: 9999px; border: 1px solid color-mix(in oklab, var(--color-sand) 15%, transparent); background: color-mix(in oklab, var(--color-ink) 35%, transparent); padding: 0.5rem 0.625rem; backdrop-filter: blur(12px); font-family: var(--font-body); } .ds-nav-mark { background: var(--color-sand); color: var(--color-ink); border-radius: 9999px; padding: 0.375rem 1rem; font-family: var(--font-display); font-size: 1rem; font-weight: 500; text-transform: lowercase; letter-spacing: -0.01em; text-decoration: none; } .ds-nav-links { display: flex; align-items: center; gap: 0.75rem; } .ds-nav-links a { border-radius: 9999px; padding: 0.375rem 1.25rem; font-size: 0.875rem; font-weight: 500; color: color-mix(in oklab, var(--color-sand) 85%, transparent); text-decoration: none; transition: background-color 200ms, color 200ms; } .ds-nav-links a:hover { background: color-mix(in oklab, var(--color-sand) 10%, transparent); color: var(--color-sand); } .ds-nav-cta { background: var(--color-sand); color: var(--color-ink); border-radius: 9999px; padding: 0.375rem 1.25rem; font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: background-color 200ms, color 200ms; } .ds-nav-cta:hover { background: var(--color-terracotta); color: var(--color-sand); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Second Look",
+    "overview": "The entire site exists to overturn one sentence: 'La Union is overrated.' The design rewards a longer gaze the way the place rewards a longer visit. Nothing arrives all at once; meaning emerges on a second read, detail emerges on scroll, the argument lands on reflection. Warm coastal editorial, El Nino afternoon light on an off-white page, not the cream-and-gold luxury-travel template and not a SaaS landing page in a magazine costume. Color is restrained on light surfaces and committed when a section becomes its own world. Motion is choreographed but quiet: sections reveal as they enter the viewport, easing always exponential ease-out, never competing with the place for attention.",
+    "keyCharacteristics": [
+      "Warm off-white (sand) as the default ground, never stark white.",
+      "Fluid display type with tight negative tracking; calm 1.65 body leading.",
+      "Restrained on light, committed in hero/feature moments (sea panels, drenched photos).",
+      "Terracotta as a <=10% accent, never body text.",
+      "Scroll-revealed, ease-out motion. The reveal is the concept."
+    ],
+    "rules": [
+      { "name": "The One Spark Rule", "body": "Terracotta appears on <=10% of any screen. Its rarity is the emphasis. The moment two terracotta things compete, neither reads as the accent.", "section": "colors" },
+      { "name": "The Contrast Gate Rule", "body": "Terracotta and ink-soft never carry small body text on sand (both below 4.5:1). Body copy is ink on sand, or sand on sea.", "section": "colors" },
+      { "name": "The No Stark White Rule", "body": "Never #fff and never #000. Every neutral is tinted warm toward the sand hue.", "section": "colors" },
+      { "name": "The Weight Ladder Rule", "body": "Only three weights ship: Geist 400 (body), 500 (UI/labels/nav), Clash 600 (display/headline).", "section": "typography" },
+      { "name": "The Tight-Top Rule", "body": "Display and headline run tight (lh <= 0.96, negative tracking). Body and lede run open (lh >= 1.55). The contrast is the editorial rhythm.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Light-page surfaces are flat. Separation is tonal (sand vs sand-deep vs sea), never a drop shadow. Glass + blur is reserved for over-photo elements.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do ground every page on warm sand (#F5F0E6); tint all neutrals toward the brand hue.",
+      "Do put body text as ink on sand or sand on sea; both clear AAA.",
+      "Do keep terracotta to <=10% of any screen, accents and large text only.",
+      "Do separate light-page surfaces tonally (sand / sand-deep / sea), flat, no shadows.",
+      "Do make every button and chip a full pill; it is a brand signal.",
+      "Do reveal sections on scroll with a small translate + fade, staggered, ease-out, no bounce.",
+      "Do ship real La Union imagery; this is a travel brief, zero images is a bug."
+    ],
+    "donts": [
+      "Don't use #fff or #000 anywhere. Pure white on this page is a bug.",
+      "Don't put small body text in terracotta or ink-soft on sand (both below 4.5:1).",
+      "Don't reach for the cream-and-gold luxury-travel template or a serif-italic-drop-cap editorial-magazine costume.",
+      "Don't default to display serifs (Playfair / Cormorant / Fraunces). Type is Clash Display + Geist.",
+      "Don't build the page as identical icon-heading-text card grids or a centered icon-title-subtitle stack.",
+      "Don't turn the site into a 'Top 10 things to do' checklist.",
+      "Don't use border-left/border-right greater than 1px as a colored accent stripe.",
+      "Don't apply glassmorphism as a default. Glass + blur is for over-photo elements only.",
+      "Don't animate layout properties or use bounce/elastic easing. Transform and opacity only, ease-out."
+    ]
+  }
+}
