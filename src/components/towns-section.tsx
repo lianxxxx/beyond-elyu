@@ -204,9 +204,9 @@ export function TownsSection() {
             />
           </Reveal>
 
-          {/* Desktop: a single sticky detail panel beside the list. */}
+          {/* Desktop: a single sticky detail card beside the list. */}
           <div className="hidden md:block">
-            <div className="sticky top-24 border-l border-ink/10 pl-12">
+            <div className="sticky top-24 rounded-3xl bg-sand p-8 shadow-card lg:p-10">
               <Detail town={activeTown} />
             </div>
           </div>

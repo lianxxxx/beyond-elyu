@@ -27,30 +27,28 @@ export function Hero() {
         className="absolute inset-0 -z-20 bg-sea-deep bg-cover bg-center"
         style={{ backgroundImage: "url('/hero.webp')" }}
       />
-      {/* Legibility scrim — tuned for a BRIGHT photo (blue sky up top, pale
-         water + sand down low). Stronger than a normal scrim because the image
-         fights light text on both bands. Warm-toward-ink so it reads as
-         afternoon shadow, not a gray veil. */}
+      {/* Legibility scrim — an even darken across the whole photo (moody,
+         cinematic) plus a little extra where the text sits. Warm-toward-ink so
+         it reads as afternoon shadow, not a gray veil. */}
       <div
         aria-hidden
         className="absolute inset-0 -z-10"
         style={{
           background: [
-            // top band — sits under the floating nav, over bright sky
-            "linear-gradient(to bottom, color-mix(in oklab, var(--color-ink) 60%, transparent) 0%, transparent 22%)",
-            // bottom band — the headline + lede, over the brightest water/sand
-            "linear-gradient(to top, color-mix(in oklab, var(--color-ink) 86%, transparent) 0%, color-mix(in oklab, var(--color-ink) 34%, transparent) 30%, transparent 64%)",
-            // left band — anchors the lower-left text column
-            "linear-gradient(to right, color-mix(in oklab, var(--color-ink) 52%, transparent) 0%, transparent 54%)",
+            // bottom — extra pool under the headline + lede
+            "linear-gradient(to top, color-mix(in oklab, var(--color-ink) 45%, transparent) 0%, color-mix(in oklab, var(--color-ink) 12%, transparent) 28%, transparent 55%)",
+            // left — gentle anchor for the lower-left text column
+            "linear-gradient(to right, color-mix(in oklab, var(--color-ink) 20%, transparent) 0%, transparent 45%)",
+            // uniform wash across the entire image
+            "linear-gradient(color-mix(in oklab, var(--color-ink) 50%, transparent), color-mix(in oklab, var(--color-ink) 50%, transparent))",
           ].join(", "),
         }}
       />
-      {/* The bridge — the photo resolves into the page's sand ground so the
-         hero lands on the sections instead of cutting to flat cream. This is the
-         connective tissue between the immersive hero and the light page. */}
+      {/* Bottom vignette — the photo sinks into dark at the base (not a cream
+         fade), giving the hero a moody, grounded edge. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[16vh] bg-gradient-to-b from-transparent to-sand-deep"
+        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[18vh] bg-gradient-to-b from-transparent to-ink"
       />
 
       {/* ── Floating pill navigation — translucent capsule over the photo ── */}
@@ -89,7 +87,7 @@ export function Hero() {
       {/* ── Lower content: headline, short lede, spot capsules ──
          Bottom padding clears the sand bridge so the text and capsules stay
          over the darkened photo, never over the cream resolve. */}
-      <div className="mt-auto max-w-3xl px-gutter pb-[clamp(3.5rem,9vh,6.5rem)] [text-shadow:0_2px_28px_color-mix(in_oklab,var(--color-ink)_45%,transparent)]">
+      <div className="mt-auto max-w-3xl px-gutter pb-[clamp(3.5rem,9vh,6.5rem)] [text-shadow:0_1px_2px_color-mix(in_oklab,var(--color-ink)_60%,transparent),0_2px_22px_color-mix(in_oklab,var(--color-ink)_45%,transparent)]">
         <h1 className="font-display text-display font-semibold tracking-tight text-sand">
           La Union
         </h1>

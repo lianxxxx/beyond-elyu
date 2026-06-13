@@ -52,12 +52,9 @@ export function MapSection() {
     setActive((cur) => (cur === name ? null : cur));
 
   return (
-    <section
-      ref={sectionRef}
-      id="map"
-      className="border-t border-ink/10 bg-sand-deep/30 px-gutter py-bay"
-    >
-      <div className="mx-auto grid max-w-6xl items-center gap-x-12 gap-y-12 md:grid-cols-2">
+    <section ref={sectionRef} id="map" className="px-gutter py-bay">
+      <div className="mx-auto max-w-6xl rounded-[2rem] bg-sand p-7 shadow-soft sm:p-12 md:p-16">
+        <div className="grid items-center gap-x-12 gap-y-12 md:grid-cols-2">
         {/* ── Left: the framing + a live readout that the map drives ── */}
         <div>
           <p className="font-body text-eyebrow font-medium uppercase text-sea">
@@ -253,6 +250,7 @@ export function MapSection() {
               );
             })}
           </svg>
+        </div>
         </div>
       </div>
     </section>
