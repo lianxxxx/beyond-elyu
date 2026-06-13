@@ -4,29 +4,26 @@
 // real photograph of the coast so the argument arrives with a place attached.
 
 import { Reveal } from "@/components/reveal";
+import { SectionHeader, Accent } from "@/components/section-header";
 
 export function Intro() {
   return (
     <section id="look-closer" className="px-gutter py-bay">
       <div className="mx-auto max-w-6xl">
-        <Reveal>
-          <p className="font-body text-eyebrow font-medium uppercase text-sea">
-            The second look
-          </p>
-        </Reveal>
-
-        <Reveal delay={80}>
-          <h2 className="mt-5 max-w-[15ch] font-display text-headline font-semibold tracking-tight text-ink">
-            A weekend is not a{" "}
-            <span className="text-terracotta">verdict</span>.
-          </h2>
-        </Reveal>
+        <SectionHeader
+          eyebrow="The second look"
+          title={
+            <>
+              A weekend is not a <Accent>verdict</Accent>.
+            </>
+          }
+        />
 
         <div className="mt-12 grid items-start gap-x-12 gap-y-12 md:mt-16 md:grid-cols-12">
           {/* Left: the argument */}
           <div className="md:col-span-6 lg:col-span-5">
             <Reveal delay={160}>
-              <p className="font-body text-lede text-ink">
+              <p className="font-body text-lede text-ink-soft">
                 Overrated, they say, meaning the breaks were crowded and the
                 cafés were full. Fair enough. But that was one town on a coast of
                 twenty, and the judgment was filed before the province even

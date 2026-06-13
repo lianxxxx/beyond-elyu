@@ -44,7 +44,7 @@ export function Closing() {
         </Reveal>
 
         <Reveal delay={160}>
-          <p className="mt-7 max-w-[54ch] font-body text-lede text-sand/90">
+          <p className="mt-7 max-w-[54ch] font-body text-lede text-sand/80">
             You came for a weekend and left with a verdict. The province is
             still here, one city and nineteen towns deep, in no hurry to prove
             anything. Come back when you can stay longer than the swell.

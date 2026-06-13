@@ -11,6 +11,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { TOWNS, COASTLINE, SEA, FOOTHILLS } from "@/lib/la-union";
+import { SectionHeader, Accent } from "@/components/section-header";
 
 const EASE_EXPO = "cubic-bezier(0.16, 1, 0.3, 1)";
 const EASE_QUINT = "cubic-bezier(0.22, 1, 0.36, 1)";
@@ -57,17 +58,16 @@ export function MapSection() {
         <div className="grid items-center gap-x-12 gap-y-12 md:grid-cols-2">
         {/* ── Left: the framing + a live readout that the map drives ── */}
         <div>
-          <p className="font-body text-eyebrow font-medium uppercase text-sea">
-            The map
-          </p>
-          <h2 className="mt-5 max-w-[14ch] font-display text-headline font-semibold tracking-tight text-ink">
-            Twenty towns, one coast.
-          </h2>
-          <p className="mt-6 max-w-[46ch] font-body text-lede text-ink">
-            From the weaving towns in the north to the basilica in the south, La
-            Union runs the whole length of the shore and climbs into the
-            foothills. San Juan is a single dot on it.
-          </p>
+          <SectionHeader
+            eyebrow="The map"
+            title={
+              <>
+                Twenty towns, one <Accent>coast</Accent>.
+              </>
+            }
+            lede="From the weaving towns in the north to the basilica in the south, La Union runs the whole length of the shore and climbs into the foothills. San Juan is a single dot on it."
+            ledeClassName="max-w-[46ch]"
+          />
 
           <div
             aria-live="polite"

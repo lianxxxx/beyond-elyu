@@ -187,9 +187,30 @@ display; the type was tuned at these weights.
 tracking). Body and lede run open (lh ≥ 1.55). The contrast between tight
 headers and airy body is the editorial rhythm; never flatten both to the middle.
 
-**The Repeated-Kicker Ban.** A track-spaced uppercase label above *every*
-section is AI scaffolding. One strong kicker where it earns its place, not as
-section grammar.
+**The Section-Header Rule.** Every light editorial section opens with the same
+header, a deliberate brand grammar, not scaffolding. It is the single source of
+truth and is implemented once in `components/section-header.tsx`; sections never
+hand-roll their own. The rhythm:
+
+- **Eyebrow**: `sea`, uppercase, `text-eyebrow`. The kicker.
+- **mt-5 → Title**: Clash `text-headline`, `ink`, with exactly **one** word or
+  short phrase wrapped in `<Accent>` (terracotta). One accent per title, never
+  more; the accent is the section's hook word.
+- **mt-6 → Lede**: Geist `text-lede` in `ink-soft`, the muted "description"
+  tone. The lede is always lighter than the title; that tonal step (ink title →
+  ink-soft lede) is the hierarchy. Body copy below a lede stays full `ink`.
+- Pieces reveal in the signature stagger (0 / 80 / 160ms).
+
+Terracotta-in-every-title is a deliberate exception to the One Spark Rule:
+one word per section keeps the painted area tiny. The **closing** is the one
+section that opts out of the accent (terracotta on sea is illegible); its
+headline stays solid `sand` and its lede is the dark-surface muted tone
+(`sand/80`).
+
+**The Section-Spacing Rule.** Sections are uniform: `px-gutter py-bay`, a
+`max-w-6xl` container, and `mt-12 md:mt-16` between the header and the section's
+content. Don't invent per-section spacing; follow the rule so the page scrolls
+as one system.
 
 ## 4. Elevation
 

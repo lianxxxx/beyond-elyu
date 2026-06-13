@@ -9,7 +9,7 @@ const LINKS = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-ink px-gutter pb-12 pt-[clamp(4rem,2rem+6vw,7rem)] text-sand">
+    <footer className="relative overflow-hidden bg-ink px-gutter pb-[clamp(1rem,3vw,2.5rem)] pt-[clamp(4rem,2rem+6vw,7rem)] text-sand">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col gap-12 md:flex-row md:items-end md:justify-between">
           <div className="max-w-md">
@@ -46,6 +46,16 @@ export function SiteFooter() {
           <p>Made with warm light and too much coffee, along the El Niño coast.</p>
         </div>
       </div>
+
+      {/* The sign-off — an oversize wordmark of the place itself, spanning the
+         foot of the page. Clipped a touch at the baseline so it reads as a
+         grand closing line, not a heading. */}
+      <p
+        aria-hidden
+        className="mt-[clamp(2.5rem,6vw,5rem)] -mb-[0.08em] select-none whitespace-nowrap text-center font-display text-[clamp(3.25rem,20.5vw,19rem)] font-semibold leading-[0.78] tracking-[-0.035em] text-sand/15"
+      >
+        La&nbsp;Union
+      </p>
     </footer>
   );
 }

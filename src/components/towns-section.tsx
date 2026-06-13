@@ -15,6 +15,7 @@ import {
   type Town,
 } from "@/lib/la-union";
 import { Reveal } from "@/components/reveal";
+import { SectionHeader, Accent } from "@/components/section-header";
 
 const numberOf = (town: Town) =>
   String(TOWNS.findIndex((t) => t.name === town.name) + 1).padStart(2, "0");
@@ -169,23 +170,15 @@ export function TownsSection() {
   return (
     <section id="towns" className="px-gutter py-bay">
       <div className="mx-auto max-w-6xl">
-        <Reveal>
-          <p className="font-body text-eyebrow font-medium uppercase text-sea">
-            Town by town
-          </p>
-        </Reveal>
-        <Reveal delay={80}>
-          <h2 className="mt-5 max-w-[16ch] font-display text-headline font-semibold tracking-tight text-ink">
-            The evidence, twenty entries.
-          </h2>
-        </Reveal>
-        <Reveal delay={160}>
-          <p className="mt-6 max-w-[48ch] font-body text-lede text-ink">
-            One city and nineteen towns, each with a history and a thing it is
-            known for. Read down the coast, then into the hills. San Juan is
-            entry five.
-          </p>
-        </Reveal>
+        <SectionHeader
+          eyebrow="Town by town"
+          title={
+            <>
+              The <Accent>evidence</Accent>, twenty entries.
+            </>
+          }
+          lede="One city and nineteen towns, each with a history and a thing it is known for. Read down the coast, then into the hills. San Juan is entry five."
+        />
 
         <div className="mt-12 grid gap-x-16 gap-y-10 md:mt-16 md:grid-cols-2">
           <Reveal delay={120}>

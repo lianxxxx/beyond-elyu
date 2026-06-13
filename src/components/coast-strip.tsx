@@ -4,6 +4,7 @@
 // collage (deliberately not an even grid) with quiet, overlaid locations.
 
 import { Reveal } from "@/components/reveal";
+import { SectionHeader, Accent } from "@/components/section-header";
 
 type Frame = {
   src: string;
@@ -60,20 +61,18 @@ export function CoastStrip() {
   return (
     <section id="coast" className="px-gutter py-bay">
       <div className="mx-auto max-w-6xl">
-        <Reveal>
-          <h2 className="max-w-[18ch] font-display text-headline font-semibold tracking-tight text-ink">
-            The long way round.
-          </h2>
-        </Reveal>
-        <Reveal delay={80}>
-          <p className="mt-6 max-w-[52ch] font-body text-lede text-ink">
-            Past the famous beach, the shore keeps going: rock pools and board
-            sheds, water that turns from gray swell to glass the further north
-            you walk.
-          </p>
-        </Reveal>
+        <SectionHeader
+          eyebrow="Along the shore"
+          title={
+            <>
+              The <Accent>long way</Accent> round.
+            </>
+          }
+          lede="Past the famous beach, the shore keeps going: rock pools and board sheds, water that turns from gray swell to glass the further north you walk."
+          ledeClassName="max-w-[52ch]"
+        />
 
-        <Reveal delay={160}>
+        <Reveal delay={200}>
           <div className="mt-12 grid gap-4 md:mt-16 md:grid-cols-12 md:[grid-template-rows:1fr_1fr]">
             <Frame
               frame={FRAMES[0]}
