@@ -6,7 +6,17 @@ import { Reveal } from "@/components/reveal";
 
 export function Intro() {
   return (
-    <section id="look-closer" className="px-gutter py-bay">
+    <section
+      id="look-closer"
+      className="px-gutter py-bay"
+      style={{
+        // The hero's warm light lands here: open on sand-deep (matching the
+        // hero's bridge) and settle into the page's sand as the reader scrolls
+        // down. Makes the photo and the argument read as one continuous surface.
+        background:
+          "linear-gradient(to bottom, var(--color-sand-deep) 0%, transparent 42%)",
+      }}
+    >
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="font-body text-eyebrow font-medium uppercase text-sea">
