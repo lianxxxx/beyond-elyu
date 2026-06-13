@@ -42,8 +42,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 flex flex-col gap-2 border-t border-sand/15 pt-6 font-body text-xs text-sand/50 sm:flex-row sm:items-center sm:justify-between">
-          <p>beyond elyu, 2026. A passion project, not a brochure.</p>
-          <p>Made with warm light and too much coffee, along the El Niño coast.</p>
+
         </div>
       </div>
 

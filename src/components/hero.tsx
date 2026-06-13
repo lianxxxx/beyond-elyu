@@ -4,6 +4,8 @@
 // IMAGE: `public/hero.webp` fills the whole hero as a cover background.
 // If it's ever missing, it falls back to a warm deep-sea-green tint.
 
+import { FiArrowUpRight } from "react-icons/fi";
+
 const NAV = [
   { label: "Guide", href: "#guide" },
   { label: "The Map", href: "#map" },
@@ -77,9 +79,10 @@ export function Hero() {
 
           <a
             href="#plan"
-            className="rounded-full bg-sand px-5 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-terracotta hover:text-sand"
+            className="inline-flex items-center gap-1.5 rounded-full bg-sand px-5 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-terracotta hover:text-sand"
           >
             Plan a trip
+            <FiArrowUpRight aria-hidden className="size-4" />
           </a>
         </div>
       </header>
