@@ -50,7 +50,7 @@ export function Hero() {
          fade), giving the hero a moody, grounded edge. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[18vh] bg-gradient-to-b from-transparent to-ink"
+        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-[18vh] bg-linear-to-b from-transparent to-ink"
       />
 
       {/* ── Floating pill navigation — translucent capsule over the photo ── */}
@@ -102,7 +102,7 @@ export function Hero() {
         </p>
 
         {/* Spot capsules — translucent glass over the photo */}
-        <ul className="mt-10 flex flex-wrap gap-2.5 [text-shadow:none]">
+        <ul className="mt-10 flex flex-wrap gap-2.5 text-shadow-none">
           {SPOTS.map((spot) => (
             <li key={spot}>
               <a

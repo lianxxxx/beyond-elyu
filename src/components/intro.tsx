@@ -68,8 +68,9 @@ export function Intro() {
         <Reveal delay={120}>
           <p className="mt-16 max-w-[34ch] font-display text-2xl font-semibold leading-snug tracking-tight text-ink sm:text-3xl md:mt-24">
             <span className="text-sea">One</span> city.{" "}
-            <span className="text-sea">Nineteen</span> towns. One coastline most
-            people reduce to a single beach.
+            <span className="text-sea">Nineteen</span> towns.{" "}
+            <span className="text-sea">One</span> coastline most people reduce
+            to a single beach.
           </p>
         </Reveal>
       </div>

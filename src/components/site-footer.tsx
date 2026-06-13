@@ -1,48 +1,76 @@
-// Footer — beyond-elyu, section 6. The sign-off.
-// Closes the page deep, on ink, after the sea panel. Quiet, editorial, warm.
+// Footer — beyond-elyu, the sign-off.
+// Closes the page deep on ink: a brand statement, a small wander-back nav, a
+// quiet meta line, and one oversize "La Union" wordmark spanning the foot.
+
+import { FiArrowUpRight, FiArrowUp } from "react-icons/fi";
 
 const LINKS = [
   { label: "The map", href: "#map" },
+  { label: "Along the shore", href: "#coast" },
   { label: "Town by town", href: "#towns" },
-  { label: "From the top", href: "#top" },
+  { label: "Look closer", href: "#plan" },
 ];
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden bg-ink px-gutter pb-[clamp(1rem,3vw,2.5rem)] pt-[clamp(4rem,2rem+6vw,7rem)] text-sand">
+    <footer className="relative overflow-hidden bg-ink px-gutter pb-[clamp(1.5rem,3vw,2.5rem)] pt-[clamp(4rem,2rem+6vw,7rem)] text-sand">
       <div className="mx-auto max-w-6xl">
-        <div className="flex flex-col gap-12 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-md">
+        <div className="grid gap-x-12 gap-y-14 md:grid-cols-12">
+          {/* Brand statement */}
+          <div className="md:col-span-7">
             <a
               href="#top"
-              className="font-display text-3xl font-medium lowercase tracking-tight text-sand"
+              className="font-display text-4xl font-semibold lowercase tracking-tight text-terracotta transition-colors hover:text-terracotta-soft"
             >
               elyu
             </a>
-            <p className="mt-4 font-display text-xl font-medium tracking-tight text-sand">
-              La Union is not overrated. Look closer.
+            <p className="mt-6 max-w-[18ch] font-display text-3xl font-semibold leading-[1.05] tracking-tight text-sand sm:text-4xl">
+              La Union is not overrated.{" "}
+              <span className="text-sand/45">Look closer.</span>
             </p>
-            <p className="mt-3 max-w-[44ch] font-body text-sm leading-relaxed text-sand/60">
+            <p className="mt-5 max-w-[46ch] font-body text-sm leading-relaxed text-sand/55">
               A small love letter to the coast everyone thinks they have already
               seen. One city, nineteen towns, and the long way round.
             </p>
           </div>
 
-          <nav className="flex flex-col gap-3">
-            {LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="font-body text-sm font-medium text-sand/75 transition-colors hover:text-sand"
-              >
-                {link.label}
-              </a>
-            ))}
+          {/* Wander-back navigation */}
+          <nav className="md:col-span-5 md:justify-self-end">
+            <p className="font-body text-eyebrow font-medium uppercase tracking-[0.2em] text-sand/40">
+              Wander back
+            </p>
+            <ul className="mt-6 flex flex-col gap-4">
+              {LINKS.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="group inline-flex items-center gap-2 font-display text-xl font-medium tracking-tight text-sand/80 transition-colors hover:text-sand"
+                  >
+                    {link.label}
+                    <FiArrowUpRight
+                      aria-hidden
+                      className="size-4 text-sand/35 transition-all duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-sand"
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </nav>
         </div>
 
-        <div className="mt-16 flex flex-col gap-2 border-t border-sand/15 pt-6 font-body text-xs text-sand/50 sm:flex-row sm:items-center sm:justify-between">
-
+        {/* Meta line */}
+        <div className="mt-16 flex flex-col gap-3 border-t border-sand/12 pt-6 font-body text-xs text-sand/45 sm:flex-row sm:items-center sm:justify-between">
+          <p>Made along the El Niño coast, 2026. A passion project, not a brochure.</p>
+          <a
+            href="#top"
+            className="group inline-flex items-center gap-1.5 text-sand/55 transition-colors hover:text-sand"
+          >
+            Back to top
+            <FiArrowUp
+              aria-hidden
+              className="size-3.5 transition-transform duration-300 ease-out group-hover:-translate-y-0.5"
+            />
+          </a>
         </div>
       </div>
 
@@ -51,7 +79,7 @@ export function SiteFooter() {
          grand closing line, not a heading. */}
       <p
         aria-hidden
-        className="mt-[clamp(2.5rem,6vw,5rem)] -mb-[0.08em] select-none whitespace-nowrap text-center font-display text-[clamp(3.25rem,20.5vw,19rem)] font-semibold leading-[0.78] tracking-[-0.035em] text-sand/15"
+        className="mt-[clamp(2.5rem,6vw,5rem)] mb-[-0.08em] select-none whitespace-nowrap text-center font-display text-[clamp(3.25rem,20.5vw,19rem)] font-semibold leading-[0.78] tracking-[-0.035em] text-sand/15"
       >
         La&nbsp;Union
       </p>
