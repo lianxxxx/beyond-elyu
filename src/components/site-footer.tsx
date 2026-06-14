@@ -18,13 +18,7 @@ export function SiteFooter() {
         <div className="grid gap-x-12 gap-y-14 md:grid-cols-12">
           {/* Brand statement */}
           <div className="md:col-span-7">
-            <a
-              href="#top"
-              className="inline-flex items-center rounded-full bg-sea-mist px-5 py-2 font-display text-2xl font-semibold lowercase tracking-tight text-ink transition-colors hover:bg-cream"
-            >
-              elyu
-            </a>
-            <p className="mt-6 max-w-[18ch] font-display text-3xl font-semibold leading-[1.05] tracking-tight text-sand sm:text-4xl">
+            <p className="max-w-[18ch] font-display text-3xl font-semibold leading-[1.05] tracking-tight text-sand sm:text-4xl">
               La Union is not overrated.{" "}
               <span className="text-sand/45">Look closer.</span>
             </p>
