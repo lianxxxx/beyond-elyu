@@ -121,10 +121,10 @@ export function Hero() {
               {/* place chips */}
               <div className="absolute left-4 top-4 flex flex-wrap gap-2">
                 <span className="rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
-                  Urbiztondo
+                  Tangadan Falls
                 </span>
                 <span className="rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
-                  Up the coast
+                  San Gabriel
                 </span>
               </div>
 
@@ -132,7 +132,7 @@ export function Hero() {
               <figcaption className="absolute inset-x-4 bottom-4">
                 <div className="flex items-center gap-3 rounded-2xl bg-card/90 p-3 shadow-card backdrop-blur-md">
                   <img
-                    src="/img/surf-shack.jpg"
+                    src="/img/cove.jpg"
                     alt=""
                     aria-hidden
                     className="size-14 shrink-0 rounded-xl object-cover"
@@ -140,10 +140,10 @@ export function Hero() {
                   />
                   <div className="min-w-0">
                     <p className="font-display text-sm font-semibold leading-snug tracking-tight text-ink">
-                      The surf is the doorway, not the room.
+                      Past the surf, the province climbs.
                     </p>
                     <p className="mt-0.5 font-body text-xs text-ink-soft">
-                      San Juan is one of twenty.
+                      Waterfalls an hour off the highway.
                     </p>
                   </div>
                 </div>
