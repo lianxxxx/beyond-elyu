@@ -92,14 +92,7 @@ export function Hero() {
 
             {/* the oversized headline, pinned to the bottom of the column */}
             <h1 className="mt-auto pt-12 font-display text-[clamp(3rem,1rem+8vw,6.5rem)] font-semibold leading-[0.92] tracking-tight text-ink">
-              La Union, the{" "}
-              <img
-                src="/img/cove.jpg"
-                alt="turquoise water up the La Union coast"
-                className="inline-block size-[0.78em] -translate-y-[0.06em] rounded-full object-cover align-middle"
-                loading="lazy"
-              />{" "}
-              <Accent>long way</Accent> round.
+              La Union, the <Accent>long way</Accent> round.
             </h1>
           </div>
 
