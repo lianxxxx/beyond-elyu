@@ -20,7 +20,7 @@ export function SiteFooter() {
           <div className="md:col-span-7">
             <a
               href="#top"
-              className="font-display text-4xl font-semibold lowercase tracking-tight text-terracotta transition-colors hover:text-terracotta-soft"
+              className="font-display text-4xl font-semibold lowercase tracking-tight text-sea-mist transition-colors hover:text-cream"
             >
               elyu
             </a>
