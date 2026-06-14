@@ -17,15 +17,20 @@
   --font-heading: var(--font-display);
   --font-mono: ui-monospace, "SFMono-Regular", "Geist Mono", monospace;
 
-  /* ── Coastal Editorial · palette (warm, light, intentional) ──
-     Authored in OKLCH; each maps 1:1 to the brief's starting hex. */
-  --color-paper: var(--paper);            /* near-white page ground */
-  --color-sand: var(--sand);              /* #F5F0E6 · warm panels / buttons */
-  --color-sand-deep: var(--sand-deep);    /* sectioning / quiet panels */
+  /* ── Coastal Editorial · palette — "Binar" reduction ──
+     The interface is near-colorless: a warm cream ground, near-white cards,
+     ink text, one green that does the structural work, and terracotta kept
+     ONLY for an accent word. All the real color comes from the photography. */
+  --color-paper: var(--paper);            /* warm cream page ground */
+  --color-card: var(--paper-card);        /* near-white card surface (was khaki) */
+  --color-cream: var(--sand);             /* warm-white — text/chips on dark only */
+  --color-sand: var(--sand);              /* legacy alias → warm-white on dark */
+  --color-sand-deep: var(--sand-deep);    /* faint hover wash */
   --color-sea: var(--sea);                /* #1F4A43 · primary */
   --color-sea-deep: var(--sea-deep);      /* hover / pressed */
-  --color-terracotta: var(--terracotta);          /* #C0623D · accent */
-  --color-terracotta-soft: var(--terracotta-soft); /* accent hover */
+  --color-sea-mist: var(--sea-mist);      /* sage tint — marquee band, highlights */
+  --color-terracotta: var(--terracotta);          /* #C0623D · accent word only */
+  --color-terracotta-soft: var(--terracotta-soft); /* accent marker wash */
   --color-ink: var(--ink);                /* #2A2622 · text */
   --color-ink-soft: var(--ink-soft);      /* secondary text */
 
@@ -46,10 +51,10 @@
   --spacing-gutter: clamp(1.5rem, 1rem + 4vw, 5.5rem);
   --spacing-bay: clamp(4rem, 2rem + 8vw, 11rem);
 
-  /* ── Soft elevation · for framed photos + panels on the white page.
+  /* ── Soft elevation · for white cards + framed photos on the cream ground.
      Large, low-opacity, warm-toward-ink. Never a hard drop shadow. ── */
-  --shadow-card: 0 18px 48px -30px color-mix(in oklab, var(--ink) 34%, transparent);
-  --shadow-soft: 0 32px 70px -38px color-mix(in oklab, var(--ink) 40%, transparent);
+  --shadow-card: 0 14px 40px -28px color-mix(in oklab, var(--ink) 28%, transparent);
+  --shadow-soft: 0 26px 64px -38px color-mix(in oklab, var(--ink) 34%, transparent);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -89,12 +94,14 @@
 }
 
 :root {
-  /* Coastal Editorial brand palette — OKLCH, mapped to the brief's hex */
-  --paper: oklch(0.992 0.0035 84.58);         /* near-white page ground, faintly warm */
-  --sand: oklch(0.9563 0.0143 84.58);        /* #F5F0E6 */
-  --sand-deep: oklch(0.9215 0.0188 83);       /* warmer panel */
+  /* Coastal Editorial brand palette — OKLCH, "Binar" reduction */
+  --paper: oklch(0.9665 0.0072 84.58);        /* warm cream page ground */
+  --paper-card: oklch(0.992 0.003 84.58);     /* near-white card surface */
+  --sand: oklch(0.9563 0.0143 84.58);         /* #F5F0E6 — warm-white on dark only */
+  --sand-deep: oklch(0.93 0.0125 84.58);      /* faint hover wash */
   --sea: oklch(0.3762 0.0495 181.43);         /* #1F4A43 */
   --sea-deep: oklch(0.305 0.043 181);         /* hover */
+  --sea-mist: oklch(0.885 0.035 150);         /* sage tint — marquee, marker */
   --terracotta: oklch(0.6006 0.1311 41.47);   /* #C0623D */
   --terracotta-soft: oklch(0.667 0.118 43);   /* hover */
   --ink: oklch(0.2715 0.0094 67.42);          /* #2A2622 */
@@ -103,9 +110,9 @@
   /* Semantic tokens, themed onto the brand (shadcn-compatible) */
   --background: var(--paper);
   --foreground: var(--ink);
-  --card: var(--sand);
+  --card: var(--paper-card);
   --card-foreground: var(--ink);
-  --popover: var(--sand);
+  --popover: var(--paper-card);
   --popover-foreground: var(--ink);
   --primary: var(--sea);
   --primary-foreground: var(--sand);

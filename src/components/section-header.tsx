@@ -15,8 +15,25 @@
 import type { ReactNode } from "react";
 import { Reveal } from "@/components/reveal";
 
+// The Binar "marker" move: a soft swipe of color behind one key word, ink text
+// riding on top. Ours is terracotta — the single accent we kept. box-decoration
+// keeps the wash intact if the word wraps. Use on exactly one word per heading.
 export function Accent({ children }: { children: ReactNode }) {
-  return <span className="text-terracotta">{children}</span>;
+  return (
+    <span className="box-decoration-clone rounded-[0.18em] bg-terracotta/18 px-[0.16em] py-[0.02em] text-ink">
+      {children}
+    </span>
+  );
+}
+
+// The inspo's literal highlighter — a sage swipe in our brand green, ink text on
+// top. Use for quieter emphasis in ledes/body, where terracotta would be too loud.
+export function Mark({ children }: { children: ReactNode }) {
+  return (
+    <span className="box-decoration-clone rounded-[0.18em] bg-sea-mist/60 px-[0.16em] py-[0.02em] text-ink">
+      {children}
+    </span>
+  );
 }
 
 export function SectionHeader({
@@ -33,7 +50,8 @@ export function SectionHeader({
   return (
     <header className="max-w-3xl">
       <Reveal>
-        <p className="font-body text-eyebrow font-medium uppercase text-sea">
+        <p className="flex items-center gap-2.5 font-body text-eyebrow font-medium uppercase text-ink-soft">
+          <span aria-hidden className="inline-block size-1.5 rounded-full bg-sea" />
           {eyebrow}
         </p>
       </Reveal>
