@@ -45,7 +45,7 @@ export function Hero() {
 
           <a
             href="#plan"
-            className="inline-flex items-center gap-1.5 rounded-full border border-ink/20 px-5 py-2 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink hover:text-cream"
+            className="inline-flex items-center gap-1.5 rounded-full border border-ink/20 px-5 py-2 text-sm font-medium text-ink transition-colors hover:border-black hover:bg-black hover:text-cream"
           >
             Plan a trip
             <FiArrowUpRight aria-hidden className="size-4" />
