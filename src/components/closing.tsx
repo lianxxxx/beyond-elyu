@@ -19,8 +19,7 @@ export function Closing() {
         {/* Left: the turn */}
         <div className="md:col-span-7">
           <Reveal>
-            <p className="flex items-center gap-2.5 font-body text-eyebrow font-medium uppercase text-ink-soft">
-              <span aria-hidden className="inline-block size-1.5 rounded-full bg-sea" />
+            <p className="font-body text-eyebrow font-medium uppercase text-ink-soft">
               Look closer
             </p>
           </Reveal>

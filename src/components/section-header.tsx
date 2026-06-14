@@ -50,8 +50,7 @@ export function SectionHeader({
   return (
     <header className="max-w-3xl">
       <Reveal>
-        <p className="flex items-center gap-2.5 font-body text-eyebrow font-medium uppercase text-ink-soft">
-          <span aria-hidden className="inline-block size-1.5 rounded-full bg-sea" />
+        <p className="font-body text-eyebrow font-medium uppercase text-ink-soft">
           {eyebrow}
         </p>
       </Reveal>
