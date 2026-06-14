@@ -20,7 +20,7 @@ import { Reveal } from "@/components/reveal";
 // keeps the wash intact if the word wraps. Use on exactly one word per heading.
 export function Accent({ children }: { children: ReactNode }) {
   return (
-    <span className="box-decoration-clone rounded-[0.18em] bg-terracotta/18 px-[0.16em] py-[0.02em] text-ink">
+    <span className="box-decoration-clone rounded-[0.18em] bg-sea-mist/70 px-[0.16em] py-[0.02em] text-ink">
       {children}
     </span>
   );
