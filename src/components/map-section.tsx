@@ -54,7 +54,7 @@ export function MapSection() {
 
   return (
     <section ref={sectionRef} id="map" className="px-gutter py-bay">
-      <div className="mx-auto max-w-6xl rounded-[2rem] bg-sand p-7 shadow-soft sm:p-12 md:p-16">
+      <div className="mx-auto max-w-6xl rounded-[2rem] border border-ink/8 bg-card p-7 shadow-card sm:p-12 md:p-16">
         <div className="grid items-center gap-x-12 gap-y-12 md:grid-cols-2">
         {/* ── Left: the framing + a live readout that the map drives ── */}
         <div>
@@ -96,7 +96,7 @@ export function MapSection() {
               Coast
             </span>
             <span className="inline-flex items-center gap-2">
-              <span className="inline-block size-2.5 rounded-full border border-sea bg-sand" />
+              <span className="inline-block size-2.5 rounded-full border border-sea bg-card" />
               Foothills
             </span>
           </div>
@@ -196,7 +196,7 @@ export function MapSection() {
                 ? "var(--color-terracotta)"
                 : t.kind === "coast"
                   ? "var(--color-sea)"
-                  : "var(--color-sand)";
+                  : "var(--color-card)";
               return (
                 <g
                   key={t.name}

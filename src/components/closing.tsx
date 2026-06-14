@@ -6,20 +6,22 @@
 
 import { FiArrowUp, FiArrowRight } from "react-icons/fi";
 import { Reveal } from "@/components/reveal";
+import { Accent } from "@/components/section-header";
 
 export function Closing() {
   return (
     <section id="plan" className="px-gutter py-bay">
-      <div className="mx-auto max-w-6xl rounded-3xl bg-sand p-8 shadow-card sm:p-12 lg:p-16">
+      <div className="mx-auto max-w-6xl rounded-3xl border border-ink/8 bg-card p-8 shadow-card sm:p-12 lg:p-16">
         <Reveal>
-          <p className="font-body text-eyebrow font-medium uppercase text-sea">
+          <p className="flex items-center gap-2.5 font-body text-eyebrow font-medium uppercase text-ink-soft">
+            <span aria-hidden className="inline-block size-1.5 rounded-full bg-sea" />
             Look closer
           </p>
         </Reveal>
 
         <Reveal delay={80}>
           <h2 className="mt-5 max-w-[16ch] font-display text-display font-semibold tracking-tight text-ink">
-            Overrated is just <span className="text-terracotta">under-looked</span>.
+            Overrated is just <Accent>under-looked</Accent>.
           </h2>
         </Reveal>
 

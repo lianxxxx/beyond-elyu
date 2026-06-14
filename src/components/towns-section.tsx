@@ -126,7 +126,7 @@ function Group({
                 type="button"
                 onClick={() => onSelect(t.name)}
                 aria-expanded={isActive}
-                className="group flex w-full items-baseline justify-between gap-4 border-t border-ink/10 py-4 text-left outline-none focus-visible:bg-sand-deep/40"
+                className="group flex w-full items-baseline justify-between gap-4 border-t border-ink/10 py-4 text-left outline-none focus-visible:bg-ink/[0.04]"
               >
                 <span className="flex items-baseline gap-3.5">
                   <span className="font-display text-sm font-semibold tabular-nums text-sea/40">
@@ -199,7 +199,7 @@ export function TownsSection() {
 
           {/* Desktop: a single sticky detail card beside the list. */}
           <div className="hidden md:block">
-            <div className="sticky top-24 rounded-3xl bg-sand p-8 shadow-card lg:p-10">
+            <div className="sticky top-24 rounded-3xl border border-ink/8 bg-card p-8 shadow-card lg:p-10">
               <Detail town={activeTown} />
             </div>
           </div>

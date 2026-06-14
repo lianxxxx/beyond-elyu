@@ -5,6 +5,7 @@
 
 import { Reveal } from "@/components/reveal";
 import { SectionHeader, Accent } from "@/components/section-header";
+import { IconButton } from "@/components/chrome";
 
 type Frame = {
   src: string;
@@ -47,11 +48,17 @@ function Frame({ frame, className = "" }: { frame: Frame; className?: string }) 
         aria-hidden
         className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent"
       />
-      <figcaption className="absolute inset-x-0 bottom-0 p-5 text-sand">
+      <IconButton
+        href="#towns"
+        label={`See ${frame.place} in the town index`}
+        tone="cream"
+        className="absolute right-4 top-4"
+      />
+      <figcaption className="absolute inset-x-0 bottom-0 p-5 text-cream">
         <span className="block font-display text-lg font-semibold tracking-tight">
           {frame.place}
         </span>
-        <span className="font-body text-sm text-sand/80">{frame.note}</span>
+        <span className="font-body text-sm text-cream/80">{frame.note}</span>
       </figcaption>
     </figure>
   );
