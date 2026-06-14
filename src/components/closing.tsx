@@ -42,7 +42,7 @@ export function Closing() {
             <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
               <a
                 href="#top"
-                className="inline-flex items-center gap-1.5 rounded-full border border-ink/20 px-5 py-2 font-body text-sm font-medium text-ink transition-colors hover:border-black hover:bg-black hover:text-cream"
+                className="inline-flex items-center gap-1.5 rounded-full border border-black bg-black px-5 py-2 font-body text-sm font-medium text-cream transition-colors hover:bg-ink"
               >
                 <FiArrowUp aria-hidden className="size-4" />
                 Take it from the top
