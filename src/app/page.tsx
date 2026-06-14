@@ -3,6 +3,7 @@ import { Marquee } from "@/components/marquee";
 import { Intro } from "@/components/intro";
 import { StatsSection } from "@/components/stats-section";
 import { MapSection } from "@/components/map-section";
+import { FieldNotes } from "@/components/field-notes";
 import { CoastStrip } from "@/components/coast-strip";
 import { TownsSection } from "@/components/towns-section";
 import { Closing } from "@/components/closing";
@@ -16,6 +17,7 @@ export default function Home() {
       <Intro />
       <StatsSection />
       <MapSection />
+      <FieldNotes />
       <CoastStrip />
       <TownsSection />
       <Closing />

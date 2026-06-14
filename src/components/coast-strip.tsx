@@ -1,7 +1,6 @@
-// The coast, in passing — beyond-elyu, a photographic interlude.
-// Between the map and the town roll-call: three frames of the shore so the
-// argument is carried by the place itself, not only by type. An asymmetric
-// collage (deliberately not an even grid) with quiet, overlaid locations.
+// The coast, in passing — recomposed as the inspo's "Explore our content" row:
+// a split header (heading ← → muted note) over a clean four-card line. Each card
+// is a rounded photo with a corner ↗ and an overlaid place + note.
 
 import { Reveal } from "@/components/reveal";
 import { SectionHeader, Accent } from "@/components/section-header";
@@ -33,16 +32,22 @@ const FRAMES: Frame[] = [
     place: "Up the coast",
     note: "where the crowds thin out",
   },
+  {
+    src: "/img/coast-dusk.jpg",
+    alt: "Spent waves drawing back over black volcanic rock at dusk.",
+    place: "Luna",
+    note: "a shore of grey stones",
+  },
 ];
 
-function Frame({ frame, className = "" }: { frame: Frame; className?: string }) {
+function Card({ frame }: { frame: Frame }) {
   return (
-    <figure className={`group relative overflow-hidden rounded-3xl shadow-card ${className}`}>
+    <figure className="group relative overflow-hidden rounded-3xl shadow-card">
       <img
         src={frame.src}
         alt={frame.alt}
         loading="lazy"
-        className="h-full w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+        className="aspect-[3/4] w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
       />
       <div
         aria-hidden
@@ -52,9 +57,9 @@ function Frame({ frame, className = "" }: { frame: Frame; className?: string }) 
         href="#towns"
         label={`See ${frame.place} in the town index`}
         tone="cream"
-        className="absolute right-4 top-4"
+        className="absolute right-3 top-3"
       />
-      <figcaption className="absolute inset-x-0 bottom-0 p-5 text-cream">
+      <figcaption className="absolute inset-x-0 bottom-0 p-4 text-cream">
         <span className="block font-display text-lg font-semibold tracking-tight">
           {frame.place}
         </span>
@@ -68,25 +73,32 @@ export function CoastStrip() {
   return (
     <section id="coast" className="px-gutter py-bay">
       <div className="mx-auto max-w-6xl">
-        <SectionHeader
-          eyebrow="Along the shore"
-          title={
-            <>
-              The <Accent>long way</Accent> round.
-            </>
-          }
-          lede="Past the famous beach, the shore keeps going: rock pools and board sheds, water that turns from gray swell to glass the further north you walk."
-          ledeClassName="max-w-[52ch]"
-        />
+        {/* split header: heading left, muted note right */}
+        <div className="grid items-end gap-x-12 gap-y-6 md:grid-cols-12">
+          <div className="md:col-span-7">
+            <SectionHeader
+              eyebrow="Along the shore"
+              title={
+                <>
+                  Explore the <Accent>long way</Accent> round.
+                </>
+              }
+            />
+          </div>
+          <Reveal delay={120} className="md:col-span-5 md:pb-2">
+            <p className="max-w-[44ch] font-body text-base leading-relaxed text-ink-soft md:text-right">
+              Past the famous beach the shore keeps going — rock pools and board
+              sheds, water that turns from gray swell to glass the further north
+              you walk.
+            </p>
+          </Reveal>
+        </div>
 
         <Reveal delay={200}>
-          <div className="mt-12 grid gap-4 md:mt-16 md:grid-cols-12 md:[grid-template-rows:1fr_1fr]">
-            <Frame
-              frame={FRAMES[0]}
-              className="aspect-[4/5] md:col-span-5 md:row-span-2 md:aspect-auto"
-            />
-            <Frame frame={FRAMES[1]} className="aspect-[16/10] md:col-span-7" />
-            <Frame frame={FRAMES[2]} className="aspect-[16/10] md:col-span-7" />
+          <div className="mt-12 grid grid-cols-2 gap-4 md:mt-16 md:grid-cols-4">
+            {FRAMES.map((frame) => (
+              <Card key={frame.src} frame={frame} />
+            ))}
           </div>
         </Reveal>
       </div>
