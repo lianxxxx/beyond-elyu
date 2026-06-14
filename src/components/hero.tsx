@@ -113,7 +113,7 @@ export function Hero() {
               <a
                 href="#look-closer"
                 aria-label="Look closer"
-                className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-card/85 text-ink backdrop-blur-md transition-colors hover:bg-card"
+                className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-card/85 text-ink backdrop-blur-md transition-colors hover:bg-sea hover:text-cream"
               >
                 <FiArrowUpRight aria-hidden className="size-5" />
               </a>
