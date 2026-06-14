@@ -95,8 +95,8 @@
 
 :root {
   /* Coastal Editorial brand palette — OKLCH, "Binar" reduction */
-  --paper: oklch(0.9665 0.0072 84.58);        /* warm cream page ground */
-  --paper-card: oklch(0.992 0.003 84.58);     /* near-white card surface */
+  --paper: oklch(0.998 0.0008 84.58);         /* white page ground */
+  --paper-card: oklch(1 0 0);                 /* pure-white card surface */
   --sand: oklch(0.9563 0.0143 84.58);         /* #F5F0E6 — warm-white on dark only */
   --sand-deep: oklch(0.93 0.0125 84.58);      /* faint hover wash */
   --sea: oklch(0.3762 0.0495 181.43);         /* #1F4A43 */
