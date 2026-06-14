@@ -187,3 +187,25 @@
     @apply font-body;
   }
 }
+
+/* The marquee word-strip (Binar): a track holding two identical halves slides
+   left by exactly 50%, so the loop is seamless. Pure CSS, paused for reduced
+   motion. */
+@keyframes elyu-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: elyu-marquee 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
