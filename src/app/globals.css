@@ -201,7 +201,7 @@
 }
 
 .marquee-track {
-  animation: elyu-marquee 38s linear infinite;
+  animation: elyu-marquee 100s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
