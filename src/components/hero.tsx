@@ -120,10 +120,10 @@ export function Hero() {
               {/* place chips */}
               <div className="absolute left-4 top-4 flex flex-wrap gap-2">
                 <span className="rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
-                  Tangadan Falls
+                  San Juan
                 </span>
                 <span className="rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
-                  San Gabriel
+                  La Union
                 </span>
               </div>
 
@@ -139,10 +139,10 @@ export function Hero() {
                   />
                   <div className="min-w-0">
                     <p className="font-display text-sm font-semibold leading-snug tracking-tight text-ink">
-                      Past the surf, the province climbs.
+                      The coast, one long curve.
                     </p>
                     <p className="mt-0.5 font-body text-xs text-ink-soft">
-                      Waterfalls an hour off the highway.
+                      Surf towns strung along the shore.
                     </p>
                   </div>
                 </div>
