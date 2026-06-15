@@ -74,7 +74,7 @@ export function Hero() {
             {/* avatar + big stat */}
             <div className="mt-9 flex items-center gap-4">
               <img
-                src="/img/la-union-seal.png"
+                src="/img/la-union-seal.webp"
                 alt="Official seal of the Province of La Union"
                 className="size-12 rounded-full object-cover"
                 loading="lazy"
