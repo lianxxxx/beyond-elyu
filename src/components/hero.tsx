@@ -1,6 +1,6 @@
 // Hero — beyond-elyu, following the Binar shot closely.
 // Top: a three-zone bar (wordmark · nav · outlined CTA).
-// Left: a small uppercase intro line, outlined tags, an avatar + big stat, and
+// Left: a small uppercase intro line, outlined tags, the La Union seal + big stat, and
 // the oversized headline with a round inline photo (the inspo's signature move).
 // Right: the coast photo as a tall rounded card with a floating white note card,
 // place chips, and a corner ↗.
@@ -74,9 +74,8 @@ export function Hero() {
             {/* avatar + big stat */}
             <div className="mt-9 flex items-center gap-4">
               <img
-                src="/img/surfer.jpg"
-                alt=""
-                aria-hidden
+                src="/img/la-union-seal.png"
+                alt="Official seal of the Province of La Union"
                 className="size-12 rounded-full object-cover"
                 loading="lazy"
               />
