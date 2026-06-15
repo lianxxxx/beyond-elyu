@@ -101,7 +101,7 @@ export function Hero() {
               <div
                 aria-hidden
                 className="aspect-[4/5] w-full bg-sea-deep bg-cover bg-center transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
-                style={{ backgroundImage: "url('/hero.webp')" }}
+                style={{ backgroundImage: "url('/img/tangadan-falls.webp')" }}
               />
               <div
                 aria-hidden
