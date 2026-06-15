@@ -15,7 +15,7 @@ const NAV = [
   { label: "Town by Town", href: "#towns" },
 ];
 
-const TAGS = ["Surf", "Heritage", "Waterfalls"];
+const TAGS = ["Heritage", "Hidden Falls", "Sunset Coast"];
 
 export function Hero() {
   return (
@@ -57,8 +57,8 @@ export function Hero() {
           {/* Left column */}
           <div className="flex flex-col md:col-span-6">
             <p className="max-w-[34ch] font-body text-[0.8125rem] font-medium uppercase leading-relaxed tracking-[0.18em] text-ink-soft">
-              An editorial field guide to the coast everyone thinks they have
-              already seen.
+              More than a beach. A coast that rises into mountains, valleys,
+              and hidden falls.
             </p>
 
             <ul className="mt-7 flex flex-wrap gap-2">
@@ -91,7 +91,7 @@ export function Hero() {
 
             {/* the oversized headline, pinned to the bottom of the column */}
             <h1 className="mt-auto pt-12 font-display text-[clamp(3rem,1rem+8vw,6.5rem)] font-semibold leading-[0.92] tracking-tight text-ink">
-              La Union, the <Accent>long way</Accent> round.
+              La Union, far <Accent>beyond</Accent> the beach.
             </h1>
           </div>
 
@@ -131,7 +131,7 @@ export function Hero() {
               <figcaption className="absolute inset-x-4 bottom-4">
                 <div className="flex items-center gap-3 rounded-2xl bg-card/90 p-3 shadow-card backdrop-blur-md">
                   <img
-                    src="/img/cove.jpg"
+                    src="/img/tangadan-thumb.webp"
                     alt=""
                     aria-hidden
                     className="size-14 shrink-0 rounded-xl object-cover"
