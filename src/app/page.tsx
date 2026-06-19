@@ -1,6 +1,7 @@
 import { Hero } from "@/components/hero";
 import { Marquee } from "@/components/marquee";
 import { Intro } from "@/components/intro";
+import { SecondLook } from "@/components/second-look";
 import { StatsSection } from "@/components/stats-section";
 import { MapSection } from "@/components/map-section";
 import { FieldNotes } from "@/components/field-notes";
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <Marquee />
       <Intro />
+      <SecondLook />
       <StatsSection />
       <MapSection />
       <FieldNotes />
