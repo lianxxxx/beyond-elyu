@@ -6,7 +6,6 @@
 // place chips, and a corner ↗.
 
 import { FiArrowUpRight } from "react-icons/fi";
-import { Accent } from "@/components/section-header";
 import { PillTag } from "@/components/chrome";
 
 const NAV = [
@@ -91,7 +90,7 @@ export function Hero() {
 
             {/* the oversized headline, pinned to the bottom of the column */}
             <h1 className="mt-auto pt-12 font-display text-[clamp(3rem,1rem+8vw,6.5rem)] font-semibold leading-[0.92] tracking-tight text-ink">
-              La Union, far <Accent>beyond</Accent> the beach.
+              La Union, <span className="text-ink-soft">beyond the beach.</span>
             </h1>
           </div>
 
