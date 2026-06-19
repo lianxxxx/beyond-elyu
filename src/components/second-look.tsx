@@ -70,7 +70,7 @@ export function SecondLook() {
               <a
                 href="#numbers"
                 aria-label="Keep reading"
-                className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-cream text-ink transition-colors hover:bg-sea hover:text-cream"
+                className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-cream text-ink transition-colors hover:bg-ink/50 hover:text-cream"
               >
                 <FiArrowUpRight aria-hidden className="size-5" />
               </a>

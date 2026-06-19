@@ -90,7 +90,7 @@ export function Hero() {
 
             {/* the oversized headline, pinned to the bottom of the column */}
             <h1 className="mt-auto pt-12 font-display text-[clamp(3rem,1rem+8vw,6.5rem)] font-semibold leading-[0.92] tracking-tight text-ink">
-              La Union, <span className="text-ink-soft">beyond the beach.</span>
+              La Union, <span className="text-ink/50">beyond the beach.</span>
             </h1>
           </div>
 
@@ -111,7 +111,7 @@ export function Hero() {
               <a
                 href="#look-closer"
                 aria-label="Look closer"
-                className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-card/85 text-ink backdrop-blur-md transition-colors hover:bg-sea hover:text-cream"
+                className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-card/85 text-ink backdrop-blur-md transition-colors hover:bg-ink/50 hover:text-cream"
               >
                 <FiArrowUpRight aria-hidden className="size-5" />
               </a>
