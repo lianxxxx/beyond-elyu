@@ -7,7 +7,7 @@ import { Reveal } from "@/components/reveal";
 import { Accent } from "@/components/section-header";
 
 const LINKS = [
-  { label: "The map", href: "#map" },
+  { label: "Getting there", href: "#getting-there" },
   { label: "Along the shore", href: "#coast" },
   { label: "Town by town", href: "#towns" },
 ];

@@ -50,7 +50,7 @@ export function IconButton({
 }) {
   const tones = {
     ink: "border border-ink/12 bg-card text-ink hover:bg-ink hover:text-cream hover:border-ink",
-    cream: "bg-cream text-ink hover:bg-sea hover:text-cream",
+    cream: "bg-cream text-ink hover:bg-ink hover:text-cream",
     sea: "bg-sea text-cream hover:bg-sea-deep",
   };
   return (

@@ -33,7 +33,7 @@ export function Inland() {
             <a
               href="#towns"
               aria-label="Find San Gabriel in the town index"
-              className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-card/85 text-ink backdrop-blur-md transition-colors hover:bg-ink/50 hover:text-cream"
+              className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-card/85 text-ink backdrop-blur-md transition-colors hover:bg-ink hover:text-cream"
             >
               <FiArrowUpRight aria-hidden className="size-5" />
             </a>

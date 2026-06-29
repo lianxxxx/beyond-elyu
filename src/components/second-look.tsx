@@ -68,9 +68,9 @@ export function SecondLook() {
                 The shore past the breaks, where the day-trippers rarely look.
               </p>
               <a
-                href="#numbers"
+                href="#notes"
                 aria-label="Keep reading"
-                className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-cream text-ink transition-colors hover:bg-ink/50 hover:text-cream"
+                className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-cream text-ink transition-colors hover:bg-ink hover:text-cream"
               >
                 <FiArrowUpRight aria-hidden className="size-5" />
               </a>

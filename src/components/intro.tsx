@@ -1,9 +1,9 @@
 // Intro — beyond-elyu. The "where is it" section: a live Google map of La Union
-// on the left, the placing-the-province argument on the right.
+// on the left, with the placing-the-province argument on the right.
 
 import { FiArrowUpRight } from "react-icons/fi";
 import { Reveal } from "@/components/reveal";
-import { SectionHeader } from "@/components/section-header";
+import { Accent, SectionHeader } from "@/components/section-header";
 
 export function Intro() {
   return (
@@ -32,7 +32,7 @@ export function Intro() {
               target="_blank"
               rel="noreferrer"
               aria-label="Open La Union in Google Maps"
-              className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-card/85 text-ink backdrop-blur-md transition-colors hover:bg-ink/50 hover:text-cream"
+              className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-card/85 text-ink backdrop-blur-md transition-colors hover:bg-ink hover:text-cream"
             >
               <FiArrowUpRight aria-hidden className="size-5" />
             </a>
@@ -45,20 +45,19 @@ export function Intro() {
             eyebrow="The place"
             title={
               <>
-                La Union, <span className="text-ink/50">on the map.</span>
+                La Union, on the <Accent>map</Accent>.
               </>
             }
-            lede="A thin ribbon of a province on the northwest coast of Luzon — about four hours up the expressway from Manila, pinned between the West Philippine Sea and the Cordillera foothills."
+            lede="On Luzon’s northwest edge, La Union sits between the West Philippine Sea and the Cordillera foothills—about four hours from Manila, with far more beyond San Juan."
             ledeClassName="max-w-[54ch]"
           />
 
           <Reveal delay={200}>
             <div className="mt-8 max-w-[58ch] space-y-5 font-body text-base leading-relaxed text-ink">
               <p>
-                One city and nineteen towns line the shore — weaving towns in
-                the north, a century-old basilica in the south, San Juan just
-                one stretch. The coast is only the doorway. Past it, the province
-                climbs into valleys, wineries, and waterfalls.
+                One city and nineteen towns stretch from northern weaving
+                communities to Agoo’s basilica, then inland to grape farms,
+                rivers, and waterfalls.
               </p>
             </div>
           </Reveal>
