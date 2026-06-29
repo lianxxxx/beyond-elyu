@@ -108,7 +108,7 @@ export function GettingThere() {
             </figure>
           </Reveal>
 
-          <div className="grid gap-4 sm:grid-cols-2 md:order-1 md:col-span-7">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:order-1 md:col-span-7">
             {OPTIONS.map((option, index) => {
               const Icon = option.icon;
               return (
