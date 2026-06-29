@@ -15,9 +15,9 @@ export default function Home() {
       <Marquee />
       <Intro />
       <GettingThere />
+      <TownsSection />
       <FieldNotes />
       <CoastStrip />
-      <TownsSection />
       <Closing />
       <SiteFooter />
     </main>

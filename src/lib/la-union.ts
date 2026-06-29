@@ -231,8 +231,12 @@ export const TOWNS: Town[] = [
   },
 ];
 
-export const COAST_TOWNS = TOWNS.filter((t) => t.kind === "coast");
-export const INLAND_TOWNS = TOWNS.filter((t) => t.kind === "inland");
+export const COAST_TOWNS = TOWNS.filter((t) => t.kind === "coast").sort((a, b) =>
+  a.name.localeCompare(b.name),
+);
+export const INLAND_TOWNS = TOWNS.filter((t) => t.kind === "inland").sort(
+  (a, b) => a.name.localeCompare(b.name),
+);
 
 // Stylized geography shared by the map and the roll-call locator.
 export const COASTLINE =
