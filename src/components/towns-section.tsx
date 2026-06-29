@@ -5,7 +5,7 @@
 // history and what it is known for. "The Second Look" again, this time as
 // reading. No card grid; the page argues against the checklist.
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { FiArrowUpRight, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import {
@@ -317,9 +317,84 @@ function TownMenu({
   );
 }
 
+// One full-width slide in the mobile carousel.
+function TownCard({ town }: { town: Town }) {
+  return (
+    <div className="relative shrink-0 basis-full snap-start rounded-3xl border border-ink/8 bg-card p-6 shadow-card">
+      <a
+        href={`https://www.google.com/maps/search/${encodeURIComponent(
+          `${town.name}, La Union`,
+        )}`}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`Open ${town.name} on Google Maps`}
+        className="absolute right-5 top-5 inline-flex size-10 items-center justify-center rounded-full border border-ink/10 text-ink transition-colors active:bg-ink active:text-cream"
+      >
+        <FiArrowUpRight aria-hidden className="size-5" />
+      </a>
+      <Detail town={town} />
+    </div>
+  );
+}
+
 export function TownsSection() {
   const [active, setActive] = useState("San Juan");
   const activeTown = TOWNS.find((t) => t.name === active) ?? TOWNS[0];
+
+  // Mobile carousel: the burger, the swipe position, and the dot indicator are
+  // all driven by the single `active` town.
+  const mobileScrollerRef = useRef<HTMLDivElement>(null);
+  const scrollTickingRef = useRef(false);
+  const activeIndex = Math.max(
+    0,
+    ORDERED_TOWNS.findIndex((t) => t.name === active),
+  );
+
+  const scrollToIndex = (index: number, smooth: boolean) => {
+    const el = mobileScrollerRef.current;
+    if (!el) return;
+    el.scrollTo({
+      left: index * el.clientWidth,
+      behavior: smooth ? "smooth" : "auto",
+    });
+  };
+
+  // Swiping updates the active town from whichever card is centered.
+  const handleCarouselScroll = () => {
+    if (scrollTickingRef.current) return;
+    scrollTickingRef.current = true;
+    requestAnimationFrame(() => {
+      scrollTickingRef.current = false;
+      const el = mobileScrollerRef.current;
+      if (!el || el.clientWidth === 0) return;
+      const town = ORDERED_TOWNS[Math.round(el.scrollLeft / el.clientWidth)];
+      if (town && town.name !== active) setActive(town.name);
+    });
+  };
+
+  // Burger and dot taps select a town and bring its card into view.
+  const handleMobileSelect = (name: string) => {
+    setActive(name);
+    const index = ORDERED_TOWNS.findIndex((t) => t.name === name);
+    if (index >= 0) scrollToIndex(index, true);
+  };
+
+  // Align the carousel to the active town once it has laid out (mobile only).
+  useEffect(() => {
+    scrollToIndex(activeIndex, false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // A small sliding window of dots keeps twenty towns compact.
+  const DOT_COUNT = 5;
+  const dotStart = Math.max(
+    0,
+    Math.min(activeIndex - 2, ORDERED_TOWNS.length - DOT_COUNT),
+  );
+  const dotIndexes = Array.from(
+    { length: Math.min(DOT_COUNT, ORDERED_TOWNS.length) },
+    (_, k) => dotStart + k,
+  );
 
   return (
     <section id="towns" className="px-gutter py-bay">
@@ -339,25 +414,45 @@ export function TownsSection() {
           </div>
         </header>
 
-        {/* Mobile: the list collapses behind a burger; the active town's
-            detail sits below in its own card. */}
+        {/* Mobile: a burger to jump + a swipeable carousel of every town,
+            with a windowed dot + counter indicator below. */}
         <div className="mt-12 md:hidden">
           <Reveal delay={120} className="relative z-30">
-            <TownMenu active={active} onSelect={setActive} />
+            <TownMenu active={active} onSelect={handleMobileSelect} />
           </Reveal>
-          <div className="relative mt-6 rounded-3xl border border-ink/8 bg-card p-6 shadow-card">
-            <a
-              href={`https://www.google.com/maps/search/${encodeURIComponent(
-                `${activeTown.name}, La Union`,
-              )}`}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Open ${activeTown.name} on Google Maps`}
-              className="absolute right-5 top-5 inline-flex size-10 items-center justify-center rounded-full border border-ink/10 text-ink transition-colors active:bg-ink active:text-cream"
-            >
-              <FiArrowUpRight aria-hidden className="size-5" />
-            </a>
-            <Detail town={activeTown} />
+
+          <div
+            ref={mobileScrollerRef}
+            onScroll={handleCarouselScroll}
+            aria-label="Towns — swipe to browse"
+            className="mt-6 flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {ORDERED_TOWNS.map((t) => (
+              <TownCard key={t.name} town={t} />
+            ))}
+          </div>
+
+          <div className="mt-5 flex items-center justify-center gap-3.5">
+            <div className="flex items-center gap-1.5">
+              {dotIndexes.map((i) => {
+                const isActive = i === activeIndex;
+                return (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => handleMobileSelect(ORDERED_TOWNS[i].name)}
+                    aria-label={`Go to ${ORDERED_TOWNS[i].name}`}
+                    aria-current={isActive}
+                    className={`h-1.5 rounded-full transition-all ${
+                      isActive ? "w-4 bg-sea-mist" : "w-1.5 bg-ink/20"
+                    }`}
+                  />
+                );
+              })}
+            </div>
+            <span className="font-display text-xs font-semibold tabular-nums text-ink-soft">
+              {String(activeIndex + 1).padStart(2, "0")} / {ORDERED_TOWNS.length}
+            </span>
           </div>
         </div>
 
