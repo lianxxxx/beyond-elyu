@@ -7,7 +7,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import {
   TOWNS,
   COAST_TOWNS,
@@ -182,17 +182,137 @@ function Group({
                   {t.knownFor}
                 </span>
               </button>
-
-              {/* Mobile: the detail expands inline under the active row. */}
-              {isActive && (
-                <div className="pb-8 pt-1 md:hidden">
-                  <Detail town={t} hideTitle />
-                </div>
-              )}
             </li>
           );
         })}
       </ul>
+    </div>
+  );
+}
+
+// One group of towns inside the mobile burger panel.
+function MenuGroup({
+  title,
+  towns,
+  active,
+  onPick,
+  className = "",
+}: {
+  title: string;
+  towns: Town[];
+  active: string;
+  onPick: (name: string) => void;
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      <p className="px-3 pb-1 pt-2 font-body text-eyebrow font-medium uppercase tracking-[0.2em] text-ink-soft">
+        {title}
+      </p>
+      <ul>
+        {towns.map((t) => {
+          const isActive = active === t.name;
+          return (
+            <li key={t.name}>
+              <button
+                type="button"
+                onClick={() => onPick(t.name)}
+                className={`flex w-full items-baseline gap-3 rounded-xl px-3 py-2.5 text-left transition-colors ${
+                  isActive ? "bg-ink/[0.06]" : "active:bg-ink/[0.04]"
+                }`}
+              >
+                <span className="font-display text-xs font-semibold tabular-nums text-sea-mist">
+                  {numberOf(t)}
+                </span>
+                <span
+                  className={`font-display text-base font-semibold tracking-tight ${
+                    isActive ? "text-ink" : "text-ink/60"
+                  }`}
+                >
+                  {t.name}
+                </span>
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+// Mobile-only burger: the twenty-town list is too long to scroll on a phone,
+// so it collapses behind this picker. Tapping a town selects it and closes.
+function TownMenu({
+  active,
+  onSelect,
+}: {
+  active: string;
+  onSelect: (name: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+
+  const pick = (name: string) => {
+    onSelect(name);
+    setOpen(false);
+  };
+
+  return (
+    <div className="relative z-30">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="relative z-10 flex w-full items-center justify-between gap-3 rounded-2xl border border-ink/10 bg-card px-4 py-3.5 shadow-card"
+      >
+        <span className="flex items-center gap-2.5">
+          {open ? (
+            <FiX aria-hidden className="size-4 text-ink" />
+          ) : (
+            <FiMenu aria-hidden className="size-4 text-ink" />
+          )}
+          <span className="font-body text-sm font-medium text-ink">
+            Browse towns
+          </span>
+          <span className="font-body text-sm text-ink-soft">
+            ({TOWNS.length})
+          </span>
+        </span>
+        <FiChevronDown
+          aria-hidden
+          className={`size-4 text-ink-soft transition-transform ${
+            open ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+
+      {open && (
+        <>
+          {/* Click-away catcher behind the panel. */}
+          <button
+            type="button"
+            aria-hidden
+            tabIndex={-1}
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 z-0 cursor-default"
+          />
+          {/* Floats over the detail card below instead of pushing it down. */}
+          <div className="absolute inset-x-0 top-full z-20 mt-2 max-h-[60vh] overflow-y-auto rounded-2xl border border-ink/10 bg-card p-2 shadow-card">
+            <MenuGroup
+              title="The coast"
+              towns={COAST_TOWNS}
+              active={active}
+              onPick={pick}
+            />
+            <MenuGroup
+              title="The foothills"
+              towns={INLAND_TOWNS}
+              active={active}
+              onPick={pick}
+              className="mt-1"
+            />
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -219,7 +339,29 @@ export function TownsSection() {
           </div>
         </header>
 
-        <div className="mt-12 grid gap-x-16 gap-y-10 md:mt-16 md:grid-cols-2">
+        {/* Mobile: the list collapses behind a burger; the active town's
+            detail sits below in its own card. */}
+        <div className="mt-12 md:hidden">
+          <Reveal delay={120} className="relative z-30">
+            <TownMenu active={active} onSelect={setActive} />
+          </Reveal>
+          <div className="relative mt-6 rounded-3xl border border-ink/8 bg-card p-6 shadow-card">
+            <a
+              href={`https://www.google.com/maps/search/${encodeURIComponent(
+                `${activeTown.name}, La Union`,
+              )}`}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open ${activeTown.name} on Google Maps`}
+              className="absolute right-5 top-5 inline-flex size-10 items-center justify-center rounded-full border border-ink/10 text-ink transition-colors active:bg-ink active:text-cream"
+            >
+              <FiArrowUpRight aria-hidden className="size-5" />
+            </a>
+            <Detail town={activeTown} />
+          </div>
+        </div>
+
+        <div className="mt-12 hidden gap-x-16 gap-y-10 md:mt-16 md:grid md:grid-cols-2">
           <Reveal delay={120}>
             <Group
               title="The coast"
