@@ -11,7 +11,7 @@ export function Intro() {
       <div className="mx-auto grid max-w-6xl items-center gap-x-12 gap-y-10 md:grid-cols-12">
         {/* Left: La Union on a live Google map */}
         <Reveal delay={120} className="md:col-span-5">
-          <figure className="group relative overflow-hidden rounded-[2rem] shadow-soft">
+          <figure className="group relative overflow-hidden rounded-[2rem]">
             <iframe
               title="Map of La Union, Philippines"
               src="https://www.google.com/maps?q=La+Union,+Philippines&z=10&t=k&output=embed"

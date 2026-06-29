@@ -53,8 +53,8 @@ export function GettingThere() {
   return (
     <section id="getting-there" className="px-gutter py-bay">
       <div className="mx-auto max-w-6xl">
-        <div className="grid items-end gap-x-12 gap-y-6 md:grid-cols-12">
-          <div className="md:col-span-7">
+        <div>
+          <div>
             <Reveal>
               <p className="font-body text-eyebrow font-medium uppercase text-ink-soft">
                 Getting there
@@ -62,17 +62,10 @@ export function GettingThere() {
             </Reveal>
             <Reveal delay={80}>
               <h2 className="mt-5 max-w-[12ch] font-display text-headline font-semibold tracking-tight text-ink">
-                The way <Accent>north</Accent>.
+                The way to <Accent>Elyu</Accent>.
               </h2>
             </Reveal>
           </div>
-
-          <Reveal delay={120} className="md:col-span-5 md:pb-2">
-            <p className="max-w-[44ch] font-body text-base leading-relaxed text-ink-soft">
-              Most trips begin in Metro Manila and head north by bus or car.
-              Leave room for traffic, and confirm your schedule before you go.
-            </p>
-          </Reveal>
         </div>
 
         <div className="mt-12 grid items-stretch gap-4 md:mt-16 md:grid-cols-12">
@@ -90,7 +83,7 @@ export function GettingThere() {
                 className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/5 to-transparent"
               />
 
-              <span className="absolute left-4 top-4 rounded-full bg-card/90 px-3.5 py-1.5 font-body text-[0.72rem] font-medium uppercase tracking-[0.16em] text-ink backdrop-blur-md">
+              <span className="absolute left-4 top-4 rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
                 Bued Bridge · Rosario
               </span>
 
