@@ -75,23 +75,16 @@ export function CoastStrip() {
       <div className="mx-auto max-w-6xl">
         {/* split header: heading left, muted note right */}
         <div className="grid items-end gap-x-12 gap-y-6 md:grid-cols-12">
-          <div className="md:col-span-7">
+          <div className="md:col-span-12">
             <SectionHeader
-              eyebrow="Along the shore"
+              eyebrow="Top spots in La Union"
               title={
-                <>
-                  Explore the <Accent>long way</Accent> round.
-                </>
+                <span className="whitespace-nowrap text-[clamp(2rem,7vw,4.75rem)]">
+                  Find your <Accent>favorite</Accent>.
+                </span>
               }
             />
           </div>
-          <Reveal delay={120} className="md:col-span-5 md:pb-2">
-            <p className="max-w-[44ch] font-body text-base leading-relaxed text-ink-soft md:text-right">
-              Past the famous beach the shore keeps going — rock pools and board
-              sheds, water that turns from gray swell to glass the further north
-              you walk.
-            </p>
-          </Reveal>
         </div>
 
         <Reveal delay={200}>

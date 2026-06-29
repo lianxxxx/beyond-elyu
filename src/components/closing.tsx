@@ -8,7 +8,7 @@ import { Accent } from "@/components/section-header";
 
 const LINKS = [
   { label: "Getting there", href: "#getting-there" },
-  { label: "Along the shore", href: "#coast" },
+  { label: "Top spots", href: "#coast" },
   { label: "Town by town", href: "#towns" },
 ];
 

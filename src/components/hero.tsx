@@ -104,7 +104,7 @@ export function Hero() {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-ink/35 via-transparent to-transparent"
+                className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/5 to-transparent"
               />
 
               {/* corner ↗ */}
@@ -126,25 +126,13 @@ export function Hero() {
                 </span>
               </div>
 
-              {/* floating white note card */}
-              <figcaption className="absolute inset-x-4 bottom-4">
-                <div className="flex items-center gap-3 rounded-2xl bg-card/90 p-3 shadow-card backdrop-blur-md">
-                  <img
-                    src="/img/tangadan-thumb.webp"
-                    alt=""
-                    aria-hidden
-                    className="size-14 shrink-0 rounded-xl object-cover"
-                    loading="lazy"
-                  />
-                  <div className="min-w-0">
-                    <p className="font-display text-sm font-semibold leading-snug tracking-tight text-ink">
-                      Past the surf, the province climbs.
-                    </p>
-                    <p className="mt-0.5 font-body text-xs text-ink-soft">
-                      Waterfalls an hour off the highway.
-                    </p>
-                  </div>
-                </div>
+              <figcaption className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-6 text-cream sm:inset-x-7 sm:bottom-7">
+                <p className="max-w-[18ch] font-display text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
+                  Beyond the surf.
+                </p>
+                <span className="max-w-[15ch] shrink-0 text-right font-body text-sm leading-snug text-cream/75">
+                  Hidden falls
+                </span>
               </figcaption>
             </figure>
           </div>

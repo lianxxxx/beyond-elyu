@@ -6,13 +6,12 @@
 // reading. No card grid; the page argues against the checklist.
 
 import { useState } from "react";
+import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 import {
   TOWNS,
   COAST_TOWNS,
   INLAND_TOWNS,
-  COASTLINE,
-  FOOTHILLS,
   type Town,
 } from "@/lib/la-union";
 import { Reveal } from "@/components/reveal";
@@ -27,81 +26,113 @@ const numberOf = (town: Town) =>
     "0",
   );
 
-// A small reuse of the map: where this town sits along the coast.
-function Locator({ town }: { town: Town }) {
-  return (
-    <svg
-      viewBox="0 0 560 800"
-      aria-hidden
-      className="h-auto w-full max-w-[150px]"
-    >
-      <path
-        d={COASTLINE}
-        fill="none"
-        stroke="var(--color-sea)"
-        strokeWidth={2.5}
-        strokeLinecap="round"
-        opacity={0.5}
-      />
-      <path
-        d={FOOTHILLS}
-        fill="none"
-        stroke="var(--color-ink)"
-        strokeWidth={1.5}
-        strokeDasharray="3 9"
-        strokeLinecap="round"
-        opacity={0.2}
-      />
-      {TOWNS.map((t) => {
-        const on = t.name === town.name;
-        return (
-          <circle
-            key={t.name}
-            cx={t.x}
-            cy={t.y}
-            r={on ? 22 : 6}
-            fill={on ? "var(--color-terracotta)" : "var(--color-sea)"}
-            opacity={on ? 1 : 0.28}
-          />
-        );
-      })}
-    </svg>
-  );
-}
+const SAMPLE_LINKS = [
+  {
+    source: "Tripadvisor",
+    title: "Agoo travel guide",
+    href: "https://www.tripadvisor.com/Tourism-g6524044-Agoo_La_Union_Province_Ilocos_Region_Luzon-Vacations.html",
+  },
+  {
+    source: "Philstar",
+    title: "Pick your own grapes and discover more La Union gems",
+    href: "https://www.philstar.com/lifestyle/travel-and-tourism/2024/03/26/2343491/lakbay-norte-pick-your-own-grapes-la-union-vineyard-other-hidden-gems-discover",
+  },
+] as const;
 
-function Detail({ town }: { town: Town }) {
+function Detail({
+  town,
+  hideTitle = false,
+}: {
+  town: Town;
+  hideTitle?: boolean;
+}) {
   return (
     <div aria-live="polite">
-      <div className="flex items-baseline gap-4">
-        <span className="font-display text-5xl font-semibold tabular-nums text-sea/35">
-          {numberOf(town)}
-        </span>
-        <span className="font-body text-eyebrow font-medium uppercase tracking-[0.2em] text-ink-soft">
-          {town.kind === "coast" ? "On the coast" : "In the foothills"}
-        </span>
-      </div>
-
-      <h3 className="mt-4 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+      <h3
+        className={
+          hideTitle
+            ? "sr-only"
+            : "font-display text-4xl font-semibold leading-none tracking-tight text-ink sm:text-5xl"
+        }
+      >
         {town.name}
       </h3>
 
-      <p className="mt-5 font-body text-eyebrow font-medium uppercase tracking-[0.18em] text-sea">
-        Known for
-      </p>
-      <p className="mt-1 font-display text-xl font-semibold tracking-tight text-ink">
+      <p
+        className={`${hideTitle ? "mt-1 text-lg" : "mt-3 text-xl"} font-display font-semibold leading-tight tracking-tight text-ink/50`}
+      >
         {town.knownFor}
       </p>
 
-      <p className="mt-5 max-w-[52ch] font-body text-base leading-relaxed text-ink">
+      <p className="mt-6 max-w-[52ch] font-body text-[0.95rem] leading-[1.75] text-ink-soft">
         {town.history}
       </p>
 
-      <div className="mt-8 flex items-end gap-4">
-        <Locator town={town} />
-        <span className="pb-2 font-body text-sm text-ink-soft">
-          Where it sits, sea to the west.
-        </span>
-      </div>
+      <figure className="mt-8">
+        <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-sea-mist">
+          <Image
+            src="/img/town-card-placeholder.jpg"
+            alt="A surfer riding a wave at Urbiztondo Beach in San Juan, La Union"
+            fill
+            sizes="(min-width: 768px) 42vw, 100vw"
+            className="object-cover"
+          />
+          <span className="absolute left-3 top-3 rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
+            Photo preview
+          </span>
+        </div>
+        <figcaption className="mt-2 font-body text-xs text-ink-soft">
+          Photo: {" "}
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Surf%E2%80%99s_up.jpg"
+            target="_blank"
+            rel="noreferrer"
+            className="underline decoration-ink/20 underline-offset-2 hover:text-ink"
+          >
+            Psalm91st / Wikimedia Commons
+          </a>{" "}
+          · {" "}
+          <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/"
+            target="_blank"
+            rel="noreferrer"
+            className="underline decoration-ink/20 underline-offset-2 hover:text-ink"
+          >
+            CC BY-SA 4.0
+          </a>
+        </figcaption>
+      </figure>
+
+      <nav className="mt-7" aria-label={`Useful links for ${town.name}`}>
+        <p className="font-body text-eyebrow font-medium uppercase tracking-[0.18em] text-sea">
+          Read more
+        </p>
+        <ul className="mt-2 border-b border-ink/10">
+          {SAMPLE_LINKS.map((link) => (
+            <li key={link.href} className="border-t border-ink/10">
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between gap-5 py-3.5"
+              >
+                <span className="min-w-0">
+                  <span className="block font-body text-xs font-medium uppercase tracking-[0.14em] text-ink-soft">
+                    {link.source}
+                  </span>
+                  <span className="mt-1 block font-display text-base font-semibold leading-snug tracking-tight text-ink">
+                    {link.title}
+                  </span>
+                </span>
+                <FiArrowUpRight
+                  aria-hidden
+                  className="size-4 shrink-0 text-ink-soft transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink"
+                />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </div>
   );
 }
@@ -155,7 +186,7 @@ function Group({
               {/* Mobile: the detail expands inline under the active row. */}
               {isActive && (
                 <div className="pb-8 pt-1 md:hidden">
-                  <Detail town={t} />
+                  <Detail town={t} hideTitle />
                 </div>
               )}
             </li>
@@ -173,7 +204,7 @@ export function TownsSection() {
   return (
     <section id="towns" className="px-gutter py-bay">
       <div className="mx-auto max-w-6xl">
-        <header className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-12">
+        <header>
           <div className="max-w-3xl">
             <Reveal>
               <p className="font-body text-eyebrow font-medium uppercase text-ink-soft">
@@ -186,13 +217,6 @@ export function TownsSection() {
               </h2>
             </Reveal>
           </div>
-
-          <Reveal delay={160}>
-            <p className="font-body text-sm text-ink-soft md:max-w-[34ch]">
-              Every spot worth stopping for, gathered town by town — down the
-              coast, then up into the hills. San Juan is where most people start.
-            </p>
-          </Reveal>
         </header>
 
         <div className="mt-12 grid gap-x-16 gap-y-10 md:mt-16 md:grid-cols-2">
