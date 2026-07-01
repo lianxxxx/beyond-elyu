@@ -21,11 +21,6 @@ export function Intro() {
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
-            {/* small label pill, like the inspo's INSIGHT pill */}
-            <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-card px-3.5 py-1.5 font-body text-[0.72rem] font-medium uppercase tracking-[0.16em] text-ink shadow-card">
-              La Union, PH
-            </span>
-
             {/* corner ↗ — open the full map */}
             <a
               href="https://www.google.com/maps?q=La+Union,+Philippines"
