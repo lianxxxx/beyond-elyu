@@ -147,10 +147,10 @@ export function FieldNotes() {
 
               <figcaption className="absolute inset-x-5 bottom-5 text-cream sm:inset-x-7 sm:bottom-7">
                 <p className="whitespace-nowrap font-display text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
-                  And they come back for this.
+                  Once is never enough.
                 </p>
                 <span className="mt-1 block font-body text-sm text-cream/75">
-                  Because it&apos;s worth returning to
+                  They always come back.
                 </span>
               </figcaption>
             </figure>
