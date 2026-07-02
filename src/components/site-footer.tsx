@@ -2,13 +2,14 @@
 // Closes the page deep on ink: a brand statement, a small wander-back nav, a
 // quiet meta line, and one oversize "La Union" wordmark spanning the foot.
 
+import Link from "next/link";
 import { FiArrowUpRight, FiArrowUp } from "react-icons/fi";
 
 const LINKS = [
   { label: "Getting there", href: "#getting-there" },
   { label: "Top spots", href: "#coast" },
   { label: "The whole province", href: "#towns" },
-  { label: "Look closer", href: "#plan" },
+  { label: "Answer the call", href: "#plan" },
 ];
 
 export function SiteFooter() {
@@ -20,11 +21,11 @@ export function SiteFooter() {
           <div className="md:col-span-7">
             <p className="max-w-[18ch] font-display text-3xl font-semibold leading-[1.05] tracking-tight text-sand sm:text-4xl">
               La Union is not overrated.{" "}
-              <span className="text-sand/45">Look closer.</span>
+              <span className="text-sand/45">You&apos;ll see.</span>
             </p>
             <p className="mt-5 max-w-[46ch] font-body text-sm leading-relaxed text-sand/55">
-              A small love letter to the coast everyone thinks they have already
-              seen. One city, nineteen towns, and the long way round.
+              You came for the surf and called it. One city, nineteen towns,
+              and a whole lot you missed.
             </p>
           </div>
 
@@ -54,7 +55,16 @@ export function SiteFooter() {
 
         {/* Meta line */}
         <div className="mt-16 flex flex-col gap-3 border-t border-sand/12 pt-6 font-body text-xs text-sand/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>Made along the El Niño coast, 2026. A passion project, not a brochure.</p>
+          <p>
+            All photos belong to their respective owners and are credited to
+            their sources.{" "}
+            <Link
+              href="/note"
+              className="text-sand/70 underline decoration-sand/30 underline-offset-2 transition-colors hover:text-sand"
+            >
+              Built for fun
+            </Link>
+          </p>
           <a
             href="#top"
             className="group inline-flex items-center gap-1.5 text-sand/55 transition-colors hover:text-sand"

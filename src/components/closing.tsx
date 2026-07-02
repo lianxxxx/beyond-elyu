@@ -1,5 +1,6 @@
-// Closing — beyond-elyu, the final persuade: a single left-aligned CTA block
-// on the white ground (no card box), pushing the reader to come back.
+// Closing — beyond-elyu, the final persuade: a left-aligned CTA inside a
+// contained outlined panel (border only, no fill), pushing the reader to
+// come back.
 
 import { FiArrowUpRight } from "react-icons/fi";
 import { Reveal } from "@/components/reveal";
@@ -9,6 +10,7 @@ export function Closing() {
   return (
     <section id="plan" className="px-gutter py-bay">
       <div className="mx-auto max-w-6xl">
+        <div className="rounded-[2.5rem] border border-ink/12 px-7 py-14 sm:px-12 md:px-16 md:py-20">
         <Reveal>
           <p className="font-body text-eyebrow font-medium uppercase text-ink-soft">
             What are you waiting for
@@ -44,6 +46,7 @@ export function Closing() {
             <FiArrowUpRight aria-hidden className="size-4" />
           </a>
         </Reveal>
+        </div>
       </div>
     </section>
   );
