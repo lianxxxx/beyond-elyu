@@ -43,18 +43,14 @@ export function Intro() {
                 La Union, on the <Accent>map</Accent>.
               </>
             }
-            lede="On Luzon’s northwest edge, La Union sits between the West Philippine Sea and the Cordillera foothills—about four hours from Manila, with far more beyond San Juan."
-            ledeClassName="max-w-[54ch]"
+            lede="A thin strip on Luzon’s northwest coast, La Union runs from the West Philippine Sea up into the Cordillera foothills, about four hours from Manila and far more than San Juan. One city and nineteen towns stretch from northern weaving communities to Agoo’s basilica, then inland to grape farms, rivers, and waterfalls."
+            ledeClassName="max-w-[58ch] text-base!"
           />
 
           <Reveal delay={200}>
-            <div className="mt-8 max-w-[58ch] space-y-5 font-body text-base leading-relaxed text-ink">
-              <p>
-                One city and nineteen towns stretch from northern weaving
-                communities to Agoo’s basilica, then inland to grape farms,
-                rivers, and waterfalls.
-              </p>
-            </div>
+            <p className="mt-6 max-w-[54ch] font-body text-base font-semibold italic text-ink">
+              The beach was never the whole story.
+            </p>
           </Reveal>
         </div>
       </div>
