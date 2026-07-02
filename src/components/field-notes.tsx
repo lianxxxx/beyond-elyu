@@ -116,14 +116,20 @@ export function FieldNotes() {
             <figure className="group relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-soft">
               <Image
                 src="/img/visitor-notes-lakbaypinas.jpg"
-                alt="Visitors relaxing by the beach in San Juan, La Union."
+                alt="Visitors by the shore near Poro Point in the City of San Fernando, La Union."
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
               />
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/5 to-transparent"
+              />
+
               <span className="absolute left-4 top-4 rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
                 Poro Point Lighthouse
               </span>
+
               <a
                 href="https://lakbaypinas.com/wp-content/uploads/2025/09/snapins-ai_2236020728088282455.jpg"
                 target="_blank"
@@ -133,7 +139,27 @@ export function FieldNotes() {
               >
                 <FiArrowUpRight aria-hidden className="size-5" />
               </a>
+
+              <figcaption className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-6 text-cream sm:inset-x-7 sm:bottom-7">
+                <p className="max-w-[18ch] font-display text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
+                  And they come back for this.
+                </p>
+                <span className="shrink-0 font-body text-sm text-cream/75">
+                  San Fernando
+                </span>
+              </figcaption>
             </figure>
+            <p className="mt-2 font-body text-xs text-ink-soft">
+              Photo:{" "}
+              <a
+                href="https://lakbaypinas.com/top-10-must-visit-la-union-beach-2025-travel-guide/"
+                target="_blank"
+                rel="noreferrer"
+                className="underline decoration-ink/20 underline-offset-2 hover:text-ink"
+              >
+                Lakbay Pinas
+              </a>
+            </p>
           </Reveal>
         </div>
       </div>

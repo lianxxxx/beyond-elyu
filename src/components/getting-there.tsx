@@ -106,9 +106,20 @@ export function GettingThere() {
                 </span>
               </figcaption>
             </figure>
+            <p className="mt-2 font-body text-xs text-ink-soft">
+              Photo:{" "}
+              <a
+                href="https://en.wikipedia.org/wiki/Rosario,_La_Union"
+                target="_blank"
+                rel="noreferrer"
+                className="underline decoration-ink/20 underline-offset-2 hover:text-ink"
+              >
+                Wikipedia — Rosario, La Union
+              </a>
+            </p>
           </Reveal>
 
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 md:order-1 md:col-span-7">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 md:order-1 md:col-span-7">
             {OPTIONS.map((option, index) => {
               const Icon = option.icon;
               return (
@@ -117,26 +128,26 @@ export function GettingThere() {
                     href={option.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="group flex h-full min-h-48 flex-col rounded-2xl border border-ink/8 bg-card p-5 transition-colors hover:border-sea/25 hover:bg-sea-mist/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sea focus-visible:ring-offset-2"
+                    className="group flex h-full min-h-48 flex-col rounded-2xl border border-ink/8 bg-card p-5 transition-colors duration-300 hover:border-ink hover:bg-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sea focus-visible:ring-offset-2"
                   >
                     <span className="flex items-start justify-between gap-4">
-                      <span className="inline-flex size-9 items-center justify-center rounded-full bg-sea-mist/55 text-sea transition-colors group-hover:bg-sea group-hover:text-cream">
+                      <span className="inline-flex size-9 items-center justify-center rounded-full bg-sea-mist/55 text-sea transition-colors duration-300 group-hover:bg-cream/15 group-hover:text-cream">
                         <Icon aria-hidden className={option.iconClassName} />
                       </span>
                       <FiArrowUpRight
                         aria-hidden
-                        className="size-4 text-ink-soft transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink"
+                        className="size-4 text-ink-soft transition-all duration-300 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-cream"
                       />
                     </span>
 
                     <span className="mt-auto pt-8">
-                      <span className="block font-display text-base font-semibold tracking-tight text-ink">
+                      <span className="block font-display text-base font-semibold tracking-tight text-ink transition-colors duration-300 group-hover:text-cream">
                         {option.title}
                       </span>
-                      <span className="mt-2 block font-body text-sm leading-relaxed text-ink-soft">
+                      <span className="mt-2 block font-body text-sm leading-relaxed text-ink-soft transition-colors duration-300 group-hover:text-cream/70">
                         {option.detail}
                       </span>
-                      <span className="mt-3 block font-body text-xs font-medium text-sea">
+                      <span className="mt-3 block font-body text-xs font-medium text-sea transition-colors duration-300 group-hover:text-cream/80">
                         {option.meta}
                       </span>
                     </span>
