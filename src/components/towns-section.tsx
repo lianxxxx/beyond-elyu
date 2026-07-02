@@ -102,17 +102,22 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Luna: {
-    image: "town-luna.jpg",
-    alt: "The Spanish-era Baluarte watchtower on Luna's pebble shore",
+    image: "town-luna-baluarte-aerial.jpg",
+    alt: "Aerial view of the Spanish-era Baluarte watchtower on Luna's pebble shore",
     badge: "Baluarte watchtower, Luna",
     photo: {
-      sourceName: "Maestromac25 / Wikimedia Commons",
+      sourceName: "Luzviminda7641 / Wikimedia Commons",
       sourceUrl:
-        "https://commons.wikimedia.org/wiki/File:Baluarte_Watch_Tower,_Luna,_La_Union.jpg",
-      licenseName: "CC BY-SA 4.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+        "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Baluarte_Watch_Tower.jpg",
+      licenseName: "CC0 1.0",
+      licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
     },
     links: [
+      {
+        source: "Wikipedia",
+        title: "La Union Watchtowers",
+        href: "https://en.wikipedia.org/wiki/La_Union_Watchtowers",
+      },
       {
         source: "Pinoy Travelogue",
         title: "Luna's Baluarte Watchtower and pebble beach",
@@ -346,9 +351,9 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     alt: "The turquoise rock pools and narrow cascade of Dupagan Falls in San Gabriel",
     badge: "Dupagan Falls, San Gabriel",
     photo: {
-      sourceName: "Philippine Information Agency",
+      sourceName: "Allevents.in",
       sourceUrl:
-        "https://pia.gov.ph/features/dupagan-falls-lifeblood-heartthrob-of-la-unions-highlands/",
+        "https://allevents.in/baguio/mt-mugong-dayhike-%7C-dupagan-falls/200028119602059",
     },
     links: [
       {
@@ -758,19 +763,21 @@ function TownMenu({
 // One full-width slide in the mobile carousel.
 function TownCard({ town }: { town: Town }) {
   return (
-    <div className="relative shrink-0 basis-full snap-start rounded-3xl border border-ink/8 bg-card p-6 shadow-card">
-      <a
-        href={`https://www.google.com/maps/search/${encodeURIComponent(
-          `${town.name}, La Union`,
-        )}`}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={`Open ${town.name} on Google Maps`}
-        className="absolute right-5 top-5 inline-flex size-10 items-center justify-center rounded-full border border-ink/10 text-ink transition-colors active:bg-ink active:text-cream"
-      >
-        <FiArrowUpRight aria-hidden className="size-5" />
-      </a>
-      <Detail town={town} />
+    <div className="shrink-0 basis-full snap-start px-2">
+      <div className="relative h-full rounded-3xl border border-ink/8 bg-card p-6 shadow-card">
+        <a
+          href={`https://www.google.com/maps/search/${encodeURIComponent(
+            `${town.name}, La Union`,
+          )}`}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`Open ${town.name} on Google Maps`}
+          className="absolute right-5 top-5 inline-flex size-10 items-center justify-center rounded-full border border-ink/10 text-ink transition-colors active:bg-ink active:text-cream"
+        >
+          <FiArrowUpRight aria-hidden className="size-5" />
+        </a>
+        <Detail town={town} />
+      </div>
     </div>
   );
 }

@@ -126,9 +126,14 @@ export function FieldNotes() {
                 className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/5 to-transparent"
               />
 
-              <span className="absolute left-4 top-4 rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
-                Poro Point Lighthouse
-              </span>
+              <div className="absolute left-4 top-4 flex flex-wrap gap-2">
+                <span className="rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
+                  Poro Point Lighthouse
+                </span>
+                <span className="rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
+                  San Fernando
+                </span>
+              </div>
 
               <a
                 href="https://lakbaypinas.com/wp-content/uploads/2025/09/snapins-ai_2236020728088282455.jpg"
@@ -140,12 +145,12 @@ export function FieldNotes() {
                 <FiArrowUpRight aria-hidden className="size-5" />
               </a>
 
-              <figcaption className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-6 text-cream sm:inset-x-7 sm:bottom-7">
-                <p className="max-w-[18ch] font-display text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
+              <figcaption className="absolute inset-x-5 bottom-5 text-cream sm:inset-x-7 sm:bottom-7">
+                <p className="whitespace-nowrap font-display text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
                   And they come back for this.
                 </p>
-                <span className="shrink-0 font-body text-sm text-cream/75">
-                  San Fernando
+                <span className="mt-1 block font-body text-sm text-cream/75">
+                  Because it&apos;s worth returning to
                 </span>
               </figcaption>
             </figure>

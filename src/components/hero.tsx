@@ -125,11 +125,11 @@ export function Hero() {
                 </span>
               </div>
 
-              <figcaption className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-6 text-cream sm:inset-x-7 sm:bottom-7">
+              <figcaption className="absolute inset-x-5 bottom-5 text-cream sm:inset-x-7 sm:bottom-7">
                 <p className="max-w-[18ch] font-display text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
                   Beyond the surf.
                 </p>
-                <span className="max-w-[15ch] shrink-0 text-right font-body text-sm leading-snug text-cream/75">
+                <span className="mt-1 block font-body text-sm leading-snug text-cream/75">
                   Trek &amp; adventure
                 </span>
               </figcaption>

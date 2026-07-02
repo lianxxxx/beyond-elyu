@@ -97,11 +97,11 @@ export function GettingThere() {
                 <FiArrowUpRight aria-hidden className="size-5" />
               </a>
 
-              <figcaption className="absolute inset-x-5 bottom-5 flex items-end justify-between gap-6 text-cream sm:inset-x-7 sm:bottom-7">
+              <figcaption className="absolute inset-x-5 bottom-5 text-cream sm:inset-x-7 sm:bottom-7">
                 <p className="max-w-[18ch] font-display text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
-                  Cross the bridge and La Union begins.
+                  Where La Union begins.
                 </p>
-                <span className="shrink-0 font-body text-sm text-cream/75">
+                <span className="mt-1 block font-body text-sm text-cream/75">
                   5–7 hrs
                 </span>
               </figcaption>

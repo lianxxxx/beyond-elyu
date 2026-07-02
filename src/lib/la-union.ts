@@ -174,7 +174,7 @@ export const TOWNS: Town[] = [
     x: 410,
     y: 268,
     kind: "inland",
-    knownFor: "Tangadan Falls",
+    knownFor: "Tangadan and Dupagan Falls",
     blurb: "The trail to Tangadan Falls",
     history:
       "The jump-off into the highlands, San Gabriel rises into green mountains cut by rivers, forest trails, and a remarkable chain of waterfalls. Tangadan is the best known, but Dupagan and the cascades along the Arosip ecotrail reveal how much more water runs through this rugged town.",
