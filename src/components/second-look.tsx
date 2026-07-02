@@ -9,7 +9,7 @@ import { SectionHeader, Accent } from "@/components/section-header";
 export function SecondLook() {
   return (
     <section id="second-look" className="px-gutter py-bay">
-      <div className="mx-auto grid max-w-6xl items-center gap-x-12 gap-y-10 md:grid-cols-12">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-x-12 gap-y-10 md:grid-cols-12">
         {/* Left: the argument */}
         <div className="md:col-span-7 md:pr-4">
           <SectionHeader

@@ -39,7 +39,8 @@ type TownMedia = {
   badge: string;
   photo: {
     sourceName: string;
-    sourceUrl: string;
+    /** link for the credit; omit for owner-supplied photos so it renders as plain text */
+    sourceUrl?: string;
     licenseName?: string;
     licenseUrl?: string;
   };
@@ -78,15 +79,13 @@ const PLACEHOLDER_MEDIA: TownMedia = {
 const TOWN_MEDIA: Record<string, TownMedia> = {
   // ── The coast ──
   Bangar: {
-    image: "town-bangar.jpg",
-    alt: "Weavers at Bangar's Abel-Panday inabel weaving festival",
-    badge: "Abel-Panday Festival, Bangar",
+    image: "town-bangar-inabel-loom.jpg",
+    alt: "A Bangar artisan weaving inabel cloth on a traditional wooden loom",
+    badge: "Inabel weaving, Bangar",
     photo: {
-      sourceName: "EngrGewan / Wikimedia Commons",
+      sourceName: "AXN Asia",
       sourceUrl:
-        "https://commons.wikimedia.org/wiki/File:Abel-Panday_Festival_2024_in_Bangar,_La_Union_05.jpg",
-      licenseName: "CC BY-SA 4.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+        "https://axn-asia.com/myhometownisgoat/whats-new/must-buy-products-and-souvenirs-in-the-north-philippines",
     },
     links: [
       {
@@ -94,11 +93,6 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
         title:
           "La Union's traditional weaving town attracts shoppers, young artisans",
         href: "https://www.rappler.com/people/human-interest/la-union-bangar-traditional-weaving-town/",
-      },
-      {
-        source: "Wikipedia",
-        title: "Bangar, La Union",
-        href: "https://en.wikipedia.org/wiki/Bangar,_La_Union",
       },
       {
         source: "Province of La Union",
@@ -120,11 +114,6 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     },
     links: [
       {
-        source: "Wikipedia",
-        title: "La Union Watchtowers",
-        href: "https://en.wikipedia.org/wiki/La_Union_Watchtowers",
-      },
-      {
         source: "Pinoy Travelogue",
         title: "Luna's Baluarte Watchtower and pebble beach",
         href: "https://www.pinoytravelogue.com/2019/07/luna-baluarte-pebble-beach-la-union.html",
@@ -137,22 +126,14 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Balaoan: {
-    image: "town-balaoan.jpg",
-    alt: "The heritage United Church of Christ gate in Balaoan",
-    badge: "Heritage church gate, Balaoan",
+    image: "town-balaoan-immuki-island.jpg",
+    alt: "Turquoise rock pools opening toward the sea at Immuki Island in Balaoan",
+    badge: "Immuki Island, Balaoan",
     photo: {
-      sourceName: "Ramon FVelasquez / Wikimedia Commons",
-      sourceUrl:
-        "https://commons.wikimedia.org/wiki/File:United_Church_of_Christ_gate_(Balaoan,_La_Union).jpg",
-      licenseName: "CC BY-SA 3.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
+      sourceName: "Wanderera",
+      sourceUrl: "https://wanderera.com/immuki-island-la-union/",
     },
     links: [
-      {
-        source: "Wikipedia",
-        title: "Balaoan, La Union",
-        href: "https://en.wikipedia.org/wiki/Balaoan",
-      },
       {
         source: "Trip.com",
         title: "Balaoan travel guide: top attractions & things to do",
@@ -166,24 +147,19 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Bacnotan: {
-    image: "town-bacnotan.jpg",
-    alt: "St. Michael the Archangel Parish Church in Bacnotan",
-    badge: "St. Michael Church, Bacnotan",
+    image: "town-bacnotan-bee-farm.jpg",
+    alt: "Honey bees on hive frames at La Union Bee Farm in Bacnotan",
+    badge: "La Union Bee Farm, Bacnotan",
     photo: {
-      sourceName: "Judgefloro / Wikimedia Commons",
+      sourceName: "Traveloka",
       sourceUrl:
-        "https://commons.wikimedia.org/wiki/File:FvfBacnotanLaUnion0079_05.JPG",
+        "https://ik.imagekit.io/tvlk/blog/2016/12/Learn-about-bees-at-La-Union-Bee-Farm.jpg?tr=q-70,c-at_max,w-1000,h-600",
     },
     links: [
       {
-        source: "Wikipedia",
-        title: "Bacnotan, La Union",
-        href: "https://en.wikipedia.org/wiki/Bacnotan",
-      },
-      {
-        source: "Out of Town Blog",
-        title: "Top La Union tourist spots & best things to do",
-        href: "https://outoftownblog.com/things-to-do-in-la-union-province/",
+        source: "Provincial Government of La Union",
+        title: "La Union Honey Bee Center and Bee Farm",
+        href: "https://launion.gov.ph/la-union-circuits/central-circuit/central-circuit-bacnotan-la-union/",
       },
       {
         source: "Guide to the Philippines",
@@ -193,7 +169,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   "San Juan": {
-    image: "surfer.jpg",
+    image: "town-san-juan-surf.jpg",
     alt: "A surfer at Urbiztondo Beach in San Juan, La Union",
     badge: "Urbiztondo surf, San Juan",
     photo: {
@@ -203,11 +179,6 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
       licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
     },
     links: [
-      {
-        source: "Wikipedia",
-        title: "San Juan, La Union",
-        href: "https://en.wikipedia.org/wiki/San_Juan,_La_Union",
-      },
       {
         source: "The Poor Traveler",
         title: "25 La Union tourist spots & things to do",
@@ -221,22 +192,15 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   "City of San Fernando": {
-    image: "town-san-fernando.jpg",
-    alt: "The seaside Ma-Cho Temple in the City of San Fernando",
+    image: "town-san-fernando-ma-cho-temple.jpg",
+    alt: "The colorful facade and entrance steps of Ma-Cho Temple in San Fernando",
     badge: "Ma-Cho Temple, San Fernando",
     photo: {
-      sourceName: "Emman A. Foronda / Wikimedia Commons",
+      sourceName: "Jay Exiomo",
       sourceUrl:
-        "https://commons.wikimedia.org/wiki/File:Ma-Cho_Temple_(Taoist_Temple).jpg",
-      licenseName: "CC BY-SA 4.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+        "https://jayexiomo.com/2023/11/06/extended-weekend-in-la-union-side-tours-to-ma-cho-temple-and-baluarte-watchtower/",
     },
     links: [
-      {
-        source: "Wikipedia",
-        title: "Ma-Cho Temple",
-        href: "https://en.wikipedia.org/wiki/Ma-Cho_Temple",
-      },
       {
         source: "Ma-Cho Temple",
         title: "The Ma-Cho Temple — San Fernando City, La Union",
@@ -245,71 +209,51 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Bauang: {
-    image: "town-bauang.jpg",
-    alt: "The shoreline at Baccuit Beach in Bauang",
-    badge: "Baccuit Beach, Bauang",
+    image: "town-bauang-gapuz-grape-farm.jpg",
+    alt: "Rows of vines heavy with grapes at Gapuz Grape Farm in Bauang",
+    badge: "Gapuz Grape Farm, Bauang",
     photo: {
-      sourceName: "Judgefloro / Wikimedia Commons",
-      sourceUrl:
-        "https://commons.wikimedia.org/wiki/File:9908Bacquit_Taberna,_Bauang,_La_Union_66.jpg",
-      licenseName: "CC0 1.0",
-      licenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+      sourceName: "Gapuz Grapes Farm",
+      sourceUrl: "https://www.facebook.com/GapuzGrapesFarm/",
+    },
+    links: [],
+  },
+  Caba: {
+    image: "town-caba-beach-camp.jpg",
+    alt: "Tents pitched by the shore at Beach Camp by LOC in Caba",
+    badge: "Beach Camp by LOC, Caba",
+    photo: {
+      sourceName: "Beach Camp by LOC (Facebook)",
+      sourceUrl: "https://www.facebook.com/KuboSaCaba/",
     },
     links: [
       {
-        source: "Wikipedia",
-        title: "Bauang, La Union",
-        href: "https://en.wikipedia.org/wiki/Bauang",
+        source: "National Historical Commission",
+        title: "Diego Silang historical marker",
+        href: "https://philhistoricsites.nhcp.gov.ph/registry_database/diego-silang-1730-1763/",
       },
     ],
   },
-  Caba: placeholder([
-    {
-      source: "Wikipedia",
-      title: "Caba, La Union",
-      href: "https://en.wikipedia.org/wiki/Caba,_La_Union",
-    },
-  ]),
   Aringay: {
-    image: "town-aringay.jpg",
-    alt: "St. Lucy Parish Church in Aringay",
-    badge: "St. Lucy Parish Church, Aringay",
+    image: "town-aringay-rice-terraces.jpg",
+    alt: "Aerial view of the Gallano Rice Terraces on the hillsides of Aringay",
+    badge: "Gallano Rice Terraces, Aringay",
     photo: {
-      sourceName: "Judgefloro / Wikimedia Commons",
-      sourceUrl:
-        "https://commons.wikimedia.org/wiki/File:FvfAringayLaUnion9487_34.JPG",
+      sourceName: "Chester Masiglat · Sabsabali a La Union (Facebook)",
+      sourceUrl: "https://www.facebook.com/groups/sabsabali.a.launion/",
     },
-    links: [
-      {
-        source: "Wikipedia",
-        title: "Aringay, La Union",
-        href: "https://en.wikipedia.org/wiki/Aringay",
-      },
-    ],
+    links: [],
   },
   Agoo: {
-    image: "town-agoo.jpg",
-    alt: "The crowned image of Our Lady of Charity at the Agoo Basilica",
-    badge: "Our Lady of Charity, Agoo Basilica",
+    image: "town-agoo-basilica.jpg",
+    alt: "The facade and bell towers of Agoo Basilica",
+    badge: "Agoo Basilica",
     photo: {
-      sourceName: "Kimilla-reece / Wikimedia Commons",
+      sourceName: "Tripadvisor",
       sourceUrl:
-        "https://commons.wikimedia.org/wiki/File:Minor_Basilica_and_Diocesan_Shrine_of_Our_Lady_of_Charity_(Agoo_Basilica).jpg",
-      licenseName: "CC BY-SA 4.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0",
+        "https://www.tripadvisor.com/Attraction_Review-g6524044-d7797020-Reviews-Basilica_Minore_of_Our_Lady_of_Charity-Agoo_La_Union_Province_Ilocos_Region_Luzo.html",
     },
-    links: [
-      {
-        source: "Wikipedia",
-        title: "Basilica Minore of Our Lady of Charity",
-        href: "https://en.wikipedia.org/wiki/Basilica_Minore_of_Our_Lady_of_Charity",
-      },
-      {
-        source: "Wikipedia",
-        title: "Agoo, La Union",
-        href: "https://en.wikipedia.org/wiki/Agoo",
-      },
-    ],
+    links: [],
   },
   "Santo Tomas": {
     image: "town-santo-tomas.jpg",
@@ -333,20 +277,16 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
         title: "Municipality of Santo Tomas",
         href: "https://launion.gov.ph/municipality-of-santo-tomas/",
       },
-      {
-        source: "Wikipedia",
-        title: "Santo Tomas, La Union",
-        href: "https://en.wikipedia.org/wiki/Santo_Tomas,_La_Union",
-      },
     ],
   },
   Rosario: {
-    image: "bued-bridge.jpg",
-    alt: "The Welcome to La Union arch over the highway at Rosario",
-    badge: "La Union welcome arch, Rosario",
+    image: "town-rosario-bani-seaside-camping.jpg",
+    alt: "Tents pitched along the shore for seaside camping at Bani in Rosario",
+    badge: "Seaside Camping, Bani, Rosario",
     photo: {
-      sourceName: "Wikimedia Commons",
-      sourceUrl: "https://commons.wikimedia.org/wiki/Category:Rosario,_La_Union",
+      sourceName: "Sabsabali a La Union (Facebook)",
+      sourceUrl:
+        "https://www.facebook.com/groups/sabsabali.a.launion/posts/1282203943152204/",
     },
     links: [
       {
@@ -359,22 +299,17 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
         title: "Rosario, La Union",
         href: "https://launion.gov.ph/city-and-municipalities/rosario-la-union/",
       },
-      {
-        source: "Wikipedia",
-        title: "Rosario, La Union",
-        href: "https://en.wikipedia.org/wiki/Rosario,_La_Union",
-      },
     ],
   },
   // ── The foothills ──
   Sudipen: {
-    image: "town-sudipen.jpg",
-    alt: "The Amburayan River at Sudipen",
-    badge: "Amburayan River, Sudipen",
+    image: "town-sudipen-ridge-road.jpg",
+    alt: "A winding road crossing the green mountain ridges of Sudipen",
+    badge: "Bilagan Road, Sudipen",
     photo: {
-      sourceName: "Judgefloro / Wikimedia Commons",
+      sourceName: "Bombo Radyo La Union",
       sourceUrl:
-        "https://commons.wikimedia.org/wiki/File:FvfTagudinSudipen5107_10.JPG",
+        "https://launion.bomboradyo.com/rinibo-a-local-tourists-simmarungkar-iti-bilagan-road-idiay-ili-ti-santol-la-union",
     },
     links: [
       {
@@ -382,23 +317,16 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
         title: "North Circuit — Sudipen",
         href: "https://launion.gov.ph/la-union-circuits/northern-circuit/north-circuit-sudipen-la-union/",
       },
-      {
-        source: "Wikipedia",
-        title: "Amburayan River",
-        href: "https://en.wikipedia.org/wiki/Amburayan_River",
-      },
     ],
   },
   Santol: {
-    image: "town-santol.jpg",
-    alt: "The welcome arch at the entrance to Santol",
-    badge: "Welcome to Santol arch",
+    image: "town-santol-balay-anito-falls.jpg",
+    alt: "Balay Anito Falls flowing into a deep green swimming pool in Santol",
+    badge: "Balay Anito Falls, Santol",
     photo: {
-      sourceName: "Judgefloro / Wikimedia Commons",
+      sourceName: "Jeffrel Langbay Valmonte · ELYUcano (Facebook)",
       sourceUrl:
-        "https://commons.wikimedia.org/wiki/File:FvfSantolLU3705_09.JPG",
-      licenseName: "CC BY-SA 3.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/3.0",
+        "https://www.facebook.com/100044471587945/posts/balay-anito-falls-santol-la-union-jeffrel-langbay-valmonte/797891277634561/",
     },
     links: [
       {
@@ -411,21 +339,16 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
         title: "The 'Great Road of Santol' and other La Union attractions",
         href: "https://www.gmanetwork.com/lifestyle/travel/87392/check-out-the-great-road-of-santol-and-other-la-union-attractions/story",
       },
-      {
-        source: "Wikipedia",
-        title: "Santol, La Union",
-        href: "https://en.wikipedia.org/wiki/Santol,_La_Union",
-      },
     ],
   },
   "San Gabriel": {
-    image: "tangadan-falls.webp",
-    alt: "Tangadan Falls near San Gabriel",
-    badge: "Tangadan Falls, San Gabriel",
+    image: "town-san-gabriel-dupagan-falls.jpg",
+    alt: "The turquoise rock pools and narrow cascade of Dupagan Falls in San Gabriel",
+    badge: "Dupagan Falls, San Gabriel",
     photo: {
-      sourceName: "Wikimedia Commons",
+      sourceName: "Philippine Information Agency",
       sourceUrl:
-        "https://commons.wikimedia.org/wiki/Category:San_Gabriel,_La_Union",
+        "https://pia.gov.ph/features/dupagan-falls-lifeblood-heartthrob-of-la-unions-highlands/",
     },
     links: [
       {
@@ -437,11 +360,6 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
         source: "Province of La Union",
         title: "Fall in love with falls in the North",
         href: "https://launion.gov.ph/la-union-tourist-spots-fall-in-love-with-falls/",
-      },
-      {
-        source: "Wikipedia",
-        title: "San Gabriel, La Union",
-        href: "https://en.wikipedia.org/wiki/San_Gabriel,_La_Union",
       },
     ],
   },
@@ -458,11 +376,6 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     },
     links: [
       {
-        source: "Wikipedia",
-        title: "Naguilian, La Union",
-        href: "https://en.wikipedia.org/wiki/Naguilian,_La_Union",
-      },
-      {
         source: "Province of La Union",
         title: "Municipality of Naguilian",
         href: "https://launion.gov.ph/municipality-of-naguilian/",
@@ -474,28 +387,35 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
       },
     ],
   },
-  Bagulin: placeholder([
-    {
-      source: "Wikipedia",
-      title: "Bagulin, La Union",
-      href: "https://en.wikipedia.org/wiki/Bagulin",
-    },
-    {
-      source: "Danny Tariman",
-      title: "A trek to Bulalakaw Falls",
-      href: "https://dtariman.wordpress.com/2022/01/08/a-trek-to-bulalakaw-falls/",
-    },
-  ]),
-  Burgos: {
-    image: "town-burgos.jpg",
-    alt: "The Bolikewkew Rice Terraces in Burgos",
-    badge: "Bolikewkew Rice Terraces, Burgos",
+  Bagulin: {
+    image: "town-bagulin-bulalakaw-falls.jpg",
+    alt: "Bulalakaw Falls descending between high rock walls into a turquoise pool in Bagulin",
+    badge: "Bulalakaw Falls, Bagulin",
     photo: {
-      sourceName: "Wikimedia Commons",
+      sourceName: "CGV The Explorer (Facebook)",
       sourceUrl:
-        "https://commons.wikimedia.org/wiki/File:Bolikewkew_Rice_Terraces,_Burgos,_La_Union.jpg",
-      licenseName: "CC BY-SA 4.0",
-      licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://www.facebook.com/CGVTheExplorer/posts/bulalakaw-falls-of-bagulin-la-union-/841905416284263/",
+    },
+    links: [
+      {
+        source: "Provincial Government of La Union",
+        title: "Municipality of Bagulin",
+        href: "https://launion.gov.ph/municipality-of-bagulin/",
+      },
+      {
+        source: "Danny Tariman",
+        title: "A trek to Bulalakaw Falls",
+        href: "https://dtariman.wordpress.com/2022/01/08/a-trek-to-bulalakaw-falls/",
+      },
+    ],
+  },
+  Burgos: {
+    image: "town-burgos-libtong-lake.jpg",
+    alt: "A bamboo raft shelter floating on Libtong Lake in Burgos",
+    badge: "Libtong Lake, Burgos",
+    photo: {
+      sourceName: "Municipality of Burgos",
+      sourceUrl: "https://burgoslaunion.gov.ph/index.php/tourism/",
     },
     links: [
       {
@@ -503,37 +423,45 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
         title: "Tourism — Burgos, La Union",
         href: "https://burgoslaunion.gov.ph/index.php/tourism/",
       },
+    ],
+  },
+  Tubao: {
+    image: "town-tubao-lang-ay-falls.jpg",
+    alt: "The sloping rock cascades and forest pools of Lang-ay Falls in Tubao",
+    badge: "Lang-ay Falls, Tubao",
+    photo: {
+      sourceName: "Edmar Cañas Gagucas · Sabsabali a La Union (Facebook)",
+      sourceUrl: "https://www.facebook.com/groups/sabsabali.a.launion/",
+    },
+    links: [
       {
-        source: "Wikipedia",
-        title: "Burgos, La Union",
-        href: "https://en.wikipedia.org/wiki/Burgos,_La_Union",
+        source: "Province of La Union",
+        title: "Tubao, La Union",
+        href: "https://launion.gov.ph/city-and-municipalities/tubao-la-union/",
       },
     ],
   },
-  Tubao: placeholder([
-    {
-      source: "Wikipedia",
-      title: "Tubao, La Union",
-      href: "https://en.wikipedia.org/wiki/Tubao",
+  Pugo: {
+    image: "town-pugo-pugad.jpg",
+    alt: "The hillside PUGAD sign at Pugo Adventure",
+    badge: "PUGAD, Pugo Adventure",
+    photo: {
+      sourceName: "RJD Explorer",
+      sourceUrl: "https://www.rjdexplorer.com/pugad-extreme-adventure-zone-up-north/",
     },
-    {
-      source: "Province of La Union",
-      title: "Tubao, La Union",
-      href: "https://launion.gov.ph/city-and-municipalities/tubao-la-union/",
-    },
-  ]),
-  Pugo: placeholder([
-    {
-      source: "Philippine Primer",
-      title: "Pugad Pugo Adventure: zip lines, ATV and more",
-      href: "https://primer.com.ph/travel/2017/11/07/pugad-pugo-adventure-in-la-union-zip-lines-atv-and-more/",
-    },
-    {
-      source: "Wikipedia",
-      title: "Pugo, La Union",
-      href: "https://en.wikipedia.org/wiki/Pugo,_La_Union",
-    },
-  ]),
+    links: [
+      {
+        source: "Provincial Government of La Union",
+        title: "Pugo, La Union",
+        href: "https://launion.gov.ph/city-and-municipalities/pugo-la-union/",
+      },
+      {
+        source: "Philippine Primer",
+        title: "Pugad Pugo Adventure: zip lines, ATV and more",
+        href: "https://primer.com.ph/travel/2017/11/07/pugad-pugo-adventure-in-la-union-zip-lines-atv-and-more/",
+      },
+    ],
+  },
 };
 
 const mediaFor = (town: Town): TownMedia =>
@@ -584,14 +512,18 @@ function Detail({
         </div>
         <figcaption className="mt-2 font-body text-xs text-ink-soft">
           Photo: {" "}
-          <a
-            href={media.photo.sourceUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="underline decoration-ink/20 underline-offset-2 hover:text-ink"
-          >
-            {media.photo.sourceName}
-          </a>
+          {media.photo.sourceUrl ? (
+            <a
+              href={media.photo.sourceUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="underline decoration-ink/20 underline-offset-2 hover:text-ink"
+            >
+              {media.photo.sourceName}
+            </a>
+          ) : (
+            media.photo.sourceName
+          )}
           {media.photo.licenseName && media.photo.licenseUrl && (
             <>
               {" "}

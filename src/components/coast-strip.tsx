@@ -74,7 +74,7 @@ export function CoastStrip() {
     <section id="coast" className="px-gutter py-bay">
       <div className="mx-auto max-w-6xl">
         {/* split header: heading left, muted note right */}
-        <div className="grid items-end gap-x-12 gap-y-6 md:grid-cols-12">
+        <div className="grid grid-cols-1 items-end gap-x-12 gap-y-6 md:grid-cols-12">
           <div className="md:col-span-12">
             <SectionHeader
               eyebrow="Top spots in La Union"

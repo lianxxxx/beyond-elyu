@@ -52,7 +52,7 @@ export function Hero() {
         </header>
 
         {/* ── The split ── */}
-        <div className="mt-[clamp(2.5rem,5vw,4.5rem)] grid gap-x-10 gap-y-12 md:grid-cols-12">
+        <div className="mt-[clamp(2.5rem,5vw,4.5rem)] grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-12">
           {/* Left column */}
           <div className="flex flex-col md:col-span-6">
             <p className="max-w-[34ch] font-body text-[0.8125rem] font-medium uppercase leading-relaxed tracking-[0.18em] text-ink-soft">
@@ -131,7 +131,7 @@ export function Hero() {
                   Beyond the surf.
                 </p>
                 <span className="max-w-[15ch] shrink-0 text-right font-body text-sm leading-snug text-cream/75">
-                  Hidden falls
+                  Trek &amp; adventure
                 </span>
               </figcaption>
             </figure>

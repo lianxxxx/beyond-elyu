@@ -8,7 +8,7 @@ import { Accent, SectionHeader } from "@/components/section-header";
 export function Intro() {
   return (
     <section id="look-closer" className="px-gutter py-bay">
-      <div className="mx-auto grid max-w-6xl items-center gap-x-12 gap-y-10 md:grid-cols-12">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-x-12 gap-y-10 md:grid-cols-12">
         {/* Left: La Union on a live Google map */}
         <Reveal delay={120} className="md:col-span-5">
           <figure className="group relative overflow-hidden rounded-[2rem]">

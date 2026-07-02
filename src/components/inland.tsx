@@ -9,7 +9,7 @@ import { SectionHeader } from "@/components/section-header";
 export function Inland() {
   return (
     <section id="inland" className="px-gutter py-bay">
-      <div className="mx-auto grid max-w-6xl items-center gap-x-12 gap-y-10 md:grid-cols-12">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-x-12 gap-y-10 md:grid-cols-12">
         {/* Left: the falls as a framed photo card */}
         <Reveal delay={120} className="md:col-span-5">
           <figure className="group relative overflow-hidden rounded-[2rem] shadow-soft">

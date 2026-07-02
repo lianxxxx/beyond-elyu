@@ -15,7 +15,7 @@ export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden bg-ink px-gutter pb-[clamp(1.5rem,3vw,2.5rem)] pt-[clamp(4rem,2rem+6vw,7rem)] text-sand">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-x-12 gap-y-14 md:grid-cols-12">
+        <div className="grid grid-cols-1 gap-x-12 gap-y-14 md:grid-cols-12">
           {/* Brand statement */}
           <div className="md:col-span-7">
             <p className="max-w-[18ch] font-display text-3xl font-semibold leading-[1.05] tracking-tight text-sand sm:text-4xl">

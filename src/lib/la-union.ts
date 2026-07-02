@@ -60,10 +60,10 @@ export const TOWNS: Town[] = [
     x: 232,
     y: 262,
     kind: "coast",
-    knownFor: "Sea urchin & the university",
+    knownFor: "Honey Capital of the North",
     blurb: "Sea urchin season and the state university",
     history:
-      "Home to a campus of Don Mariano Marcos Memorial State University, Bacnotan balances students with fishermen. In season its waters give up sea urchin, cracked open and eaten fresh by the road.",
+      "Home to DMMMSU and its Sericulture Research and Development Institute (SRDI), Bacnotan moves to the rhythm of campus life and the sea. Its beekeeping tradition has earned it the name Honey Capital of the North.",
   },
   {
     name: "San Juan",
@@ -105,7 +105,7 @@ export const TOWNS: Town[] = [
     knownFor: "Windswept points",
     blurb: "Windswept points and small fishing barangays",
     history:
-      "A small coastal town between the resort strip and the river mouths, Caba is mostly farmland meeting the sea. Its points catch the same swell that made its neighbour famous, without the crowd.",
+      "A small coastal town between the resort strip and the river mouths, Caba is mostly farmland meeting the sea. Its points catch the same swell that made its neighbour famous, without the crowd. It is the historical birthplace of prominent Filipino revolutionary hero Diego Silang.",
   },
   {
     name: "Aringay",
@@ -177,7 +177,7 @@ export const TOWNS: Town[] = [
     knownFor: "Tangadan Falls",
     blurb: "The trail to Tangadan Falls",
     history:
-      "The jump-off into the highlands, San Gabriel guards the trail to Tangadan Falls and a string of river crossings. It is where the province goes vertical.",
+      "The jump-off into the highlands, San Gabriel rises into green mountains cut by rivers, forest trails, and a remarkable chain of waterfalls. Tangadan is the best known, but Dupagan and the cascades along the Arosip ecotrail reveal how much more water runs through this rugged town.",
   },
   {
     name: "Naguilian",
@@ -197,7 +197,7 @@ export const TOWNS: Town[] = [
     knownFor: "Highland trails",
     blurb: "Highland trails above the valley",
     history:
-      "One of the least-travelled towns in La Union, Bagulin is upland forest and footpaths, home to Indigenous highland communities. The roads thin out and the quiet takes over.",
+      'One of the least-travelled towns in La Union, Bagulin is upland forest and footpaths, home to Indigenous highland communities. Known as the "soft broom capital" of the province, it sustains a strong local craft tradition built around tiger grass and skilled broom-making. The roads thin out and the quiet takes over.',
   },
   {
     name: "Burgos",
@@ -207,7 +207,7 @@ export const TOWNS: Town[] = [
     knownFor: "Cool uplands",
     blurb: "Cool uplands, far from the surf",
     history:
-      "Named for the martyred priest, Burgos is a small upland town of cool air and long views. It keeps to itself above the valley.",
+      'Named for the martyred priest, Burgos is a small upland town of cool air and long views. Known as La Union\'s "Soft Broom Capital," it supports a cottage industry where artisans turn locally grown tiger grass into colorful brooms. That craft takes center stage each year at the Boyboy Festival.',
   },
   {
     name: "Tubao",
@@ -217,7 +217,7 @@ export const TOWNS: Town[] = [
     knownFor: "Inland farms",
     blurb: "Inland farms and slow afternoons",
     history:
-      "A lowland-to-foothill farming town in the south, Tubao is fields, fruit, and the unhurried pace of a place off the tourist line.",
+      'A lowland-to-foothill farming town in the south, Tubao is fields, fruit, and the unhurried pace of a place off the tourist line. Historically called the "Home of the Native Tobacco," it earned a reputation for fine tobacco leaves and locally made cigars.',
   },
   {
     name: "Pugo",
@@ -227,7 +227,7 @@ export const TOWNS: Town[] = [
     knownFor: "Eco-adventure parks",
     blurb: "Eco-adventure parks in the hills",
     history:
-      "Pugo turned its hills into a weekend of zip lines and tree-top courses, the province's dose of adrenaline away from the water. Past the parks it stays rural and green.",
+      "Pugo has made its green mountain setting La Union's hub for eco-adventure. Hillside destinations such as Pugo Adventure, better known as PUGAD, and Kultura Splashwave draw visitors for zip lines, outdoor activities, and water attractions. Beyond the parks, the town remains rural and green.",
   },
 ];
 

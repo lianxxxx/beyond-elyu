@@ -52,7 +52,7 @@ export function FieldNotes() {
           }
         />
 
-        <div className="mt-12 grid items-stretch gap-x-12 gap-y-10 md:mt-16 md:grid-cols-12">
+        <div className="mt-12 grid grid-cols-1 items-stretch gap-x-12 gap-y-10 md:mt-16 md:grid-cols-12">
           {/* Left: the dark card + dispatch rows */}
           <div className="flex flex-col md:col-span-6">
             <Reveal delay={120}>
@@ -122,7 +122,7 @@ export function FieldNotes() {
                 className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
               />
               <span className="absolute left-4 top-4 rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
-                San Juan, La Union
+                Poro Point Lighthouse
               </span>
               <a
                 href="https://lakbaypinas.com/wp-content/uploads/2025/09/snapins-ai_2236020728088282455.jpg"

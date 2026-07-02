@@ -68,7 +68,7 @@ export function GettingThere() {
           </div>
         </div>
 
-        <div className="mt-12 grid items-stretch gap-4 md:mt-16 md:grid-cols-12">
+        <div className="mt-12 grid grid-cols-1 items-stretch gap-4 md:mt-16 md:grid-cols-12">
           <Reveal delay={160} className="md:order-2 md:col-span-5">
             <figure className="group relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-soft">
               <Image

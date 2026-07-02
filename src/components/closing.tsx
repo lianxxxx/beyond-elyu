@@ -15,7 +15,7 @@ const LINKS = [
 export function Closing() {
   return (
     <section id="plan" className="px-gutter py-bay">
-      <div className="mx-auto grid max-w-6xl items-end gap-x-12 gap-y-14 md:grid-cols-12">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-end gap-x-12 gap-y-14 md:grid-cols-12">
         {/* Left: the turn */}
         <div className="md:col-span-7">
           <Reveal>
