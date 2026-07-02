@@ -11,6 +11,7 @@ const LANDMARKS: Landmark[] = [
   { place: "Inabel looms", town: "Bangar" },
   { place: "Pebble Beach", town: "Luna" },
   { place: "Baluarte watchtowers", town: "Luna" },
+  { place: "Bahay na Bato", town: "Luna" },
   { place: "Namacpacan Church", town: "Luna" },
   { place: "Riverside quiet", town: "Balaoan" },
   { place: "The bee farm", town: "Bacnotan" },

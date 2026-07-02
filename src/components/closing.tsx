@@ -9,7 +9,7 @@ import { Accent } from "@/components/section-header";
 const LINKS = [
   { label: "Getting there", href: "#getting-there" },
   { label: "Top spots", href: "#coast" },
-  { label: "Town by town", href: "#towns" },
+  { label: "The whole province", href: "#towns" },
 ];
 
 export function Closing() {

@@ -44,7 +44,7 @@ export function FieldNotes() {
     <section id="notes" className="px-gutter py-bay">
       <div className="mx-auto max-w-6xl">
         <SectionHeader
-          eyebrow="Visitor notes"
+          eyebrow="What people say"
           title={
             <span className="whitespace-nowrap text-[clamp(2rem,7vw,4.75rem)]">
               They <Accent>come back</Accent>.

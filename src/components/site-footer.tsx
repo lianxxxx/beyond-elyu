@@ -7,7 +7,7 @@ import { FiArrowUpRight, FiArrowUp } from "react-icons/fi";
 const LINKS = [
   { label: "Getting there", href: "#getting-there" },
   { label: "Top spots", href: "#coast" },
-  { label: "Town by town", href: "#towns" },
+  { label: "The whole province", href: "#towns" },
   { label: "Look closer", href: "#plan" },
 ];
 

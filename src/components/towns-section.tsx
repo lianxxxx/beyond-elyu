@@ -841,7 +841,7 @@ export function TownsSection() {
           <div className="max-w-3xl">
             <Reveal>
               <p className="font-body text-eyebrow font-medium uppercase text-ink-soft">
-                Town by town
+                The whole province
               </p>
             </Reveal>
             <Reveal delay={80}>
