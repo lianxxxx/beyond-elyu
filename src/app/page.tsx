@@ -1,3 +1,4 @@
+import { SiteNav } from "@/components/site-nav";
 import { Hero } from "@/components/hero";
 import { Marquee } from "@/components/marquee";
 import { Intro } from "@/components/intro";
@@ -11,6 +12,7 @@ import { SiteFooter } from "@/components/site-footer";
 export default function Home() {
   return (
     <main>
+      <SiteNav />
       <Hero />
       <Marquee />
       <Intro />

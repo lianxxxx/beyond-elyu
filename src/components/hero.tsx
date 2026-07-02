@@ -7,12 +7,8 @@
 
 import { FiArrowUpRight } from "react-icons/fi";
 import { PillTag } from "@/components/chrome";
-
-const NAV = [
-  { label: "Getting There", href: "#getting-there" },
-  { label: "The Coast", href: "#coast" },
-  { label: "Town by Town", href: "#towns" },
-];
+import { HeroMobileNav } from "@/components/hero-mobile-nav";
+import { NAV } from "@/lib/nav";
 
 const TAGS = ["Heritage", "Hidden Falls", "Sunset Coast"];
 
@@ -25,7 +21,7 @@ export function Hero() {
           <a
             href="#top"
             aria-label="elyu — home"
-            className="font-display text-2xl font-semibold lowercase tracking-tight text-ink"
+            className="relative z-[60] font-display text-2xl font-semibold lowercase tracking-tight text-ink"
           >
             elyu
           </a>
@@ -42,13 +38,16 @@ export function Hero() {
             ))}
           </nav>
 
-          <a
-            href="#getting-there"
-            className="inline-flex items-center gap-1.5 rounded-full border border-ink/20 px-5 py-2 text-sm font-medium text-ink transition-colors hover:border-black hover:bg-black hover:text-cream"
-          >
-            Plan a trip
-            <FiArrowUpRight aria-hidden className="size-4" />
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href="#getting-there"
+              className="relative z-[60] inline-flex items-center gap-1.5 rounded-full border border-ink/20 px-5 py-2 text-sm font-medium text-ink transition-colors hover:border-black hover:bg-black hover:text-cream"
+            >
+              Plan a trip
+              <FiArrowUpRight aria-hidden className="size-4" />
+            </a>
+            <HeroMobileNav items={NAV} />
+          </div>
         </header>
 
         {/* ── The split ── */}
