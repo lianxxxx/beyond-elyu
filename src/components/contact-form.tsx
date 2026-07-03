@@ -5,7 +5,7 @@
 // console — only the public access key is sent. Name / email / message, with a
 // honeypot for spam and a simple sent/error state.
 
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import {
   FiArrowUpRight,
   FiMail,
@@ -14,6 +14,28 @@ import {
 } from "react-icons/fi";
 
 const ACCESS_KEY = "bf94e6ed-ddb6-462b-8a89-ccfca5afb3de";
+const CONFETTI_PIECES = [
+  ["-44vw", "-32vh", "240deg", "0.04s"],
+  ["-36vw", "-8vh", "-210deg", "0.12s"],
+  ["-32vw", "24vh", "260deg", "0.08s"],
+  ["-24vw", "-42vh", "-260deg", "0.18s"],
+  ["-18vw", "36vh", "220deg", "0.14s"],
+  ["-9vw", "-28vh", "-190deg", "0.02s"],
+  ["-5vw", "45vh", "280deg", "0.2s"],
+  ["8vw", "-42vh", "-230deg", "0.1s"],
+  ["14vw", "32vh", "250deg", "0.16s"],
+  ["22vw", "-24vh", "-280deg", "0.06s"],
+  ["28vw", "44vh", "210deg", "0.22s"],
+  ["34vw", "-5vh", "-200deg", "0.14s"],
+  ["42vw", "26vh", "270deg", "0.09s"],
+  ["46vw", "-32vh", "-250deg", "0.2s"],
+  ["-44vw", "40vh", "230deg", "0.24s"],
+  ["44vw", "42vh", "-220deg", "0.26s"],
+  ["-30vw", "-45vh", "290deg", "0.05s"],
+  ["30vw", "-45vh", "-270deg", "0.11s"],
+  ["-16vw", "10vh", "200deg", "0.17s"],
+  ["18vw", "12vh", "-240deg", "0.03s"],
+] as const;
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -58,19 +80,39 @@ export function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div>
-        <p className="font-body text-sm leading-relaxed text-ink-soft">
-          Thank you, your message is on its way, and it&apos;ll land straight in
-          my inbox. I&apos;ll take care of it right away, whether that&apos;s
-          fixing a credit or taking a photo down.
-        </p>
-        <button
-          type="button"
-          onClick={() => setStatus("idle")}
-          className="mt-4 inline-flex cursor-pointer items-center rounded-full bg-black px-5 py-2 font-body text-sm font-medium text-cream transition-opacity hover:opacity-90"
-        >
-          Send another issue
-        </button>
+      <div className="py-1">
+        <div aria-hidden className="confetti-burst">
+          {CONFETTI_PIECES.map(([x, y, rotation, delay], index) => (
+            <span
+              key={index}
+              style={
+                {
+                  "--confetti-x": x,
+                  "--confetti-y": y,
+                  "--confetti-rotation": rotation,
+                  "--confetti-delay": delay,
+                } as CSSProperties
+              }
+            />
+          ))}
+        </div>
+        <div>
+          <h3 className="font-display text-lg font-semibold text-ink">
+            Thank you!
+          </h3>
+          <p className="mt-1 font-body text-sm leading-relaxed text-ink-soft">
+            Your message is on its way, and it&apos;ll land straight in my
+            inbox. I&apos;ll take care of it right away, whether that&apos;s
+            fixing a credit or taking a photo down.
+          </p>
+          <button
+            type="button"
+            onClick={() => setStatus("idle")}
+            className="mt-4 inline-flex cursor-pointer items-center rounded-full bg-black px-5 py-2 font-body text-sm font-medium text-cream transition-opacity hover:opacity-90"
+          >
+            Send another issue
+          </button>
+        </div>
       </div>
     );
   }

@@ -11,6 +11,9 @@ import { ContactForm } from "@/components/contact-form";
 
 type Step = "idle" | "asking" | "no" | "yes";
 
+const raisedCardClass =
+  "rounded-3xl bg-paper shadow-[0_0_0_1px_rgba(42,38,34,0.035),0_10px_28px_-18px_rgba(42,38,34,0.18),5px_5px_14px_rgba(42,38,34,0.07),-5px_-5px_14px_rgba(255,255,255,0.75)]";
+
 export function ReachOut() {
   const [step, setStep] = useState<Step>("idle");
 
@@ -38,9 +41,12 @@ export function ReachOut() {
       </p>
 
       {step === "asking" && (
-        <div className="mt-4 rounded-2xl border border-ink/12 bg-card p-6">
-          <p className="font-body text-sm leading-relaxed text-ink-soft">
-            Wait… are you sure? Nothing you wanna change your mind?
+        <div className={`${raisedCardClass} mt-4 p-6`}>
+          <h3 className="font-display text-lg font-semibold text-ink">
+            Wait… are you sure?
+          </h3>
+          <p className="mt-1 font-body text-sm leading-relaxed text-ink-soft">
+            Nothing you wanna change your mind?
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <button
@@ -62,10 +68,12 @@ export function ReachOut() {
       )}
 
       {step === "no" && (
-        <div className="mt-4 rounded-2xl border border-ink/12 bg-card p-6">
-          <p className="font-body text-sm leading-relaxed text-ink-soft">
-            YES!! Less work for me then. JK! The form&apos;s right here if you
-            ever change your mind.
+        <div className={`${raisedCardClass} mt-4 p-6`}>
+          <h3 className="font-display text-lg font-semibold text-ink">
+            YES!! Less work for me then.
+          </h3>
+          <p className="mt-1 font-body text-sm leading-relaxed text-ink-soft">
+            JK! The form&apos;s right here if you ever change your mind.
           </p>
           <button
             type="button"
@@ -78,7 +86,7 @@ export function ReachOut() {
       )}
 
       {step === "yes" && (
-        <div className="mt-8 rounded-3xl bg-paper p-6 shadow-[0_0_0_1px_rgba(42,38,34,0.035),0_10px_28px_-18px_rgba(42,38,34,0.18),5px_5px_14px_rgba(42,38,34,0.07),-5px_-5px_14px_rgba(255,255,255,0.75)] sm:p-8">
+        <div className={`${raisedCardClass} mt-8 p-6 sm:p-8`}>
           <ContactForm />
         </div>
       )}
