@@ -14,8 +14,8 @@ import {
   INLAND_TOWNS,
   type Town,
 } from "@/lib/la-union";
-import { Reveal } from "@/components/reveal";
-import { Accent } from "@/components/section-header";
+import { Reveal } from "@/components/shared/reveal";
+import { Accent } from "@/components/shared/section-header";
 
 // Numbering follows the on-page order: the alphabetical coast list, then the
 // foothills — so the entries read 01–20 straight down rather than by geography.

@@ -8,9 +8,9 @@
 // a dot + counter indicator, mirroring the town-by-town section.
 
 import { useRef, useState } from "react";
-import { Reveal } from "@/components/reveal";
-import { SectionHeader, Accent } from "@/components/section-header";
-import { IconButton } from "@/components/chrome";
+import { Reveal } from "@/components/shared/reveal";
+import { SectionHeader, Accent } from "@/components/shared/section-header";
+import { IconButton } from "@/components/layout/chrome";
 
 type Frame = {
   src: string;

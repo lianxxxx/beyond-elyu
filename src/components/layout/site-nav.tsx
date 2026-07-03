@@ -12,7 +12,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 import { NAV } from "@/lib/nav";
-import { HeroMobileNav } from "@/components/hero-mobile-nav";
+import { HeroMobileNav } from "@/components/layout/hero-mobile-nav";
 
 // How far down the page you must be before the bar is allowed to show — past
 // the hero's own header, so the two never overlap.

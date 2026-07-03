@@ -4,8 +4,8 @@
 
 import Link from "next/link";
 import { FiArrowLeft } from "react-icons/fi";
-import { Accent } from "@/components/section-header";
-import { ReachOut } from "@/components/reach-out";
+import { Accent } from "@/components/shared/section-header";
+import { ReachOut } from "@/components/note/reach-out";
 
 export const metadata = {
   title: "A note — beyond elyu",

@@ -6,8 +6,8 @@
 // place chips, and a corner ↗.
 
 import { FiArrowUpRight } from "react-icons/fi";
-import { PillTag } from "@/components/chrome";
-import { HeroMobileNav } from "@/components/hero-mobile-nav";
+import { PillTag } from "@/components/layout/chrome";
+import { HeroMobileNav } from "@/components/layout/hero-mobile-nav";
 import { NAV } from "@/lib/nav";
 
 const TAGS = ["Heritage", "Hidden Falls", "Sunset Coast"];

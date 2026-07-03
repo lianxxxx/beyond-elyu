@@ -13,7 +13,7 @@
 // `max-w-6xl` container, and `mt-12 md:mt-16` before the section's content.
 
 import type { ReactNode } from "react";
-import { Reveal } from "@/components/reveal";
+import { Reveal } from "@/components/shared/reveal";
 
 // The Binar "marker" move: a soft swipe of color behind one key word, ink text
 // riding on top. Ours is terracotta — the single accent we kept. box-decoration

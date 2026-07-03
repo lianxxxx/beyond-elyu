@@ -3,8 +3,8 @@
 // come back.
 
 import { FiArrowUpRight } from "react-icons/fi";
-import { Reveal } from "@/components/reveal";
-import { Accent } from "@/components/section-header";
+import { Reveal } from "@/components/shared/reveal";
+import { Accent } from "@/components/shared/section-header";
 
 export function Closing() {
   return (

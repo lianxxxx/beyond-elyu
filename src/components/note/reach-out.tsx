@@ -7,7 +7,7 @@
 
 import { useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
-import { ContactForm } from "@/components/contact-form";
+import { ContactForm } from "@/components/note/contact-form";
 
 type Step = "idle" | "asking" | "no" | "yes";
 

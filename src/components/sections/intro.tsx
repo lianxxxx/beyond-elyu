@@ -2,8 +2,8 @@
 // on the left, with the placing-the-province argument on the right.
 
 import { FiArrowUpRight } from "react-icons/fi";
-import { Reveal } from "@/components/reveal";
-import { Accent, SectionHeader } from "@/components/section-header";
+import { Reveal } from "@/components/shared/reveal";
+import { Accent, SectionHeader } from "@/components/shared/section-header";
 
 export function Intro() {
   return (
