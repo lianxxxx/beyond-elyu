@@ -6,14 +6,22 @@
 // honeypot for spam and a simple sent/error state.
 
 import { useState } from "react";
-import { FiArrowUpRight } from "react-icons/fi";
+import {
+  FiArrowUpRight,
+  FiMail,
+  FiMessageSquare,
+  FiUser,
+} from "react-icons/fi";
 
 const ACCESS_KEY = "bf94e6ed-ddb6-462b-8a89-ccfca5afb3de";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
 const fieldClass =
-  "w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 font-body text-sm text-ink outline-none transition-colors placeholder:text-ink-soft/70 focus:border-ink/35";
+  "w-full rounded-xl border border-ink/15 bg-paper py-3 pr-4 pl-11 font-body text-sm text-ink outline-none transition-colors placeholder:text-ink-soft/70 focus:border-ink/35";
+
+const iconClass =
+  "pointer-events-none absolute left-4 size-4 text-ink-soft/70";
 
 const labelClass =
   "mb-2 block font-body text-eyebrow font-medium uppercase tracking-[0.14em] text-ink/70";
@@ -84,26 +92,38 @@ export function ContactForm() {
           <label htmlFor="cf-name" className={labelClass}>
             Name
           </label>
-          <input
-            id="cf-name"
-            name="name"
-            required
-            placeholder="Your name"
-            className={fieldClass}
-          />
+          <div className="relative">
+            <FiUser
+              aria-hidden
+              className={`${iconClass} top-1/2 -translate-y-1/2`}
+            />
+            <input
+              id="cf-name"
+              name="name"
+              required
+              placeholder="Your name"
+              className={fieldClass}
+            />
+          </div>
         </div>
         <div>
           <label htmlFor="cf-email" className={labelClass}>
             Email
           </label>
-          <input
-            id="cf-email"
-            type="email"
-            name="email"
-            required
-            placeholder="Your email"
-            className={fieldClass}
-          />
+          <div className="relative">
+            <FiMail
+              aria-hidden
+              className={`${iconClass} top-1/2 -translate-y-1/2`}
+            />
+            <input
+              id="cf-email"
+              type="email"
+              name="email"
+              required
+              placeholder="Your email"
+              className={fieldClass}
+            />
+          </div>
         </div>
       </div>
 
@@ -111,14 +131,17 @@ export function ContactForm() {
         <label htmlFor="cf-message" className={labelClass}>
           Message
         </label>
-        <textarea
-          id="cf-message"
-          name="message"
-          required
-          rows={4}
-          placeholder="Your long sweet message <3"
-          className={`${fieldClass} resize-y`}
-        />
+        <div className="relative">
+          <FiMessageSquare aria-hidden className={`${iconClass} top-3.5`} />
+          <textarea
+            id="cf-message"
+            name="message"
+            required
+            rows={4}
+            placeholder="Your long sweet message <3"
+            className={`${fieldClass} resize-y`}
+          />
+        </div>
       </div>
 
       <div className="flex flex-wrap items-center gap-4">

@@ -62,7 +62,7 @@ export function SiteFooter() {
               href="/note"
               className="text-sand/70 underline decoration-sand/30 underline-offset-2 transition-colors hover:text-sand"
             >
-              Built for fun
+              Note
             </Link>
           </p>
           <a

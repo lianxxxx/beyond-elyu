@@ -19,7 +19,7 @@ export function ReachOut() {
       <p className="font-body text-base leading-relaxed text-ink-soft">
         If you own a photo used here and want the credit corrected or the image
         taken down, that&apos;s completely fine.{" "}
-        <span className="font-semibold italic text-ink">
+        <span className="italic">
           Just reach out and I&apos;ll sort it right away.
         </span>{" "}
         {step === "idle" && (
@@ -78,7 +78,7 @@ export function ReachOut() {
       )}
 
       {step === "yes" && (
-        <div className="mt-8 rounded-2xl border border-ink/10 bg-sea-mist/10 p-6 sm:p-8">
+        <div className="mt-8 rounded-3xl bg-paper p-6 shadow-[0_0_0_1px_rgba(42,38,34,0.035),0_10px_28px_-18px_rgba(42,38,34,0.18),5px_5px_14px_rgba(42,38,34,0.07),-5px_-5px_14px_rgba(255,255,255,0.75)] sm:p-8">
           <ContactForm />
         </div>
       )}
