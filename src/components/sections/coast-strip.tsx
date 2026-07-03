@@ -8,6 +8,7 @@
 // a dot + counter indicator, mirroring the town-by-town section.
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeader, Accent } from "@/components/shared/section-header";
 import { IconButton } from "@/components/layout/chrome";
@@ -30,7 +31,7 @@ type Frame = {
 // The four picks, drawn from the town-by-town roll call.
 const FRAMES: Frame[] = [
   {
-    src: "/img/coast-immuki-island.jpg",
+    src: "/img/coast-immuki-island.webp",
     alt: "An aerial view of the turquoise tidal rock pools and bamboo rafts at Immuki Island in Balaoan.",
     place: "Immuki Island",
     note: "Balaoan's tidal rock pools",
@@ -41,7 +42,7 @@ const FRAMES: Frame[] = [
     },
   },
   {
-    src: "/img/town-luna.jpg",
+    src: "/img/town-luna.webp",
     alt: "The Spanish-era Baluarte watchtower on Luna's pebble shore.",
     place: "Baluarte",
     note: "Luna's coast sentinel",
@@ -54,7 +55,7 @@ const FRAMES: Frame[] = [
     },
   },
   {
-    src: "/img/town-san-gabriel-tangadan-falls.jpg",
+    src: "/img/town-san-gabriel-tangadan-falls.webp",
     alt: "The wide sloping cascade of Tangadan Falls tumbling into its green pool in San Gabriel.",
     place: "Tangadan Falls",
     note: "San Gabriel's famous cascade",
@@ -65,7 +66,7 @@ const FRAMES: Frame[] = [
     },
   },
   {
-    src: "/img/coast-san-juan-surf.jpg",
+    src: "/img/coast-san-juan-surf.webp",
     alt: "A surfer riding a wave off Urbiztondo Beach in San Juan, La Union.",
     place: "Urbiztondo",
     note: "San Juan's famous break",
@@ -75,7 +76,7 @@ const FRAMES: Frame[] = [
     },
   },
   {
-    src: "/img/town-san-gabriel-dupagan-falls.jpg",
+    src: "/img/town-san-gabriel-dupagan-falls.webp",
     alt: "The narrow cascade and turquoise gorge pool of Dupagan Falls in San Gabriel.",
     place: "Dupagan Falls",
     note: "San Gabriel's hidden gorge",
@@ -86,7 +87,7 @@ const FRAMES: Frame[] = [
     },
   },
   {
-    src: "/img/coast-agoo-eco-park.jpg",
+    src: "/img/coast-agoo-eco-park.webp",
     alt: "Rows of tall agoho pines lining the grove at Agoo Eco Park.",
     place: "Eco Park",
     note: "Agoo's peaceful pines",
@@ -96,7 +97,7 @@ const FRAMES: Frame[] = [
     },
   },
   {
-    src: "/img/town-san-fernando-ma-cho-temple.jpg",
+    src: "/img/town-san-fernando-ma-cho-temple.webp",
     alt: "The colorful facade and entrance steps of Ma-Cho Temple in San Fernando.",
     place: "Ma-Cho Temple",
     note: "San Fernando's hilltop shrine",
@@ -107,7 +108,7 @@ const FRAMES: Frame[] = [
     },
   },
   {
-    src: "/img/coast-lakay-ago.jpg",
+    src: "/img/coast-lakay-ago.webp",
     alt: "A stone storybook cottage with a round door and flower garden at Lakay Ago Nature's Park in Agoo.",
     place: "Lakay Ago",
     note: "Agoo's storybook garden",
@@ -118,7 +119,7 @@ const FRAMES: Frame[] = [
     },
   },
   {
-    src: "/img/coast-luna-pebble-beach.jpg",
+    src: "/img/coast-luna-pebble-beach.webp",
     alt: "A bamboo hut and stone boats on the grey pebble shore of Luna's Pebble Beach.",
     place: "Pebble Beach",
     note: "Luna's grey-stone shore",
@@ -128,7 +129,7 @@ const FRAMES: Frame[] = [
     },
   },
   {
-    src: "/img/coast-luna-bahay-na-bato.jpg",
+    src: "/img/coast-luna-bahay-na-bato.webp",
     alt: "An aerial view of the red-roofed stone art house and garden of Bahay na Bato in Luna.",
     place: "Bahay na Bato",
     note: "Luna's stone art house",
@@ -139,7 +140,7 @@ const FRAMES: Frame[] = [
     },
   },
   {
-    src: "/img/coast-balaoan-manmade-forest.jpg",
+    src: "/img/coast-balaoan-manmade-forest.webp",
     alt: "A road curving through a green canopy of arching trees at the Balaoan Man-made Forest.",
     place: "Man-made Forest",
     note: "Balaoan's green tunnel",
@@ -150,7 +151,7 @@ const FRAMES: Frame[] = [
     },
   },
   {
-    src: "/img/town-bauang-gapuz-grape-farm.jpg",
+    src: "/img/town-bauang-gapuz-grape-farm.webp",
     alt: "Rows of vines heavy with grapes at Gapuz Grape Farm in Bauang.",
     place: "Grape Farm",
     note: "Bauang's vineyard rows",
@@ -164,12 +165,13 @@ const FRAMES: Frame[] = [
 function Card({ frame }: { frame: Frame }) {
   return (
     <figure className="group flex flex-col">
-      <div className="relative overflow-hidden rounded-3xl shadow-card">
-        <img
+      <div className="relative aspect-[3/4] overflow-hidden rounded-3xl shadow-card">
+        <Image
           src={frame.src}
           alt={frame.alt}
-          loading="lazy"
-          className="aspect-[3/4] w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
+          fill
+          sizes="(min-width: 768px) 25vw, 100vw"
+          className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
         />
         <div
           aria-hidden

@@ -5,6 +5,7 @@
 // Right: the coast photo as a tall rounded card with a floating white note card,
 // place chips, and a corner ↗.
 
+import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 import { PillTag } from "@/components/layout/chrome";
 import { HeroMobileNav } from "@/components/layout/hero-mobile-nav";
@@ -71,11 +72,12 @@ export function Hero() {
 
             {/* avatar + big stat */}
             <div className="mt-9 flex items-center gap-4">
-              <img
+              <Image
                 src="/img/la-union-seal.webp"
                 alt="Official seal of the Province of La Union"
+                width={48}
+                height={48}
                 className="size-12 rounded-full object-cover"
-                loading="lazy"
               />
               <div className="leading-none">
                 <span className="font-display text-4xl font-semibold tracking-tight text-ink">

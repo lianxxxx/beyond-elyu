@@ -73,13 +73,13 @@ const PLACEHOLDER_MEDIA: TownMedia = {
       href: "https://www.tripadvisor.com/Tourism-g2301534-La_Union_Province_Ilocos_Region_Luzon-Vacations.html",
     },
   ]),
-  image: "town-card-placeholder.jpg",
+  image: "town-card-placeholder.webp",
 };
 
 const TOWN_MEDIA: Record<string, TownMedia> = {
   // ── The coast ──
   Bangar: {
-    image: "town-bangar-inabel-loom.jpg",
+    image: "town-bangar-inabel-loom.webp",
     alt: "A Bangar artisan weaving inabel cloth on a traditional wooden loom",
     badge: "Inabel weaving, Bangar",
     photo: {
@@ -102,7 +102,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Luna: {
-    image: "town-luna-baluarte-aerial.jpg",
+    image: "town-luna-baluarte-aerial.webp",
     alt: "Aerial view of the Spanish-era Baluarte watchtower on Luna's pebble shore",
     badge: "Baluarte watchtower, Luna",
     photo: {
@@ -131,7 +131,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Balaoan: {
-    image: "town-balaoan-immuki-island.jpg",
+    image: "town-balaoan-immuki-island.webp",
     alt: "Turquoise rock pools opening toward the sea at Immuki Island in Balaoan",
     badge: "Immuki Island, Balaoan",
     photo: {
@@ -152,7 +152,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Bacnotan: {
-    image: "town-bacnotan-bee-farm.jpg",
+    image: "town-bacnotan-bee-farm.webp",
     alt: "Honey bees on hive frames at La Union Bee Farm in Bacnotan",
     badge: "La Union Bee Farm, Bacnotan",
     photo: {
@@ -174,7 +174,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   "San Juan": {
-    image: "town-san-juan-surf.jpg",
+    image: "town-san-juan-surf.webp",
     alt: "A surfer at Urbiztondo Beach in San Juan, La Union",
     badge: "Urbiztondo surf, San Juan",
     photo: {
@@ -197,7 +197,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   "City of San Fernando": {
-    image: "town-san-fernando-ma-cho-temple.jpg",
+    image: "town-san-fernando-ma-cho-temple.webp",
     alt: "The colorful facade and entrance steps of Ma-Cho Temple in San Fernando",
     badge: "Ma-Cho Temple, San Fernando",
     photo: {
@@ -214,7 +214,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Bauang: {
-    image: "town-bauang-gapuz-grape-farm.jpg",
+    image: "town-bauang-gapuz-grape-farm.webp",
     alt: "Rows of vines heavy with grapes at Gapuz Grape Farm in Bauang",
     badge: "Gapuz Grape Farm, Bauang",
     photo: {
@@ -224,7 +224,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     links: [],
   },
   Caba: {
-    image: "town-caba-beach-camp.jpg",
+    image: "town-caba-beach-camp.webp",
     alt: "Tents pitched by the shore at Beach Camp by LOC in Caba",
     badge: "Beach Camp by LOC, Caba",
     photo: {
@@ -240,7 +240,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Aringay: {
-    image: "town-aringay-rice-terraces.jpg",
+    image: "town-aringay-rice-terraces.webp",
     alt: "Aerial view of the Gallano Rice Terraces on the hillsides of Aringay",
     badge: "Gallano Rice Terraces, Aringay",
     photo: {
@@ -250,7 +250,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     links: [],
   },
   Agoo: {
-    image: "town-agoo-basilica.jpg",
+    image: "town-agoo-basilica.webp",
     alt: "The facade and bell towers of Agoo Basilica",
     badge: "Agoo Basilica",
     photo: {
@@ -261,7 +261,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     links: [],
   },
   "Santo Tomas": {
-    image: "town-santo-tomas.jpg",
+    image: "town-santo-tomas.webp",
     alt: "The Damortis shoreline in Santo Tomas",
     badge: "Damortis shoreline, Santo Tomas",
     photo: {
@@ -285,7 +285,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Rosario: {
-    image: "town-rosario-bani-seaside-camping.jpg",
+    image: "town-rosario-bani-seaside-camping.webp",
     alt: "Tents pitched along the shore for seaside camping at Bani in Rosario",
     badge: "Seaside Camping, Bani, Rosario",
     photo: {
@@ -308,7 +308,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
   },
   // ── The foothills ──
   Sudipen: {
-    image: "town-sudipen-ridge-road.jpg",
+    image: "town-sudipen-ridge-road.webp",
     alt: "A winding road crossing the green mountain ridges of Sudipen",
     badge: "Bilagan Road, Sudipen",
     photo: {
@@ -325,7 +325,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Santol: {
-    image: "town-santol-balay-anito-falls.jpg",
+    image: "town-santol-balay-anito-falls.webp",
     alt: "Balay Anito Falls flowing into a deep green swimming pool in Santol",
     badge: "Balay Anito Falls, Santol",
     photo: {
@@ -347,7 +347,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   "San Gabriel": {
-    image: "town-san-gabriel-dupagan-falls.jpg",
+    image: "town-san-gabriel-dupagan-falls.webp",
     alt: "The turquoise rock pools and narrow cascade of Dupagan Falls in San Gabriel",
     badge: "Dupagan Falls, San Gabriel",
     photo: {
@@ -369,7 +369,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Naguilian: {
-    image: "town-naguilian.jpg",
+    image: "town-naguilian.webp",
     alt: "Rock formations along the Balili River in Naguilian",
     badge: "Balili River rock formation, Naguilian",
     photo: {
@@ -393,7 +393,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Bagulin: {
-    image: "town-bagulin-bulalakaw-falls.jpg",
+    image: "town-bagulin-bulalakaw-falls.webp",
     alt: "Bulalakaw Falls descending between high rock walls into a turquoise pool in Bagulin",
     badge: "Bulalakaw Falls, Bagulin",
     photo: {
@@ -415,7 +415,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Burgos: {
-    image: "town-burgos-libtong-lake.jpg",
+    image: "town-burgos-libtong-lake.webp",
     alt: "A bamboo raft shelter floating on Libtong Lake in Burgos",
     badge: "Libtong Lake, Burgos",
     photo: {
@@ -431,7 +431,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Tubao: {
-    image: "town-tubao-lang-ay-falls.jpg",
+    image: "town-tubao-lang-ay-falls.webp",
     alt: "The sloping rock cascades and forest pools of Lang-ay Falls in Tubao",
     badge: "Lang-ay Falls, Tubao",
     photo: {
@@ -447,7 +447,7 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
     ],
   },
   Pugo: {
-    image: "town-pugo-pugad.jpg",
+    image: "town-pugo-pugad.webp",
     alt: "The hillside PUGAD sign at Pugo Adventure",
     badge: "PUGAD, Pugo Adventure",
     photo: {

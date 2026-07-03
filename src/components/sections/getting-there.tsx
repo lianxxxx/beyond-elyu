@@ -72,7 +72,7 @@ export function GettingThere() {
           <Reveal delay={160} className="md:order-2 md:col-span-5">
             <figure className="group relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-soft">
               <Image
-                src="/img/bued-bridge.jpg"
+                src="/img/bued-bridge.webp"
                 alt="The La Union welcome arch over Bued Bridge at the provincial boundary in Rosario."
                 fill
                 sizes="(min-width: 768px) 42vw, 100vw"

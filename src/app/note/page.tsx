@@ -2,6 +2,7 @@
 // practice / side project, not a commercial travel brand; this page says so
 // plainly and offers a takedown path for any credited photo.
 
+import Image from "next/image";
 import Link from "next/link";
 import { FiArrowLeft } from "react-icons/fi";
 import { Accent } from "@/components/shared/section-header";
@@ -57,10 +58,12 @@ export default function AboutPage() {
           <figcaption className="mb-2 font-body text-xs text-ink-soft">
             in my defense,
           </figcaption>
-          <img
-            src="/img/note-just-a-girl.jpg"
+          <Image
+            src="/img/note-just-a-girl.webp"
             alt="The 'im just a girl' sad hamster meme"
-            className="w-36 rounded-2xl"
+            width={360}
+            height={360}
+            className="h-auto w-36 rounded-2xl"
           />
         </figure>
       </div>

@@ -115,7 +115,7 @@ export function FieldNotes() {
           <Reveal delay={160} className="md:col-span-6">
             <figure className="group relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-soft">
               <Image
-                src="/img/visitor-notes-lakbaypinas.jpg"
+                src="/img/visitor-notes-lakbaypinas.webp"
                 alt="Visitors by the shore near Poro Point in the City of San Fernando, La Union."
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
