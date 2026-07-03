@@ -764,7 +764,7 @@ function TownMenu({
 function TownCard({ town }: { town: Town }) {
   return (
     <div className="shrink-0 basis-full snap-start px-2">
-      <div className="relative h-full rounded-3xl border border-ink/8 bg-card p-6 shadow-card">
+      <div className="relative h-full rounded-3xl border border-ink/8 bg-card p-6">
         <a
           href={`https://www.google.com/maps/search/${encodeURIComponent(
             `${town.name}, La Union`,
@@ -920,7 +920,7 @@ export function TownsSection() {
 
           {/* Desktop: a single sticky detail card beside the list. */}
           <div className="hidden md:block">
-            <div className="sticky top-24 rounded-3xl border border-ink/8 bg-card p-8 shadow-card lg:p-10">
+            <div className="sticky top-24 rounded-3xl border border-ink/8 bg-card p-8 lg:p-10">
               <a
                 href={`https://www.google.com/maps/search/${encodeURIComponent(
                   `${activeTown.name}, La Union`,
