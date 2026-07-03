@@ -14,7 +14,7 @@ const TAGS = ["Heritage", "Hidden Falls", "Sunset Coast"];
 
 export function Hero() {
   return (
-    <section id="top" className="px-gutter pb-bay pt-[clamp(1.25rem,2.5vw,2rem)]">
+    <section id="top" className="px-gutter pb-bay-lead pt-[clamp(1.25rem,2.5vw,2rem)]">
       <div className="mx-auto max-w-6xl">
         {/* ── Three-zone top bar ── */}
         <header className="flex items-center justify-between">

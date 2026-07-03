@@ -49,7 +49,8 @@
 
   /* ── Generous spacing · page gutter + section bay ── */
   --spacing-gutter: clamp(1.5rem, 1rem + 4vw, 5.5rem);
-  --spacing-bay: clamp(4rem, 2rem + 8vw, 11rem);
+  --spacing-bay: clamp(3.5rem, 2.25rem + 3.5vw, 6.5rem);
+  --spacing-bay-lead: clamp(4rem, 2rem + 8vw, 11rem);
 
   /* ── Soft elevation · for white cards + framed photos on the cream ground.
      Large, low-opacity, warm-toward-ink. Never a hard drop shadow. ── */

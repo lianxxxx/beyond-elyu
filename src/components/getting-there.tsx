@@ -51,7 +51,7 @@ const OPTIONS = [
 
 export function GettingThere() {
   return (
-    <section id="getting-there" className="px-gutter py-bay">
+    <section id="getting-there" className="px-gutter pb-bay pt-[clamp(1rem,0.5rem+1.5vw,2.25rem)]">
       <div className="mx-auto max-w-6xl">
         <div>
           <div>

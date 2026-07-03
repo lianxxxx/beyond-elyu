@@ -26,7 +26,7 @@ export function Closing() {
         <Reveal delay={160}>
           <p className="mt-6 max-w-[52ch] font-body text-base text-ink-soft">
             Stop waiting for the perfect time. The emails can wait; the sunsets
-            won't. File that vacation leave, pack light, and point yourself
+            won&apos;t. File that vacation leave, pack light, and point yourself
             north. You deserve rest. You deserve La Union.
           </p>
         </Reveal>
