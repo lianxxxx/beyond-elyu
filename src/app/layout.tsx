@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { GeistSans } from "geist/font/sans";
 import { SITE } from "@/lib/site";
+import { LoadingScreen } from "@/components/layout/loading-screen";
 import "./globals.css";
 
 // Display face — Clash Display, self-hosted via next/font/local.
@@ -75,6 +76,7 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${clashDisplay.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-background font-body text-ink">
+        <LoadingScreen />
         {children}
       </body>
     </html>
