@@ -91,7 +91,7 @@ export function Hero() {
 
             {/* the oversized headline, pinned to the bottom of the column */}
             <h1 className="mt-auto pt-12 font-display text-[clamp(3rem,1rem+8vw,6.5rem)] font-semibold leading-[0.92] tracking-tight text-ink">
-              La Union, <span className="text-ink/50">beyond the beach.</span>
+              La Union, <span className="text-ink/50">beyond the surf.</span>
             </h1>
           </div>
 
