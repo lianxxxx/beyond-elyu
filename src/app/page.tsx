@@ -8,10 +8,12 @@ import { CoastStrip } from "@/components/sections/coast-strip";
 import { TownsSection } from "@/components/sections/towns-section";
 import { Closing } from "@/components/sections/closing";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { HomeJsonLd } from "@/components/seo/json-ld";
 
 export default function Home() {
   return (
     <main>
+      <HomeJsonLd />
       <SiteNav />
       <Hero />
       <Marquee />
