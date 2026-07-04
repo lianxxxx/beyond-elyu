@@ -1,6 +1,6 @@
 # beyond elyu
 
-> Elyu is more than the surf.
+> Elyu is beyond the surf.
 
 A single-page editorial site about **La Union** — the surf coast on the
 northwest of Luzon that everyone thinks they've already seen from a weekend

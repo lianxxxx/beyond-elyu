@@ -7,7 +7,7 @@ import { SITE } from "@/lib/site";
 // risk (the Clash Display .woff2 is variable and unreliable through satori).
 // satori supports only flexbox + a CSS subset; every container sets display.
 export const alt =
-  "beyond elyu — Elyu is more than the surf. An editorial field guide to the coast everyone thinks they already know.";
+  "beyond elyu — Elyu is beyond the surf. An editorial field guide to the coast everyone thinks they already know.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -57,9 +57,9 @@ export default function Image() {
           </div>
         </div>
 
-        {/* headline — three short lines; "more than" carries the terracotta
+        {/* headline — three short lines; "beyond" carries the terracotta
             highlighter marker. Stacked (not inline) so nothing overflows the
-            1200px width and the marker hugs its two words. */}
+            1200px width and the marker hugs the word. */}
         <div
           style={{
             display: "flex",
@@ -81,7 +81,7 @@ export default function Image() {
               margin: "8px 0",
             }}
           >
-            more than
+            beyond
           </div>
           <div style={{ display: "flex" }}>the surf</div>
         </div>

@@ -13,7 +13,7 @@ export function GET() {
     "\n",
   );
 
-  const body = `# ${SITE.name} — ${SITE.tagline}
+  const body = `# ${SITE.title}
 
 > An editorial field guide to La Union, a coastal province in the Ilocos Region of the Philippines. Its argument: La Union is not overrated. The surf town of San Juan is only one small part of one city and nineteen towns that run from the West Philippine Sea up into the Cordillera foothills — northern weaving communities, a seaside basilica, grape farms, rivers, and waterfalls. The beach was never the whole story.
 
