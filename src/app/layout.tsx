@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { GeistSans } from "geist/font/sans";
+import { SITE } from "@/lib/site";
 import "./globals.css";
 
 // Display face — Clash Display, self-hosted via next/font/local.
@@ -14,9 +15,53 @@ const clashDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "beyond elyu — La Union, look closer",
-  description:
-    "La Union is not overrated. An editorial field guide to the coast everyone thinks they already know.",
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: SITE.title,
+    // Child pages set a short title; this frames it, e.g. "A note — beyond elyu".
+    template: `%s — ${SITE.name}`,
+  },
+  description: SITE.description,
+  applicationName: SITE.name,
+  authors: [{ name: SITE.name }],
+  creator: SITE.name,
+  category: "travel",
+  keywords: [
+    "La Union",
+    "Elyu",
+    "La Union travel guide",
+    "things to do in La Union",
+    "San Juan surf",
+    "La Union towns",
+    "La Union itinerary",
+    "Northern Luzon coast",
+    "Philippines travel",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: SITE.locale,
+    url: SITE.url,
+    siteName: SITE.name,
+    title: SITE.title,
+    description: SITE.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE.title,
+    description: SITE.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({

@@ -9,9 +9,11 @@ import { Accent } from "@/components/shared/section-header";
 import { ReachOut } from "@/components/note/reach-out";
 
 export const metadata = {
-  title: "A note — beyond elyu",
+  // Framed by the root title template → "A note — beyond elyu".
+  title: "A note",
   description:
     "The developer behind beyond elyu — a frontend practice and side project.",
+  alternates: { canonical: "/note" },
 };
 
 export default function AboutPage() {
