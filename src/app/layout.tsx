@@ -39,6 +39,9 @@ export const metadata: Metadata = {
     "Philippines travel",
   ],
   alternates: { canonical: "/" },
+  verification: {
+    google: "rY9SijY4W3VToci9239TIjvxZz95zjdZxk82S-9Qhgw",
+  },
   openGraph: {
     type: "website",
     locale: SITE.locale,
