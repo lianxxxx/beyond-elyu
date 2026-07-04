@@ -129,7 +129,7 @@ export function Hero() {
 
               <figcaption className="absolute inset-x-5 bottom-5 text-cream sm:inset-x-7 sm:bottom-7">
                 <p className="max-w-[18ch] font-display text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
-                  Where the coast climbs.
+                  Where the falls hide.
                 </p>
                 <span className="mt-1 block font-body text-sm leading-snug text-cream/75">
                   Trek &amp; adventure
