@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Photo } from "@/components/shared/photo";
 import {
   FiArrowUpRight,
   FiCalendar,
@@ -71,7 +71,7 @@ export function GettingThere() {
         <div className="mt-12 grid grid-cols-1 items-stretch gap-4 md:mt-16 md:grid-cols-12">
           <Reveal delay={160} className="md:order-2 md:col-span-5">
             <figure className="group relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-soft">
-              <Image
+              <Photo
                 src="/img/bued-bridge.webp"
                 alt="The La Union welcome arch over Bued Bridge at the provincial boundary in Rosario."
                 fill

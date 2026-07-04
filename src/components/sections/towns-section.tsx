@@ -6,7 +6,7 @@
 // reading. No card grid; the page argues against the checklist.
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { Photo } from "@/components/shared/photo";
 import { FiArrowUpRight, FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import {
   TOWNS,
@@ -504,7 +504,7 @@ function Detail({
 
       <figure className="mt-8">
         <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-sea-mist">
-          <Image
+          <Photo
             src={`/img/${media.image ?? PLACEHOLDER_MEDIA.image}`}
             alt={media.alt}
             fill

@@ -256,3 +256,47 @@
     display: none;
   }
 }
+
+/* ── Skeleton shimmer — shown only while a real asset (map iframe, photo) is
+   still loading. Tied to onLoad, so on fast connections it barely appears. ── */
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton {
+  background-color: color-mix(in oklab, var(--ink) 6%, var(--paper));
+  background-image: linear-gradient(
+    100deg,
+    transparent 20%,
+    color-mix(in oklab, var(--sea-mist) 55%, var(--paper)) 45%,
+    transparent 70%
+  );
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}
+
+/* ── Loading screen — the opening splash bar (indeterminate slide). ── */
+@keyframes loader-slide {
+  0% { transform: translateX(-110%); }
+  100% { transform: translateX(320%); }
+}
+
+.loader-bar {
+  animation: loader-slide 1.15s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-bar {
+    animation: none;
+    width: 100%;
+    transform: none;
+  }
+}

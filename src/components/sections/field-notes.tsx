@@ -3,7 +3,7 @@
 // the left, and a big rounded photo on the right. The single dark block
 // gives the white page the contrast rhythm the shot has.
 
-import Image from "next/image";
+import { Photo } from "@/components/shared/photo";
 import { FiArrowUpRight, FiMessageCircle } from "react-icons/fi";
 import { Reveal } from "@/components/shared/reveal";
 import { Accent, SectionHeader } from "@/components/shared/section-header";
@@ -114,7 +114,7 @@ export function FieldNotes() {
           {/* Right: the big photo */}
           <Reveal delay={160} className="md:col-span-6">
             <figure className="group relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-soft">
-              <Image
+              <Photo
                 src="/img/visitor-notes-lakbaypinas.webp"
                 alt="Visitors by the shore near Poro Point in the City of San Fernando, La Union."
                 fill

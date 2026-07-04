@@ -1,8 +1,8 @@
 // Intro — beyond-elyu. The "where is it" section: a live Google map of La Union
 // on the left, with the placing-the-province argument on the right.
 
-import { FiArrowUpRight } from "react-icons/fi";
 import { Reveal } from "@/components/shared/reveal";
+import { MapEmbed } from "@/components/sections/map-embed";
 import { Accent, SectionHeader } from "@/components/shared/section-header";
 
 export function Intro() {
@@ -11,27 +11,7 @@ export function Intro() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-x-12 gap-y-10 md:grid-cols-12">
         {/* Left: La Union on a live Google map */}
         <Reveal delay={120} className="md:col-span-5">
-          <figure className="group relative overflow-hidden rounded-[2rem]">
-            <iframe
-              title="Map of La Union, Philippines"
-              src="https://www.google.com/maps?q=La+Union,+Philippines&z=10&t=k&output=embed"
-              className="aspect-[4/5] w-full"
-              style={{ border: 0 }}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-            {/* corner ↗ — open the full map */}
-            <a
-              href="https://www.google.com/maps?q=La+Union,+Philippines"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Open La Union in Google Maps"
-              className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-card/85 text-ink backdrop-blur-md transition-colors hover:bg-ink hover:text-cream"
-            >
-              <FiArrowUpRight aria-hidden className="size-5" />
-            </a>
-          </figure>
+          <MapEmbed />
         </Reveal>
 
         {/* Right: placing the province */}

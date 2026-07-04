@@ -8,7 +8,7 @@
 // a dot + counter indicator, mirroring the town-by-town section.
 
 import { useRef, useState } from "react";
-import Image from "next/image";
+import { Photo } from "@/components/shared/photo";
 import { Reveal } from "@/components/shared/reveal";
 import { SectionHeader, Accent } from "@/components/shared/section-header";
 import { IconButton } from "@/components/layout/chrome";
@@ -166,7 +166,7 @@ function Card({ frame }: { frame: Frame }) {
   return (
     <figure className="group flex flex-col">
       <div className="relative aspect-[3/4] overflow-hidden rounded-3xl shadow-card">
-        <Image
+        <Photo
           src={frame.src}
           alt={frame.alt}
           fill
