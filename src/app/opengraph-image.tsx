@@ -7,7 +7,7 @@ import { SITE } from "@/lib/site";
 // risk (the Clash Display .woff2 is variable and unreliable through satori).
 // satori supports only flexbox + a CSS subset; every container sets display.
 export const alt =
-  "beyond elyu — La Union, look closer. An editorial field guide to the coast everyone thinks they already know.";
+  "beyond elyu — Elyu is more than the surf. An editorial field guide to the coast everyone thinks they already know.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -57,25 +57,33 @@ export default function Image() {
           </div>
         </div>
 
-        {/* headline — "look closer" with the terracotta highlighter marker */}
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", fontSize: 132, lineHeight: 1.04, fontWeight: 600 }}>
-            La Union,
+        {/* headline — three short lines; "more than" carries the terracotta
+            highlighter marker. Stacked (not inline) so nothing overflows the
+            1200px width and the marker hugs its two words. */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            fontSize: 108,
+            lineHeight: 1.04,
+            fontWeight: 600,
+          }}
+        >
+          <div style={{ display: "flex" }}>Elyu is</div>
+          <div
+            style={{
+              display: "flex",
+              backgroundColor: TERRACOTTA,
+              color: SEA,
+              padding: "2px 26px 14px",
+              borderRadius: 16,
+              margin: "8px 0",
+            }}
+          >
+            more than
           </div>
-          <div style={{ display: "flex", alignItems: "center", fontSize: 132, lineHeight: 1.04, fontWeight: 600 }}>
-            <div style={{ display: "flex", marginRight: 28 }}>look</div>
-            <div
-              style={{
-                display: "flex",
-                backgroundColor: TERRACOTTA,
-                color: SEA,
-                padding: "4px 30px 16px",
-                borderRadius: 16,
-              }}
-            >
-              closer
-            </div>
-          </div>
+          <div style={{ display: "flex" }}>the surf</div>
         </div>
 
         {/* footer — the thesis, quotable for answer/generative engines */}

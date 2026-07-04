@@ -8,8 +8,8 @@
 export const SITE = {
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://beyond-elyu.vercel.app").replace(/\/$/, ""),
   name: "beyond elyu",
-  title: "beyond elyu — La Union, look closer",
-  tagline: "La Union, look closer",
+  title: "beyond elyu — more than the surf",
+  tagline: "more than the surf",
   description:
     "La Union is not overrated. An editorial field guide to the coast everyone thinks they already know — its towns, tides, surf, and the details you only catch on a second look.",
   locale: "en_PH",
