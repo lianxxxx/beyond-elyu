@@ -783,7 +783,7 @@ function TownCard({ town }: { town: Town }) {
 }
 
 export function TownsSection() {
-  const [active, setActive] = useState("San Juan");
+  const [active, setActive] = useState("San Gabriel");
   const activeTown = TOWNS.find((t) => t.name === active) ?? TOWNS[0];
 
   // Mobile carousel: the burger, the swipe position, and the dot indicator are
