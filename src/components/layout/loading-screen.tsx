@@ -45,7 +45,7 @@ export function LoadingScreen() {
         <style>{`.loading-screen{display:none!important}`}</style>
       </noscript>
 
-      <span className="font-display text-6xl font-semibold lowercase tracking-tight text-ink">
+      <span className="font-display text-5xl font-semibold lowercase tracking-tight text-ink">
         elyu
       </span>
 
