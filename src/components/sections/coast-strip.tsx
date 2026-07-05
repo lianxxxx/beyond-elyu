@@ -162,6 +162,9 @@ const FRAMES: Frame[] = [
   },
 ];
 
+// The whole strip as one browsable set for the lightbox, in on-screen order.
+const COAST_GALLERY = FRAMES.map((f) => ({ src: f.src, alt: f.alt }));
+
 function Card({ frame }: { frame: Frame }) {
   return (
     <figure className="group flex flex-col">
@@ -171,6 +174,8 @@ function Card({ frame }: { frame: Frame }) {
           alt={frame.alt}
           fill
           sizes="(min-width: 768px) 25vw, 100vw"
+          gallery={COAST_GALLERY}
+          galleryIndex={FRAMES.indexOf(frame)}
           className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05]"
         />
         <div

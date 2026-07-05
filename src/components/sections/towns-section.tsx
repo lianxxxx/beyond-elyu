@@ -472,6 +472,12 @@ const TOWN_MEDIA: Record<string, TownMedia> = {
 const mediaFor = (town: Town): TownMedia =>
   TOWN_MEDIA[town.name] ?? PLACEHOLDER_MEDIA;
 
+// Every town photo as one browsable set for the lightbox, in on-screen order.
+const TOWN_GALLERY = ORDERED_TOWNS.map((t) => {
+  const m = mediaFor(t);
+  return { src: `/img/${m.image ?? PLACEHOLDER_MEDIA.image}`, alt: m.alt };
+});
+
 function Detail({
   town,
   hideTitle = false,
@@ -509,6 +515,8 @@ function Detail({
             alt={media.alt}
             fill
             sizes="(min-width: 768px) 42vw, 100vw"
+            gallery={TOWN_GALLERY}
+            galleryIndex={ORDERED_TOWNS.findIndex((t) => t.name === town.name)}
             className="object-cover"
           />
           <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">

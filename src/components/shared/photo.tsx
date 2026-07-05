@@ -2,7 +2,7 @@
 
 import Image, { type ImageProps } from "next/image";
 import { useState } from "react";
-import { useLightbox } from "./lightbox";
+import { useLightbox, type LightboxItem } from "./lightbox";
 
 // next/image with a shimmer skeleton shown until the image actually loads.
 // Tied to onLoad, so on a fast connection it resolves instantly and nothing
@@ -10,21 +10,32 @@ import { useLightbox } from "./lightbox";
 // absolutely-positioned skeleton fills it.
 //
 // Tapping the photo opens it in the app-wide lightbox (the whole image, same
-// page). Set `zoomable={false}` to opt a decorative image out. Overlays that
-// sit on top of the image (gradients, captions, badges) must be
-// `pointer-events-none` so the tap reaches it; real links stay above.
+// page). Set `zoomable={false}` to opt a decorative image out. Pass `gallery`
+// (+ `galleryIndex`) to open the photo as part of a browsable set so the
+// lightbox shows prev/next. Overlays that sit on top of the image (gradients,
+// captions, badges) must be `pointer-events-none` so the tap reaches it; real
+// links stay above.
 export function Photo({
   className = "",
   onLoad,
   zoomable = true,
+  gallery,
+  galleryIndex = 0,
   ...props
-}: ImageProps & { zoomable?: boolean }) {
+}: ImageProps & {
+  zoomable?: boolean;
+  gallery?: LightboxItem[];
+  galleryIndex?: number;
+}) {
   const [loaded, setLoaded] = useState(false);
   const { open } = useLightbox();
 
   const canZoom = zoomable && typeof props.src === "string";
   const alt = typeof props.alt === "string" ? props.alt : "";
-  const zoom = () => open({ src: props.src as string, alt });
+  const zoom = () =>
+    gallery && gallery.length > 1
+      ? open(gallery, galleryIndex)
+      : open([{ src: props.src as string, alt }]);
 
   return (
     <>
