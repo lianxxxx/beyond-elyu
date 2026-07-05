@@ -870,7 +870,7 @@ export function TownsSection() {
             ref={mobileScrollerRef}
             onScroll={handleCarouselScroll}
             aria-label="Towns — swipe to browse"
-            className="mt-6 flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="-mx-2 mt-6 flex snap-x snap-mandatory overflow-x-auto overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {ORDERED_TOWNS.map((t) => (
               <TownCard key={t.name} town={t} />
@@ -901,7 +901,7 @@ export function TownsSection() {
           </div>
         </div>
 
-        <div className="mt-12 hidden gap-x-16 gap-y-10 md:mt-16 md:grid md:grid-cols-2">
+        <div className="mt-12 hidden gap-x-12 gap-y-10 md:mt-16 md:grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)]">
           <Reveal delay={120}>
             <Group
               title="The coast"
