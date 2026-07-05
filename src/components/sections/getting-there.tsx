@@ -80,10 +80,10 @@ export function GettingThere() {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/5 to-transparent"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/5 to-transparent"
               />
 
-              <span className="absolute left-4 top-4 rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
+              <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
                 Bued Bridge · Rosario
               </span>
 
@@ -97,7 +97,7 @@ export function GettingThere() {
                 <FiArrowUpRight aria-hidden className="size-5" />
               </a>
 
-              <figcaption className="absolute inset-x-5 bottom-5 text-cream sm:inset-x-7 sm:bottom-7">
+              <figcaption className="pointer-events-none absolute inset-x-5 bottom-5 text-cream sm:inset-x-7 sm:bottom-7">
                 <p className="max-w-[18ch] font-display text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
                   Where La Union begins.
                 </p>

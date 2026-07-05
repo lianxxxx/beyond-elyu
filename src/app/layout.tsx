@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { GeistSans } from "geist/font/sans";
 import { SITE } from "@/lib/site";
 import { LoadingScreen } from "@/components/layout/loading-screen";
+import { LightboxProvider } from "@/components/shared/lightbox";
 import "./globals.css";
 
 // Display face — Clash Display, self-hosted via next/font/local.
@@ -80,7 +81,7 @@ export default function RootLayout({
     >
       <body className="min-h-full bg-background font-body text-ink">
         <LoadingScreen />
-        {children}
+        <LightboxProvider>{children}</LightboxProvider>
       </body>
     </html>
   );

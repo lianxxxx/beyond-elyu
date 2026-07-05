@@ -175,7 +175,7 @@ function Card({ frame }: { frame: Frame }) {
         />
         <div
           aria-hidden
-          className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent"
         />
         <IconButton
           href="#towns"
@@ -183,7 +183,7 @@ function Card({ frame }: { frame: Frame }) {
           tone="cream"
           className="absolute right-3 top-3"
         />
-        <figcaption className="absolute inset-x-0 bottom-0 p-4 text-cream">
+        <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 p-4 text-cream">
           <span className="block font-display text-lg font-semibold tracking-tight">
             {frame.place}
           </span>

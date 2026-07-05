@@ -7,6 +7,7 @@
 
 import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
+import { ZoomButton } from "@/components/shared/lightbox";
 import { PillTag } from "@/components/layout/chrome";
 import { HeroMobileNav } from "@/components/layout/hero-mobile-nav";
 import { NAV } from "@/lib/nav";
@@ -105,20 +106,27 @@ export function Hero() {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/5 to-transparent"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/5 to-transparent"
+              />
+
+              {/* tap the photo to view it full */}
+              <ZoomButton
+                src="/img/tangadan-falls.webp"
+                alt="Tangadan Falls in San Gabriel, La Union."
+                className="z-10"
               />
 
               {/* corner ↗ */}
               <a
                 href="#look-closer"
                 aria-label="Read the story"
-                className="absolute right-4 top-4 inline-flex size-11 items-center justify-center rounded-full bg-card/85 text-ink backdrop-blur-md transition-colors hover:bg-ink hover:text-cream"
+                className="absolute right-4 top-4 z-20 inline-flex size-11 items-center justify-center rounded-full bg-card/85 text-ink backdrop-blur-md transition-colors hover:bg-ink hover:text-cream"
               >
                 <FiArrowUpRight aria-hidden className="size-5" />
               </a>
 
               {/* place chips */}
-              <div className="absolute left-4 top-4 flex flex-wrap gap-2">
+              <div className="pointer-events-none absolute left-4 top-4 z-20 flex flex-wrap gap-2">
                 <span className="rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
                   Tangadan Falls
                 </span>
@@ -127,7 +135,7 @@ export function Hero() {
                 </span>
               </div>
 
-              <figcaption className="absolute inset-x-5 bottom-5 text-cream sm:inset-x-7 sm:bottom-7">
+              <figcaption className="pointer-events-none absolute inset-x-5 bottom-5 z-20 text-cream sm:inset-x-7 sm:bottom-7">
                 <p className="max-w-[18ch] font-display text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
                   Where the falls wait.
                 </p>

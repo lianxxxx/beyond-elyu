@@ -123,10 +123,10 @@ export function FieldNotes() {
               />
               <div
                 aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/5 to-transparent"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/5 to-transparent"
               />
 
-              <div className="absolute left-4 top-4 flex flex-wrap gap-2">
+              <div className="pointer-events-none absolute left-4 top-4 flex flex-wrap gap-2">
                 <span className="rounded-full bg-card/85 px-3.5 py-1.5 font-body text-[0.78rem] font-medium tracking-tight text-ink backdrop-blur-md">
                   Poro Point Lighthouse
                 </span>
@@ -145,7 +145,7 @@ export function FieldNotes() {
                 <FiArrowUpRight aria-hidden className="size-5" />
               </a>
 
-              <figcaption className="absolute inset-x-5 bottom-5 text-cream sm:inset-x-7 sm:bottom-7">
+              <figcaption className="pointer-events-none absolute inset-x-5 bottom-5 text-cream sm:inset-x-7 sm:bottom-7">
                 <p className="text-balance font-display text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
                   Where you&rsquo;ll stay.
                 </p>
