@@ -13,6 +13,16 @@ This is a **vibe-coded side project** — made for fun, to play with a design
 direction and to show off how good La Union actually is, not as a polished
 product. Expect things to be a work in progress.
 
+<p align="center">
+  <img src="docs/screenshots/hero-phone.webp" alt="beyond elyu hero on iPhone — 'La Union, beyond the surf.'" width="30%">
+  &nbsp;&nbsp;
+  <img src="docs/screenshots/top-spots-phone.webp" alt="Top spots carousel on iPhone — 'Find your favorite,' Immuki Island" width="30%">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/the-spots-ipad.webp" alt="The whole province town roll call on iPad — 'The spots,' San Gabriel detail" width="62%">
+</p>
+
 ## Design direction — "Binar Nature"
 
 North star: **"The Second Look"** — meaning that reveals itself on a longer
@@ -88,4 +98,4 @@ OG, sitemap, and llms.txt URL reads from it (falls back to a Vercel host).
 
 ---
 
-Made with warm light and too much coffee, somewhere along the El Niño coast.
+Made with warm light and too much coffee, somewhere along the Elyu coast.
