@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Photo } from "@/components/shared/photo";
 import {
   FiArrowUpRight,
@@ -160,7 +161,14 @@ export function GettingThere() {
 
         <p className="mt-4 font-body text-xs leading-relaxed text-ink-soft">
           Schedules, travel times, and fares change. Confirm directly with the
-          operator before departure.
+          operator before departure.{" "}
+          <Link
+            href="/manila-to-la-union"
+            className="font-medium text-sea underline decoration-sea/30 underline-offset-2 hover:text-ink"
+          >
+            Read the full Manila to La Union guide
+          </Link>
+          .
         </p>
       </div>
     </section>

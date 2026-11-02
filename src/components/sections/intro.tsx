@@ -1,6 +1,7 @@
 // Intro — beyond-elyu. The "where is it" section: a live Google map of La Union
 // on the left, with the placing-the-province argument on the right.
 
+import Link from "next/link";
 import { Reveal } from "@/components/shared/reveal";
 import { MapEmbed } from "@/components/sections/map-embed";
 import { Accent, SectionHeader } from "@/components/shared/section-header";
@@ -23,7 +24,7 @@ export function Intro() {
                 La Union, on the <Accent>map</Accent>.
               </>
             }
-            lede="A thin strip on Luzon’s northwest coast, La Union runs from the West Philippine Sea up into the Cordillera foothills, about four hours from Manila and far more than San Juan. One city and nineteen towns stretch from northern weaving communities to Agoo’s basilica, then inland to grape farms, rivers, and waterfalls."
+            lede="A thin strip on Luzon’s northwest coast, La Union runs from the West Philippine Sea up into the Cordillera foothills, roughly five to seven hours by bus from Manila and far more than San Juan. One city and nineteen towns stretch from northern weaving communities to Agoo’s basilica, then inland to grape farms, rivers, and waterfalls."
             ledeClassName="max-w-[58ch] text-base!"
           />
 
@@ -31,6 +32,12 @@ export function Intro() {
             <p className="mt-6 max-w-[54ch] font-body text-base font-semibold italic text-ink">
               The beach was never the whole story.
             </p>
+            <Link
+              href="/what-is-elyu"
+              className="mt-4 inline-block font-body text-sm font-medium text-sea underline decoration-sea/30 underline-offset-4 transition-colors hover:text-ink"
+            >
+              What does Elyu mean?
+            </Link>
           </Reveal>
         </div>
       </div>

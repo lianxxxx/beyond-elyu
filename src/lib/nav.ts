@@ -4,4 +4,5 @@ export const NAV = [
   { label: "Getting There", href: "#getting-there" },
   { label: "Top Spots", href: "#coast" },
   { label: "The Whole Province", href: "#towns" },
+  { label: "Guides", href: "/guides" },
 ];

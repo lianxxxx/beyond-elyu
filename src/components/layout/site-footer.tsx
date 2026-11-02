@@ -4,6 +4,7 @@
 
 import Link from "next/link";
 import { FiArrowUpRight, FiArrowUp } from "react-icons/fi";
+import { GUIDES } from "@/lib/guides";
 
 const LINKS = [
   { label: "Getting there", href: "#getting-there" },
@@ -18,7 +19,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 gap-x-12 gap-y-14 md:grid-cols-12">
           {/* Brand statement */}
-          <div className="md:col-span-7">
+          <div className="md:col-span-5">
             <p className="max-w-[18ch] font-display text-3xl font-semibold leading-[1.05] tracking-tight text-sand sm:text-4xl">
               La Union is not overrated.{" "}
               <span className="text-sand/45">You&apos;ll see.</span>
@@ -30,7 +31,7 @@ export function SiteFooter() {
           </div>
 
           {/* Wander-back navigation */}
-          <nav className="md:col-span-5 md:justify-self-end">
+          <nav className="md:col-span-3 md:justify-self-end">
             <p className="font-body text-eyebrow font-medium uppercase tracking-[0.2em] text-sand/40">
               Wander back
             </p>
@@ -47,6 +48,28 @@ export function SiteFooter() {
                       className="size-4 text-sand/35 transition-all duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-sand"
                     />
                   </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Topic guides: real page links, so every guide is one click away */}
+          <nav aria-label="Guides" className="md:col-span-4 md:justify-self-end">
+            <Link
+              href="/guides"
+              className="block font-body text-eyebrow font-medium uppercase tracking-[0.2em] text-sand/40 transition-colors hover:text-sand"
+            >
+              Guides
+            </Link>
+            <ul className="mt-6 flex flex-col gap-3">
+              {GUIDES.map((guide) => (
+                <li key={guide.href}>
+                  <Link
+                    href={guide.href}
+                    className="font-body text-base text-sand/80 transition-colors hover:text-sand"
+                  >
+                    {guide.label}
+                  </Link>
                 </li>
               ))}
             </ul>
