@@ -19,26 +19,15 @@ const clashDisplay = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: SITE.title,
-    // Child pages set a short title; this frames it, e.g. "A note — beyond elyu".
-    template: `%s — ${SITE.name}`,
+    default: SITE.seoTitle,
+    // Child pages set a short title; this frames it, e.g. "A note | beyond elyu".
+    template: `%s | ${SITE.name}`,
   },
-  description: SITE.description,
+  description: SITE.seoDescription,
   applicationName: SITE.name,
   authors: [{ name: SITE.name }],
   creator: SITE.name,
   category: "travel",
-  keywords: [
-    "La Union",
-    "Elyu",
-    "La Union travel guide",
-    "things to do in La Union",
-    "San Juan surf",
-    "La Union towns",
-    "La Union itinerary",
-    "Northern Luzon coast",
-    "Philippines travel",
-  ],
   alternates: { canonical: "/" },
   verification: {
     google: "rY9SijY4W3VToci9239TIjvxZz95zjdZxk82S-9Qhgw",

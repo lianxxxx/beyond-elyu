@@ -7,14 +7,15 @@ import Link from "next/link";
 import { FiArrowLeft } from "react-icons/fi";
 import { Accent } from "@/components/shared/section-header";
 import { ReachOut } from "@/components/note/reach-out";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
-  // Framed by the root title template → "A note — beyond elyu".
+export const metadata = pageMetadata({
+  // Framed by the root title template: "A note | beyond elyu".
+  path: "/note",
   title: "A note",
   description:
-    "The developer behind beyond elyu — a frontend practice and side project.",
-  alternates: { canonical: "/note" },
-};
+    "The developer behind beyond elyu, a frontend practice and side project.",
+});
 
 export default function AboutPage() {
   return (
