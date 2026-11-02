@@ -34,14 +34,15 @@ const ATTRACTIONS = [
   },
 ] as const;
 
-const FAQ = [
+// Also rendered on the home page by HomeFaq, so keep this as readable copy.
+export const FAQ = [
   {
     q: "Is La Union overrated?",
-    a: "No. La Union is often reduced to the surf town of San Juan, but the province is one city and nineteen towns — from the inabel weaving communities of Bangar and the Basilica of Our Lady of Charity in Agoo to inland grape farms, rivers, and waterfalls. The beach was never the whole story.",
+    a: "No. La Union is often reduced to the surf town of San Juan, but the province is one city and nineteen towns, from the inabel weaving communities of Bangar and the Basilica of Our Lady of Charity in Agoo to inland grape farms, rivers, and waterfalls. The beach was never the whole story.",
   },
   {
     q: "Where is La Union?",
-    a: "La Union is a thin province on Luzon's northwest coast in the Ilocos Region of the Philippines. It runs from the West Philippine Sea up into the Cordillera foothills and sits about four hours from Manila.",
+    a: "La Union is a thin province on Luzon's northwest coast in the Ilocos Region of the Philippines. It runs from the West Philippine Sea up into the Cordillera foothills and sits roughly five to seven hours by bus from Manila.",
   },
   {
     q: "How do you get to La Union from Manila?",
@@ -53,9 +54,49 @@ const FAQ = [
   },
   {
     q: "How many towns are in La Union?",
-    a: "La Union is made up of one city — the City of San Fernando, the provincial capital — and nineteen municipalities, stretching from the northern coast down to Rosario and inland into the Cordillera foothills.",
+    a: "La Union is made up of one city (the City of San Fernando, the provincial capital) and nineteen municipalities, stretching from the northern coast down to Rosario and inland into the Cordillera foothills.",
   },
 ] as const;
+
+// JSON-LD for a guide page: the article itself plus its visible FAQ. Pass the
+// same FAQ the page renders, so the markup and the page never disagree.
+export function guideJsonLd({
+  path,
+  title,
+  description,
+  faq,
+}: {
+  path: string;
+  title: string;
+  description: string;
+  faq: readonly { q: string; a: string }[];
+}) {
+  const url = `${SITE.url}${path}`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `${url}#article`,
+        headline: title,
+        description,
+        url,
+        inLanguage: "en",
+        about: { "@id": `${SITE.url}/#destination` },
+        isPartOf: { "@id": `${SITE.url}/#website` },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${url}#faq`,
+        mainEntity: faq.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+  };
+}
 
 export function homeJsonLd() {
   return {
@@ -75,7 +116,7 @@ export function homeJsonLd() {
         name: "La Union",
         alternateName: "Elyu",
         description:
-          "La Union is a thin coastal province on Luzon's northwest coast in the Ilocos Region of the Philippines, running from the West Philippine Sea up into the Cordillera foothills, about four hours from Manila. It is made up of one city and nineteen towns.",
+          "La Union is a thin coastal province on Luzon's northwest coast in the Ilocos Region of the Philippines, running from the West Philippine Sea up into the Cordillera foothills, roughly five to seven hours by bus from Manila. It is made up of one city and nineteen towns.",
         url: SITE.url,
         geo: {
           "@type": "GeoCoordinates",
