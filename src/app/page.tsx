@@ -24,8 +24,8 @@ export default function Home() {
       <TownsSection />
       <FieldNotes />
       <CoastStrip />
-      <GuideLinks />
       <HomeFaq />
+      <GuideLinks />
       <Closing />
       <SiteFooter />
     </main>

@@ -1,7 +1,9 @@
 // Links into the topic guides, as plain crawlable anchors. GuideList is the
-// card grid shared by /guides and the home page's "Plan your trip" row.
+// card grid shared by /guides and the home page's guides row.
 
 import Link from "next/link";
+import { Reveal } from "@/components/shared/reveal";
+import { Accent } from "@/components/shared/section-header";
 import { FiArrowUpRight } from "react-icons/fi";
 import { GUIDES } from "@/lib/guides";
 
@@ -37,13 +39,26 @@ export function GuideLinks() {
   return (
     <section aria-labelledby="guides-heading" className="px-gutter pb-bay">
       <div className="mx-auto max-w-6xl">
-        <h2
-          id="guides-heading"
-          className="font-display text-headline font-semibold tracking-tight text-ink"
-        >
-          Plan your trip
-        </h2>
-        <GuideList />
+        <header>
+          <Reveal>
+            <p className="font-body text-eyebrow font-medium uppercase text-ink-soft">
+              The guides
+            </p>
+          </Reveal>
+          <Reveal delay={80}>
+            <h2
+              id="guides-heading"
+              className="mt-5 font-display text-headline font-semibold tracking-tight text-ink"
+            >
+              <span className="whitespace-nowrap text-[clamp(2rem,7vw,4.75rem)]">
+                Know before you <Accent>go</Accent>.
+              </span>
+            </h2>
+          </Reveal>
+        </header>
+        <Reveal delay={120} className="mt-4">
+          <GuideList />
+        </Reveal>
       </div>
     </section>
   );
