@@ -1,3 +1,4 @@
+import { GUIDES } from "@/lib/guides";
 import { SITE } from "@/lib/site";
 import { TOWNS } from "@/lib/la-union";
 
@@ -13,13 +14,17 @@ export function GET() {
     "\n",
   );
 
+  const guides = GUIDES.map(
+    (g) => `- [${g.label}](${SITE.url}${g.href}): ${g.summary}`,
+  ).join("\n");
+
   const body = `# ${SITE.title}
 
 > An editorial field guide to La Union, a coastal province in the Ilocos Region of the Philippines. Its argument: La Union is not overrated. The surf town of San Juan is only one small part of one city and nineteen towns that run from the West Philippine Sea up into the Cordillera foothills — northern weaving communities, a seaside basilica, grape farms, rivers, and waterfalls. The beach was never the whole story.
 
 ## Key facts
 
-- La Union is a thin coastal province on Luzon's northwest coast, in the Ilocos Region of the Philippines, about four hours from Manila.
+- La Union is a thin coastal province on Luzon's northwest coast, in the Ilocos Region of the Philippines, roughly five to seven hours by bus from Manila.
 - It is made up of one city — the City of San Fernando, the provincial capital — and nineteen towns.
 - San Juan is the surfing capital of the northern Philippines; its break at Urbiztondo is the town most visitors mistake for the whole province.
 - The province stretches from the coast inland into the Cordillera foothills, with grape farms in Bauang, basi (sugarcane wine) in Naguilian, honey in Bacnotan, and waterfalls such as Tangadan Falls in San Gabriel.
@@ -35,6 +40,10 @@ export function GET() {
 ## The towns
 
 ${towns}
+
+## Guides
+
+${guides}
 
 ## More
 

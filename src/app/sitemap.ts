@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
+import { GUIDES } from "@/lib/guides";
 import { SITE } from "@/lib/site";
 
-// Two static routes today: the single-page guide and the /note page.
+// Static routes: the home guide, the topic guides, and the /note page.
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
   return [
@@ -11,6 +13,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: `${SITE.url}/guides`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    ...GUIDES.map((guide) => ({
+      url: `${SITE.url}${guide.href}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     {
       url: `${SITE.url}/note`,
       lastModified,
