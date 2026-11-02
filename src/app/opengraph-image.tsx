@@ -1,5 +1,4 @@
 import { ImageResponse } from "next/og";
-import { SITE } from "@/lib/site";
 
 // Branded 1200×630 share card. Rendered by next/og (satori) at build time.
 // No custom font is loaded on purpose: next/og bundles Geist — the site's own
